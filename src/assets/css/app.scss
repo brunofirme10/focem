@@ -6,6 +6,7 @@ body {
   }
   h1, h2, h3, h4, h5, h6, .font-montserrat {
     font-family: 'Montserrat', sans-serif;
+
   }
 }
 header {
@@ -30,8 +31,13 @@ header {
     }
   }
 }
-
+.cover {
+  object-fit: cover;
+  max-height: 50vh;
+  overflow: hidden;
+}
 section {
+    padding: 30px 0;
     h1, h2, h3 {
         color: $primary-color;
     }
@@ -39,6 +45,21 @@ section {
         margin: auto;
         text-transform: uppercase;
     }
+    &.interna {
+      h1 {
+        font-size: 6rem;
+        font-weight: 900;
+        line-height: 5rem;
+      }
+      h3 { color: $primary-color }
+      p { 
+        font-size: 16px;
+        .destaque { 
+          color: $primary-color;
+        }
+      }
+    }
+
     &#home {
       background:url('./assets/img/bg-home.jpg');
       object-fit: cover;
@@ -94,6 +115,12 @@ section {
                 }
             }
         }
+    }
+    &#focem {
+      h1 {
+        font-size: 6rem;
+        font-weight: 900;
+      }
     }
 }
 nav {
