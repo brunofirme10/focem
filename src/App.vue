@@ -1,17 +1,19 @@
 <template>
   <div id="app">
-    <navbar/>
-    <component is="clean-layout">
+    <component is="default-layout">
         <router-view/>
     </component>
+    <navbar/>
   </div>
 </template>
 
 <script>
 import CleanLayout from '@/layout/Clean'
+import DefaultLayout from '@/layout/Default'
 import Navbar from '@/layout/components/Navbar'
 export default {
   components: {
+    DefaultLayout,
     CleanLayout,
     Navbar
   },
@@ -20,4 +22,5 @@ export default {
 </script>
 
 <style lang="scss">
+@import '@/assets/css/app.scss';
 </style>

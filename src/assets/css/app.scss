@@ -1,0 +1,47 @@
+$primary-color: #00a5f5;
+
+header {
+    height: 200px;
+    background: red;
+    .logo {
+        background: $primary-color;
+        width: 100px;
+        height: 30px;
+        margin: auto;
+        text-align: center;
+    }
+}
+
+section {
+    h1, h2, h3 {
+        color: $primary-color;
+    }
+    h1 {
+        margin: auto;
+        text-transform: uppercase;
+    }
+    &#eventos {
+        button {
+            &.subscribe {
+                background: $primary-color;
+                width: 100%;
+                padding: 0.5rem
+            }
+        }
+    }
+}
+
+$spaceamounts: (1, 2, 3, 4, 5, 6, 7);
+$sides: (top, bottom, left, right); 
+
+@each $space in $spaceamounts {
+  @each $side in $sides {
+    .m-#{str-slice($side, 0, 1)}-#{$space} {
+      margin-#{$side}: #{$space}rem !important;
+    }
+  
+    .p-#{str-slice($side, 0, 1)}-#{$space} {
+      padding-#{$side}: #{$space}rem !important;
+    }
+  }
+}
