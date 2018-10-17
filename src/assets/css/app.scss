@@ -1,4 +1,13 @@
 $primary-color: #00a5f5;
+body {
+  color: #5b5b5f;
+  p {
+    font-family: 'Montserrat', sans-serif;
+  }
+  h1, h2, h3, h4, h5, h6, .font-montserrat {
+    font-family: 'Montserrat', sans-serif;
+  }
+}
 header {
   text-align: center;
   padding: 20px 0;
