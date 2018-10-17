@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <component is="default-layout">
+    <component :is="layout">
         <router-view/>
     </component>
     <navbar/>
@@ -16,14 +16,13 @@ export default {
     ...Layouts,
     Navbar
   },
-  mounted() {
-    console.log(Layouts);
-  },
-  layout() {
-            let foundLayout
-            this.$route.matched.find(e => e.meta.layout ? foundLayout = e.meta.layout : '')
-            return (foundLayout || 'default') + '-layout';
-        }
+  computed: {
+    layout() {
+      let foundLayout
+      this.$route.matched.find(e => e.meta.layout ? foundLayout = e.meta.layout : '')
+      return (foundLayout || 'default') + '-layout';
+    }
+  }
 }
 </script>
 

@@ -12,6 +12,9 @@ export default new Router({
     {
       path: '/',
       component: load('home'),
+      meta: {
+        layout: 'Clean'
+      }
     },
     {
       path: '/auto',

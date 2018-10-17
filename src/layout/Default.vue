@@ -7,6 +7,7 @@
 <script>
 import Components from './components'
 export default {
+    name: 'Default',
     components: {
         ...Components
     }
