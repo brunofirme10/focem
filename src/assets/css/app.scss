@@ -1,6 +1,11 @@
 $primary-color: #00a5f5;
+$primary-color-lighter: #a8e0fa;
+$secundary-color: #5b5b5f;
+$secundary-color-lighter: #e5e6e7;
+$dark: #000;
+
 body {
-  color: #5b5b5f;
+  color: $secundary-color;
   p {
     font-family: 'Montserrat', sans-serif;
   }
@@ -9,6 +14,34 @@ body {
 
   }
 }
+input[type="text"], textarea {
+  background-color: $secundary-color-lighter;
+  border: solid 1px $secundary-color-lighter;
+  color: $dark;
+  padding-left: 2rem;
+  font-family: 'Montserrat', sans-serif;
+  font-size: .8rem;
+  font-weight: 500;
+  transition: all .3s;
+  &::placeholder {
+    text-transform: uppercase;
+    color: $secundary-color;
+  }
+  &:focus {
+    background-color: $primary-color-lighter;
+    border: solid 1px $primary-color-lighter;
+  }
+}
+
+.btn {
+  background: $primary-color;
+  padding: 0.7rem 5rem 0.7rem 5rem;
+}
+.btn-primary {
+  background: $primary-color;
+  color: #FFF;
+}
+
 header {
   text-align: center;
   padding: 20px 0;
@@ -47,19 +80,46 @@ section {
     }
     &.interna {
       h1 {
-        font-size: 6rem;
+        font-size: 4rem;
         font-weight: 900;
         line-height: 5rem;
       }
-      h3 { color: $primary-color }
+      h2 {
+        font-weight: 600;
+      }
+      h3 { 
+        font-weight: 600;
+        font-size: 1rem;
+        color: $primary-color;
+        text-transform: uppercase;
+        padding: .5rem 0 .5rem 0;
+      }
       p { 
         font-size: 16px;
         .destaque { 
           color: $primary-color;
         }
       }
+      iframe {
+        width: 100%;
+      }
     }
-
+    .event-info {
+        display: flex;
+        justify-content: space-between;
+        max-width: 23rem;
+        span {
+            display: flex;
+            align-items: center;
+            font-size: .9rem;
+            color: $primary-color;
+            svg {
+                width: .9rem;
+                fill: $primary-color;
+                margin-right: .2rem;
+            }
+        }
+    }
     &#home {
       background:url('./assets/img/bg-home.jpg');
       object-fit: cover;
@@ -92,28 +152,12 @@ section {
         img {
             box-shadow: -7px 7px 0px 0px rgba(0,165,245,1);
         }
-        button {
-            &.subscribe {
-                background: $primary-color;
-                width: 100%;
-                padding: 0.5rem;
-                color: #fff;
-            }
-        }
-        .event-info {
-            display: flex;
-            justify-content: space-between;
-            span {
-                display: flex;
-                align-items: center;
-                font-size: .9rem;
-                color: $primary-color;
-                svg {
-                    width: .9rem;
-                    fill: $primary-color;
-                    margin-right: .2rem;
-                }
-            }
+        .subscribe {
+            position: absolute;
+            background: $primary-color;
+            width: 100%;
+            padding: 0.5rem;
+            color: #fff;
         }
     }
     &#focem {
