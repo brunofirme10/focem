@@ -26,10 +26,7 @@ export default new Router({
           path: 'sobre',
           component: load('auto/sobre')
         },
-        {
-          path: 'eventos',
-          component: load('auto/eventos')
-        },
+        
         {
           path: 'evento/:id',
           component: load('auto/evento_interna')
@@ -46,15 +43,16 @@ export default new Router({
           path: 'sobre',
           component: load('petro/sobre')
         },
-        {
-          path: 'eventos',
-          component: load('petro/eventos')
-        },
-        {
-          path: 'evento/:id',
-          component: load('petro/evento_interna')
-        },
+        
       ]
+    },
+    {
+      path: '/eventos',
+      component: load('eventos')
+    },
+    {
+      path: '/evento/:id',
+      component: load('evento.interna')
     },
     {
       path: '/focem',

@@ -1,14 +1,14 @@
 <template>
 <div>
     <cover img="auto/evento/cover-header.jpg"/>
-    <section id="eventos">
+    <section id="eventos" class="interna">
         <div class="grid-container">
             <div class="grid-x grid-margin-x">
                 <div class="cell text-center">
                     <h1> Eventos </h1>
                 </div>
                 <div class="cell text-center">
-                    <h2> Fundo para Convergência Estrutural do Mercosul </h2>
+                    <h3> Fundo para Convergência Estrutural do Mercosul </h3>
                 </div>
             </div>
         </div>
@@ -49,8 +49,8 @@
                                 </div>
                             </div>
                             <div class="grid-x grid-margin-x">
-                                <div class="cell">
-                                    <button class="subscribe"> Fazer inscrição </button>
+                                <div class="cell" style="position: relative">
+                                    <router-link class="subscribe text-center" :to="`/evento/${event.id}`"> Fazer inscrição </router-link>
                                 </div>
                             </div>
                         </div>
@@ -66,8 +66,11 @@
 <script>
 import api from '@/api/auto'
 export default {
-    data: () => ({
-        events: api.list
-    })
+    computed: {
+        events() {
+            api.list.map(e => e.photo = e.photo.includes('static') ? e.photo : `/static/${e.photo}`);
+            return api.list
+        }
+    }
 }
 </script>

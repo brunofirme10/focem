@@ -1,10 +1,10 @@
 <template>
 <div>
-    <cover img="auto/focem/cover-header.jpg"/>
-    <section id="focem" class="interna">
+    <cover img="pg/cover-header.jpg"/>
+    <section id="petro" class="interna">
       <div class="grid-container">
         <div class="grid-x grid-padding-x grid-padding-y align-center text-center">
-            <div class="cell medium-10">
+            <div class="cell medium-9">
               <h1>FOCEM PETRÓLEO & GÁS</h1>
               <div class="grid-container">
                 <div class="grid-x grid-padding-x align-center">
@@ -41,25 +41,38 @@
                     <path class="a3" d="M0 20 L15 36 L30 20"></path>
                 </svg>
             </a>
-            <div class="choose-section">
+            <div class="choose-section space">
               <div class="grid-container">
                 <div class="grid-x grid-padding-x">
-                    <div class="medium-6 cell">
+                    <div class="medium-5 cell">
                       <div class="infographic">
                         <div class="infographic__data">
-                          <h1>Público-alvo</h1>
+                          <h1 class="dot">Público-alvo</h1>
                           <h2>99 empresas  que participam  deste projeto. </h2>
                         </div>
                         <div class="infographic__score">
                           <h1>34<span>BRASIL</span></h1>
                         </div>
-                        <div class="infographic__text">
-                          <p></p>
+                        <div class="infographic__text dot">
+                          <p>As empresas beneficiadas
+                              pelo projeto foram escolhidas
+                              a partir da identificação
+                              de sua capacidade potencial
+                              de atender às demandas
+                              das empresas-âncoras
+                              do setor no Mercosul
+                              por itens estratégicos
+                              e de baixa competitividade,
+                              com dificuldade de suprimento ou que
+                              precisam ser importados
+                              de fora da zona do bloco.
+                              </p>
                         </div>
                       </div>
                     </div>
+                    <div class="medium-1 cell">&nbsp;</div>
                     <div class="medium-6 cell">
-                      <img src="@/assets/img/refinaria.png" alt="">
+                      <img src="@/assets/img/focem-auto/auto-map--dinamico.png" alt="">
                     </div>
                 </div>
               </div>

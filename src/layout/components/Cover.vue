@@ -1,6 +1,6 @@
 <template>
     <div class="cover" :style="`
-        background: ${this.img ? `url(../static/${this.img})` : 'transparent'}; 
+        background: ${this.img ? `url(/static/${this.img})` : 'transparent'}; 
         background-size: ${(this.bgSize || 'cover')};
         height: ${(this.height || '300px')};
         `"></div>

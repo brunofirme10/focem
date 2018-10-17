@@ -4,9 +4,9 @@
       <nav id="menu">
           <ul>
               <li><router-link to="/focem/sobre"><span>FOCEM</span></router-link></li>
-              <li><a href="#"><span>AUTOMOTIVO</span></a></li>
-              <li><a href="#"><span>PETRÓLEO & GÁS</span></a></li>
-              <li><a href="#"><span>EVENTOS</span></a></li>
+              <li><a to=""><span>AUTOMOTIVO</span></a></li>
+              <li><a to=""><span>PETRÓLEO & GÁS</span></a></li>
+              <li><router-link to="/eventos"><span>EVENTOS</span></router-link></li>
           </ul>
       </nav>
         <!-- <ul> Auto
