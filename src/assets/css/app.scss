@@ -91,14 +91,7 @@ nav {
             width: 100%;
             font-weight: 300;
             transition: .3s all;
-            span {
-              position: relative;
-              top: 0;
-              right: 0;
-              width: 100%;
-              transition: .2s all;
-            }
-            :after {
+            &:after {
               content: '';
               position: absolute;
               right: -110px;
@@ -109,11 +102,18 @@ nav {
               transition: .2s all;
               display:inline-block;
             }
+            span {
+              position: relative;
+              top: 0;
+              right: 0;
+              width: 100%;
+              transition: .2s all;
+            }
+
             &:hover {
               color: #fde970;
-              ::after {
+              &::after {
                 width: calc(100% + 110px);
-                background: red;
               }
               span {
                 top: -10px;
@@ -123,22 +123,6 @@ nav {
         }
       }
   }
-
-// nav#menu ul li a
-// nav#menu ul li a:after {
-//     content: '';
-//     position: absolute;
-//     right: -110px;
-//     width: 100px;
-//     height: 2px;
-//     top: 10px;
-//     background: #fde970;
-//     transition: .2s all;
-//     display:inline-block;
-// }
-// nav#menu ul li a:hover { color: #fde970; }
-// nav#menu ul li a:hover::after{ width: calc(100% + 110px); }
-// nav#menu ul li a:hover span { top: -10px; }
 }
 $spaceamounts: (1, 2, 3, 4, 5, 6, 7);
 $sides: (top, bottom, left, right);

@@ -3,7 +3,7 @@
     <div>
       <nav id="menu">
           <ul>
-              <li><a href="#"><span>FOCEM</span></a></li>
+              <li><router-link to="/focem/sobre"><span>FOCEM</span></router-link></li>
               <li><a href="#"><span>AUTOMOTIVO</span></a></li>
               <li><a href="#"><span>PETRÓLEO & GÁS</span></a></li>
               <li><a href="#"><span>EVENTOS</span></a></li>

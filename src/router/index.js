@@ -56,5 +56,17 @@ export default new Router({
         },
       ]
     },
+    {
+      path: '/focem',
+      component: {
+        render: c => c('router-view')
+      },
+      children: [
+        {
+          path: 'sobre',
+          component: load('focem/sobre')
+        }
+      ]
+    }
   ]
 })
