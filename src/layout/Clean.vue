@@ -1,10 +1,12 @@
 <template>
     <div>
-        <slot/>
+      <header-home></header-home>
+      <slot/>
     </div>
 </template>
 <script>
+import HeaderHome from '@/layout/components/Header/Home'
 export default {
-    
+  components: { 'header-home': HeaderHome }
 }
 </script>

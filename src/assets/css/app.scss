@@ -1,6 +1,11 @@
 $primary-color: #00a5f5;
-
 header {
+  text-align: center;
+  padding: 20px 0;
+  position: absolute;
+  z-index: 1;
+  width: 100%;
+  &.interna {
     height: 300px;
     background: url('./assets/img/evento/cover-header.jpg');
     background-size: cover;
@@ -14,6 +19,7 @@ header {
             max-width: 110px;
         }
     }
+  }
 }
 
 section {
@@ -24,6 +30,34 @@ section {
         margin: auto;
         text-transform: uppercase;
     }
+    &#home {
+      background:url('./assets/img/bg-home.jpg');
+      object-fit: cover;
+      background-repeat: no-repeat;
+      height: 100vh;
+      width: 100vw;
+      position: relative;
+      .slide {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        .slide__title h1 {
+          font-size: 7rem;
+          font-weight: 900;
+          color: #fff;
+        }
+        .slide__image {
+          position: absolute;
+          z-index: 1;
+          top: 50%;
+          left: 50%;
+          width: 100%;
+          object-fit: cover;
+          transform: translate(-50%,-50%);
+        }
+      }
+    }
     &#eventos {
         img {
             box-shadow: -7px 7px 0px 0px rgba(0,165,245,1);
@@ -32,21 +66,112 @@ section {
             &.subscribe {
                 background: $primary-color;
                 width: 100%;
-                padding: 0.5rem
+                padding: 0.5rem;
+                color: #fff;
+            }
+        }
+        .event-info {
+            display: flex;
+            justify-content: space-between;
+            span {
+                display: flex;
+                align-items: center;
+                font-size: .9rem;
+                color: $primary-color;
+                svg {
+                    width: .9rem;
+                    fill: $primary-color;
+                    margin-right: .2rem;
+                }
             }
         }
     }
 }
+nav {
+  &#menu {
+    position: fixed;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    vertical-align: middle;
+      ul {
+        display: inline-block;
+        list-style: none;
+        li {
+          padding-right: 100px;
+          text-align: right;
+          min-height: 30px;
+          margin: 1px 0;
+          min-width: 265px;
+          pointer-events: none;
+          a {
+            position: relative;
+            pointer-events: auto;
+            text-transform: uppercase;
+            color: #8ed8f9;
+            font-weight: 400;
+            min-height: 35px;
+            width: 100%;
+            font-weight: 300;
+            transition: .3s all;
+            span {
+              position: relative;
+              top: 0;
+              right: 0;
+              width: 100%;
+              transition: .2s all;
+            }
+            :after {
+              content: '';
+              position: absolute;
+              right: -110px;
+              width: 100px;
+              height: 2px;
+              top: 10px;
+              background: #fde970;
+              transition: .2s all;
+              display:inline-block;
+            }
+            &:hover {
+              color: #fde970;
+              ::after {
+                width: calc(100% + 110px);
+                background: red;
+              }
+              span {
+                top: -10px;
+              }
+            }
+          }
+        }
+      }
+  }
 
+// nav#menu ul li a
+// nav#menu ul li a:after {
+//     content: '';
+//     position: absolute;
+//     right: -110px;
+//     width: 100px;
+//     height: 2px;
+//     top: 10px;
+//     background: #fde970;
+//     transition: .2s all;
+//     display:inline-block;
+// }
+// nav#menu ul li a:hover { color: #fde970; }
+// nav#menu ul li a:hover::after{ width: calc(100% + 110px); }
+// nav#menu ul li a:hover span { top: -10px; }
+}
 $spaceamounts: (1, 2, 3, 4, 5, 6, 7);
-$sides: (top, bottom, left, right); 
+$sides: (top, bottom, left, right);
 
 @each $space in $spaceamounts {
   @each $side in $sides {
     .m-#{str-slice($side, 0, 1)}-#{$space} {
       margin-#{$side}: #{$space}rem !important;
     }
-  
+
     .p-#{str-slice($side, 0, 1)}-#{$space} {
       padding-#{$side}: #{$space}rem !important;
     }

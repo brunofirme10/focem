@@ -24,14 +24,19 @@
                                 </div>
                             </div>
                             <div class="grid-x grid-margin-x">
-                                <div class="large-5 medium-5 cell">
-                                    {{ event.local }}
-                                </div>
-                                <div class="large-4 medium-4 cell">
-                                    {{ event.date }}
-                                </div>
-                                <div class="large-3 medium-3 cell">
-                                    {{ event.time }}
+                                <div class="cell event-info">
+                                    <span>
+                                        <v-icon name="map-marker-alt"/>
+                                        {{ event.local }}
+                                    </span>
+                                    <span>
+                                        <v-icon name="calendar"/>
+                                        {{ event.date }}
+                                    </span>
+                                    <span>
+                                        <v-icon name="clock"/>
+                                        {{ event.time }}
+                                    </span>
                                 </div>
                             </div>
                             <div class="grid-x grid-margin-x p-t-1 p-b-1">

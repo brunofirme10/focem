@@ -1,6 +1,15 @@
 <template>
+
     <div>
-        <ul> Auto
+      <nav id="menu">
+          <ul>
+              <li><a href="#"><span>FOCEM</span></a></li>
+              <li><a href="#"><span>AUTOMOTIVO</span></a></li>
+              <li><a href="#"><span>PETRÓLEO & GÁS</span></a></li>
+              <li><a href="#"><span>EVENTOS</span></a></li>
+          </ul>
+      </nav>
+        <!-- <ul> Auto
             <li>
                 <router-link to="/auto/sobre">Sobre</router-link>
             </li>
@@ -21,7 +30,7 @@
             <li>
                 <router-link to="/petro/evento/1">Evento Interna</router-link>
             </li>
-        </ul>
-        
+        </ul> -->
+
     </div>
 </template>
