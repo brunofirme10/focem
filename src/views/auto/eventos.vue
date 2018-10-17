@@ -1,6 +1,7 @@
 <template>
+<div>
+    <cover img="auto/evento/cover-header.jpg"/>
     <section id="eventos">
-        <cover img="auto/evento/cover-header.jpg"/>
         <div class="grid-container">
             <div class="grid-x grid-margin-x">
                 <div class="cell text-center">
@@ -58,6 +59,8 @@
             </div>
         </div>
     </section>
+</div>
+   
 </template>
 
 <script>
