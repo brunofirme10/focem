@@ -1,5 +1,6 @@
 <template>
     <section id="eventos">
+        <cover img="auto/evento/cover-header.jpg"/>
         <div class="grid-container">
             <div class="grid-x grid-margin-x">
                 <div class="cell text-center">

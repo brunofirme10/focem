@@ -12,6 +12,9 @@ import 'vue-awesome/icons'
 import Icon from 'vue-awesome/components/Icon'
 Vue.component('v-icon', Icon)
 
+import Cover from './layout/components/Cover.vue'
+Vue.component('cover', Cover)
+
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */

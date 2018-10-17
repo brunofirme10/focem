@@ -7,6 +7,8 @@
 <script>
 import HeaderHome from '@/layout/components/Header/Home'
 export default {
-  components: { 'header-home': HeaderHome }
+  components: { 
+    HeaderHome 
+  }
 }
 </script>
