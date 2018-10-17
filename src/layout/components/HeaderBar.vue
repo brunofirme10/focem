@@ -1,8 +1,7 @@
 <template>
     <header>
         <div class="logo">
-            ABDI
-            <!-- <img src="" alt=""> -->
+            <img src="@/assets/img/logo-abdi.png" alt="">
         </div>
     </header>
 </template>
