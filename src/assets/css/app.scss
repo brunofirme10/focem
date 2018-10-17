@@ -1,4 +1,8 @@
 $primary-color: #00a5f5;
+$secondary-color: #03a9f4;
+$white-color: #fff;
+$gray-color: #dadcdd;
+
 body {
   color: #5b5b5f;
   p {
@@ -9,6 +13,25 @@ body {
 
   }
 }
+/* BUTTONS */
+.button  {
+  padding: .7rem 5rem;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  border: 1px solid transparent;
+  svg {
+    position: relative;
+    right: -1rem;
+  }
+  &.button-default {
+    background: $secondary-color;
+    &:hover {
+      background: $white-color;
+      color: $secondary-color;
+      border-color: $secondary-color;
+    }
+  }
+}
 header {
   text-align: center;
   padding: 20px 0;
@@ -16,14 +39,15 @@ header {
   z-index: 1;
   width: 100%;
   &.interna {
-    height: 200px;
-    background: red;
+    padding: 0px;
     .logo {
         background: $primary-color;
         width: 100px;
-        height: 30px;
         margin: auto;
-        text-align: center;
+        padding: .5rem;
+        img {
+          max-width: 110px;
+        }
     }
   }
 }
@@ -33,7 +57,7 @@ header {
   overflow: hidden;
 }
 section {
-    padding: 30px 0;
+    padding: 30px 0 0 0;
     h1, h2, h3 {
         color: $primary-color;
     }
@@ -48,13 +72,42 @@ section {
         line-height: 5rem;
       }
       h3 { color: $primary-color }
-      p { 
+      p {
         font-size: 16px;
-        .destaque { 
+        .destaque {
           color: $primary-color;
+          font-weight: bold;
         }
       }
+      h5 { text-transform: uppercase; font-weight: 400; color: $gray-color; }
       h6 { color: $primary-color; font-weight: 900 }
+      .choose-section {
+        position: relative;
+        min-height: 70vh;
+        padding: 2rem 0;
+        background: $primary-color;
+        .slide {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%,-50%);
+          .slide__title h1 {
+            font-size: 7rem;
+            font-weight: 900;
+            color: $white-color;
+          }
+          .slide__image {
+            position: absolute;
+            z-index: 1;
+            top: 50%;
+            left: 50%;
+            width: 100%;
+            object-fit: cover;
+            transform: translate(-50%,-50%);
+          }
+        }
+      }
+
     }
 
     &#home {
@@ -72,7 +125,7 @@ section {
         .slide__title h1 {
           font-size: 7rem;
           font-weight: 900;
-          color: #fff;
+          color: $white-color;
         }
         .slide__image {
           position: absolute;
@@ -86,11 +139,30 @@ section {
       }
     }
     &#eventos {
+        img {
+            box-shadow: -7px 7px 0px 0px rgba(0,165,245,1);
+        }
         button {
             &.subscribe {
                 background: $primary-color;
                 width: 100%;
-                padding: 0.5rem
+                padding: 0.5rem;
+                color: #fff;
+            }
+        }
+        .event-info {
+            display: flex;
+            justify-content: space-between;
+            span {
+                display: flex;
+                align-items: center;
+                font-size: .9rem;
+                color: $primary-color;
+                svg {
+                    width: .9rem;
+                    fill: $primary-color;
+                    margin-right: .2rem;
+                }
             }
         }
     }

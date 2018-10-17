@@ -1,8 +1,6 @@
 <template>
 <div>
-    <div class="cover">
-      <img src="@/assets/img/focem/cover-header.jpg" alt="">
-    </div>
+    <cover img="auto/focem/cover-header.jpg"/>
     <section id="focem" class="interna">
       <div class="grid-container">
         <div class="grid-x grid-padding-x grid-padding-y align-center text-center">
@@ -36,11 +34,35 @@
             <p>A ABDI teve seu início em 2005, vinculada ao Ministério da Indústria, Comércio Exterior e Serviços (MDIC),  e tem como objetivo promover a execução de ações para ampliar a competitividade da indústria. E isso  se aplica diretamente aos dois projetos de integração produtiva, voltados para cadeia automotiva e para cadeia de petróleo e gás, executados pela Agência  com recursos majoritariamente provenientes do Fundo.</p>
           </div>
           <div class="cell medium-6">
+            <h6>Programa III - Coesão Social Programa IV - Fortalecimento da Estrutura Institucional e do Processo de Integração</h6>
+            <p>Entre os dois projetos, um é voltado para o adensamento e a complementação produtiva no setor automobilístico-autopecista (contribuição FOCEM de US$ 3 milhões), e o outro para o desenvolvimento de fornecedores na cadeia produtiva de petróleo e gás (contribuição FOCEM de US$ 2,8 milhões). </p>
             <h6>Os dois projetos são plurinacionais, beneficiando quatro  países do bloco: Argentina, Brasil, Paraguai e Uruguai. </h6>
             <p>
               Objetivo: ambos os projetos estão comprometidos com  a superação das assimetrias entre países, mas, principalmente,  com o aprofundamento das complementaridades e dos entrelaçamentos produtivos no âmbito do Mercosul  e com o aumento das capacidades competitivas do bloco regional.
             </p>
            </div>
+        </div>
+        <div class="grid-x grid-padding-x grid-padding-y">
+          <div class="cell text-center">
+              <button class="button button-default">PLANO DE AQUISIÇÕES <v-icon name="download"/></button>
+          </div>
+        </div>
+      </div>
+      <div class="grid-container full">
+        <div class="grid-x">
+          <div class="cell text-center">
+            <h5>Escolha um dos programas abaixo</h5>
+            <div class="choose-section">
+              <div class="slide">
+                  <div class="slide__title">
+                      <h1>Petróleo & Gás </h1>
+                  </div>
+                  <div class="slide__image">
+                      <img src="@/assets/img/automotivos.png" alt="">
+                  </div>
+              </div>
+            </div>
+            </div>
         </div>
       </div>
     </section>

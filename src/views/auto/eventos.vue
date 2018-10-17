@@ -1,4 +1,6 @@
 <template>
+<div>
+    <cover img="auto/evento/cover-header.jpg"/>
     <section id="eventos">
         <div class="grid-container">
             <div class="grid-x grid-margin-x">
@@ -12,32 +14,37 @@
         </div>
         <div class="grid-container p-t-2">
             <div class="grid-x grid-margin-x align-center">
-                <div class="box large-7 medium-7 cell p-b-4" v-for="(event, key) in events" :key="key">
+                <div class="box large-8 medium-8 cell p-b-3" v-for="(event, key) in events" :key="key">
                     <div class="grid-x grid-margin-x">
-                        <div class="large-7 medium-7 cell">
-                            <h1> Imagem </h1>
+                        <div class="large-6 medium-6 cell">
+                            <img :src="event.photo" alt="">
                         </div>
-                        <div class="large-5 medium-5 cell" style="backgroud: red">
+                        <div class="large-6 medium-6 cell">
                             <div class="grid-x grid-margin-x">
                                 <div class="cell">
-                                    <h3> Nome do evento 1</h3>
+                                    <h3> {{ event.title }}</h3>
                                 </div>
                             </div>
                             <div class="grid-x grid-margin-x">
-                                <div class="large-5 medium-5 cell">
-                                    Ulisses guimaraes
-                                </div>
-                                <div class="large-4 medium-4 cell">
-                                    21 de Outubro
-                                </div>
-                                <div class="large-3 medium-3 cell">
-                                    15h
+                                <div class="cell event-info">
+                                    <span>
+                                        <v-icon name="map-marker-alt"/>
+                                        {{ event.local }}
+                                    </span>
+                                    <span>
+                                        <v-icon name="calendar"/>
+                                        {{ event.date }}
+                                    </span>
+                                    <span>
+                                        <v-icon name="clock"/>
+                                        {{ event.time }}
+                                    </span>
                                 </div>
                             </div>
-                            <div class="grid-x grid-margin-x p-t-2 p-b-2">
+                            <div class="grid-x grid-margin-x p-t-1 p-b-1">
                                 <div class="cell">
                                     <p>
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam eu lacinia urna. Sed imperdiet lorem nec lacus sagittis, at elementum tellus aliquam. Vivamus varius.
+                                        {{ event.description}}
                                     </p>
                                 </div>
                             </div>
@@ -52,6 +59,8 @@
             </div>
         </div>
     </section>
+</div>
+   
 </template>
 
 <script>

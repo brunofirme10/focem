@@ -8,6 +8,13 @@ window.$ = window.jQuery = require('jquery')
 import 'foundation-sites/dist/css/foundation.min.css';
 import 'foundation-sites/dist/js/foundation.min.js';
 
+import 'vue-awesome/icons'
+import Icon from 'vue-awesome/components/Icon'
+Vue.component('v-icon', Icon)
+
+import Cover from './layout/components/Cover.vue'
+Vue.component('cover', Cover)
+
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */
