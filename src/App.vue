@@ -8,16 +8,22 @@
 </template>
 
 <script>
-import CleanLayout from '@/layout/Clean'
-import DefaultLayout from '@/layout/Default'
+import Layouts from '@/layout'
 import Navbar from '@/layout/components/Navbar'
 export default {
+  name: 'App',
   components: {
-    DefaultLayout,
-    CleanLayout,
+    ...Layouts,
     Navbar
   },
-  name: 'App'
+  mounted() {
+    console.log(Layouts);
+  },
+  layout() {
+            let foundLayout
+            this.$route.matched.find(e => e.meta.layout ? foundLayout = e.meta.layout : '')
+            return (foundLayout || 'default') + '-layout';
+        }
 }
 </script>
 

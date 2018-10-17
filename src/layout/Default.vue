@@ -5,8 +5,10 @@
     </div>
 </template>
 <script>
-import { Navbar, HeaderBar, FooterBar } from './components'
+import Components from './components'
 export default {
-    components: require('./components')
+    components: {
+        ...Components
+    }
 }
 </script>
