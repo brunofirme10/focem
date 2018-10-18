@@ -5,6 +5,9 @@ import App from './App'
 import router from './router'
 
 window.$ = window.jQuery = require('jquery')
+window.TweenMax = require('gsap').TweenMax
+window._ = require('lodash')
+
 import 'foundation-sites/dist/css/foundation.min.css';
 import 'foundation-sites/dist/js/foundation.min.js';
 
@@ -14,6 +17,8 @@ Vue.component('v-icon', Icon)
 
 import Cover from './layout/components/Cover.vue'
 Vue.component('cover', Cover)
+
+require('./plugins/transitions')
 
 Vue.config.productionTip = false
 

@@ -4,7 +4,7 @@
         <section class="interna">
             <div class="grid-container">
                 <div class="grid-x grid-margin-x align-center">
-                    <div class="large-8 cell">
+                    <div class="large-8 cell" v-show="!_.isEmpty(event)">
                         <div class="grid-x grid-margin-x align-center p-b-1">
                             <div class="large-8 cell text-center">
                                 <h2> {{ event.title }} </h2>
@@ -41,7 +41,7 @@
                         </div>
                         <div class="grid-x grid-margin-x align-center">
                             <div class="cell">
-                                <form action="" @submit.prevent="">
+                                <form action="" @submit.prevent="submit">
                                     <div class="grid-x grid-margin-x align-center">
                                         <div class="large-6 cell text-center">
                                             <input type="text" placeholder="Seu nome">
@@ -64,6 +64,9 @@
                             </div>
                         </div>
                     </div>
+                    <div v-show="_.isEmpty(event)"> 
+                        <h1> Evento não encontrado </h1>
+                    </div>
                 </div>
             </div>
         </section>
@@ -71,11 +74,26 @@
 </template>
 
 <script>
-import api from '@/api/auto'
+import api from '@/api/pt_br'
 export default {
     data: (self) => ({
-        event: api.list.find(e => e.id == self.$route.params.id)
-    })
+        category: self.$route.matched[0].path.replace('/', '')
+    }),
+    computed: {
+        event() {
+            return api.events.find(e => 
+                        (e.id == this.$route.params.id || e.slug == this.$route.params.id) 
+                        && e.category == this.category) || {}
+        },
+        _() {
+            return _
+        }
+    },
+    methods: {
+        submit() {
+            console.error('Método ainda não funcional');
+        }
+    },
 }
 </script>
 

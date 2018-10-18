@@ -1,7 +1,9 @@
 <template>
     <div id="layout-default">
         <header-default/>
-        <router-view/>
+        <fade-transition>  
+            <router-view/>
+        </fade-transition>  
     </div>
 </template>
 <script>
@@ -11,7 +13,7 @@ export default {
     name: 'Default',
     components: {
         ...Components,
-        'header-default' : HeaderDefault
+        HeaderDefault
     }
 }
 </script>
