@@ -77,7 +77,7 @@
 import api from '@/api/pt_br'
 export default {
     data: (self) => ({
-        category: self.$route.matched[0].path.replace('/', '')
+        category: self.$route.matched[0].path.replace('/', ''),
     }),
     computed: {
         event() {

@@ -65,8 +65,11 @@ export default new Router({
       ]
     },
     {
-      path: '/downloads',
-      component: require('@/layout/components/About/Downloads').default
+      path: '/galeria',
+      component: require('@/layout/components/About/Gallery').default,
+      meta: {
+        layout: 'none'
+      }
     }
   ]
 })
