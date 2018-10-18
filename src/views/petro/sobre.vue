@@ -126,12 +126,12 @@
                   </div>
                 </div>
               </div>
-              <div class="tab">
+              <div class="tab" @click=" tabSelected = 'gallery' ">
                 <input class="tab-radio" type="radio" id="tab-4" name="tab-group-1">
-                <label class="tab-label" for="tab-4">GALERIA</label>
+                <label class="tab-label" for="tab-4" >GALERIA</label>
                 <div class="tab-panel">
                   <div class="tab-content">
-                    conteudo do elemento 4
+                    <gallery :images="gallery" v-if="tabSelected.includes('gallery')"/>
                   </div>
                 </div>
               </div>
@@ -164,9 +164,15 @@ export default {
   },
   data: (app) => ({
     downloads: _.cloneDeep(api.pg.downloads),
-    partners: _.cloneDeep(api.pg.partners)
+    partners: _.cloneDeep(api.pg.partners),
+    gallery: _.cloneDeep(api.pg.gallery),
+    tabSelected: 'timeline'
   }),
   mounted() {
+      this.renderTabs()
+  },
+  methods: {
+    renderTabs() {
       (function($) {
         $('.tabs input[type="radio"]:checked').closest('.tab').addClass('checked');
 
@@ -181,6 +187,7 @@ export default {
           .addClass('checked');
         });
       })(window.jQuery);
+    }
   }
 }
 </script>

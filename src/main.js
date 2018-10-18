@@ -11,6 +11,9 @@ window._ = require('lodash')
 import 'foundation-sites/dist/css/foundation.min.css';
 import 'foundation-sites/dist/js/foundation.min.js';
 
+require('./assets/css/lightslider.min.css');
+require('./assets/js/lightslider.min.js');
+
 import 'vue-awesome/icons'
 import Icon from 'vue-awesome/components/Icon'
 Vue.component('v-icon', Icon)
