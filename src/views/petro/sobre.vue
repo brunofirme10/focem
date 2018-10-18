@@ -48,8 +48,15 @@
                       <div class="infographic">
                         <div class="infographic__data">
                           <h1 class="dot">Público-alvo</h1>
-                          <h2>99 empresas  que participam  deste projeto. </h2>
-                        </div>
+                          <div class="grid-x">
+                            <div class="small-9 cell">
+                              <h2>99 empresas  que participam  deste projeto. </h2>
+                            </div>
+                            <div class="small-3 cell">
+                              <img src="@/assets/img/pg/icon-empresa.png" alt="">
+                            </div>
+                          </div>
+                           </div>
                         <div class="infographic__score">
                           <h1>34<span>BRASIL</span></h1>
                         </div>
@@ -80,6 +87,77 @@
             </div>
         </div>
       </div>
+      <div class="grid-container">
+        <div class="grid-x grid-padding-x">
+          <div class="cell">
+            <div class="tabs-section">
+              <div class="tab">
+                <input class="tab-radio" type="radio" id="tab-1" name="tab-group-1" checked>
+                <label class="tab-label" for="tab-1">TIMELINE</label>
+                <div class="tab-panel">
+                  <div class="tab-content">
+                    conteudo do elemento
+                    conteudo do elemento
+                    conteudo do elemento
+                    conteudo do elemento
+                    conteudo do elemento
+                    conteudo do elemento
+                    conteudo do elemento
+                    conteudo do elemento
+                    conteudo do elemento
+                  </div>
+                </div>
+              </div>
+              <div class="tab">
+                <input class="tab-radio" type="radio" id="tab-2" name="tab-group-1">
+                <label class="tab-label" for="tab-2">PARCEIROS</label>
+                <div class="tab-panel">
+                  <div class="tab-content">
+                    conteudo do elemento 2
+                    conteudo do elemento 2
+                    conteudo do elemento 2
+                    conteudo do elemento 2
+                    conteudo do elemento 2
+                    conteudo do elemento 2
+                    conteudo do elemento 2
+                    conteudo do elemento 2
+                    conteudo do elemento 2
+                    conteudo do elemento 2
+                  </div>
+                </div>
+              </div>
+              <div class="tab">
+                <input class="tab-radio" type="radio" id="tab-3" name="tab-group-1">
+                <label class="tab-label" for="tab-3">RESULTADOS</label>
+                <div class="tab-panel">
+                  <div class="tab-content">
+                    conteudo do elemento 3
+                  </div>
+                </div>
+              </div>
+              <div class="tab">
+                <input class="tab-radio" type="radio" id="tab-4" name="tab-group-1">
+                <label class="tab-label" for="tab-4">GALERIA</label>
+                <div class="tab-panel">
+                  <div class="tab-content">
+                    conteudo do elemento 4
+                  </div>
+                </div>
+              </div>
+              <div class="tab">
+                <input class="tab-radio" type="radio" id="tab-5" name="tab-group-1">
+                <label class="tab-label" for="tab-5">DOWNLOADS</label>
+                <div class="tab-panel">
+                  <div class="tab-content">
+                    conteudo do elemento 5
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
     </section>
 </div>
 </template>
@@ -89,6 +167,23 @@ import api from '@/api/auto'
 export default {
     data: () => ({
         events: api.list
-    })
+    }),
+    mounted() {
+      console.log('element is mounted');
+        (function($) {
+          $('.tabs input[type="radio"]:checked').closest('.tab').addClass('checked');
+
+          $('section').on('click', '.tabs input', function() {
+            console.log('clique', this.name);
+
+            $('input[name="' + this.name + '"]')
+            .closest('.tab')
+            .removeClass('checked');
+            $(this)
+            .closest('.tab')
+            .addClass('checked');
+          });
+        })(window.jQuery);
+    }
 }
 </script>
