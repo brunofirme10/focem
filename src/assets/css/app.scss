@@ -397,6 +397,7 @@ section {
     [type="radio"]:checked + .tab-label {
       position: relative;
       background: #026a99;
+      color: #fff;
       border-bottom-width: 0;
       padding-bottom: 11px;
       z-index: 1;
@@ -447,7 +448,7 @@ section {
     box-sizing: border-box;
     display: block;
     background: white;
-    padding: 0 20px;
+    padding: 20px;
     float: left;
     font-size: 16px;
     font-size: 1rem;
@@ -456,7 +457,107 @@ section {
     min-height: 50vh;
   }
 }
+// componentes tab
+.timeline__slideshow {
+  position: relative;
+  height: 500px;
+  .pagination__slide {
+    position: absolute;
+    right: 0;
+    width: 70%;
+    max-height: 200px;
+    .item  {
+      display: inline-block;
+      transform: scale(.5);
+      &.is-active {
+        transform: scale(1);
+      }
+    }
+  }
+  .timeline__slides {
+    position:relative;
+    .timeline__slide {
+      width: 100%;
+      display:none;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+      // opacity: 0;
+      &.is-active {
+        display: block;
+      }
+      .timeline__slide_img {
+        position: absolute;
+        top: 0;
+        height: 100%;
+        width: 30%;
+        background: blue;
+        left: 0;
+      }
+      .timeline__slide_content {
+        position: absolute;
+        display: inline-block;
+        width: 70%;
+        margin-top: 150px;
+        top: 0;
+        right: 0;
+        height: 100%;
+        padding: 0 10px;
+        .timeline__slide_content__title {
+          text-align: left;
+          margin: 30px 0;
+          display: inline-block;
+          h1 {
+            font-weight: 600;
+            font-size: 6rem;
+          }
+          h3 {
+            text-align: center;
+            padding: 0;
+            font-weight: 500;
+          }
+          p {
+            line-height: 1rem;
+            text-align: center;
+            margin: 0;
+          }
+        }
+        .timeline__slide_content__text {
+          padding-right: 100px;
+        }
+      }
+    }
+  }
+  .arrows {
+    .arrow {
+      margin: -33px 0 0;padding: 20px;position: absolute;top: 50%;cursor: pointer;z-index: 3;
+    }
+    .prev {
+      left: 30px;
 
+      &:hover .svg {
+        left: -10px;
+      }
+    }
+    .next {
+      right: 30px;
+
+      &:hover .svg {
+        left: 10px;
+      }
+    }
+    .svg {
+      position: relative;
+      left: 0;
+      width: 25px;
+      height: 35px;
+      fill: #03a9f4;
+      transition: left 0.2s ease;
+    }
+  }
+}
 
 
 
