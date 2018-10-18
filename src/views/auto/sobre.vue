@@ -161,29 +161,3 @@
     </section>
 </div>
 </template>
-
-<script>
-// import api from '@/api/auto'
-export default {
-    // data: () => ({
-    //     events: api.list
-    // }),
-    mounted() {
-      console.log('element is mounted');
-        (function($) {
-          $('.tabs input[type="radio"]:checked').closest('.tab').addClass('checked');
-
-          $('section').on('click', '.tabs input', function() {
-            console.log('clique', this.name);
-
-            $('input[name="' + this.name + '"]')
-            .closest('.tab')
-            .removeClass('checked');
-            $(this)
-            .closest('.tab')
-            .addClass('checked');
-          });
-        })(window.jQuery);
-    }
-}
-</script>
