@@ -19,6 +19,7 @@ import Cover from './layout/components/Cover.vue'
 Vue.component('cover', Cover)
 
 require('./plugins/transitions')
+require('./api/pt_br')
 
 Vue.config.productionTip = false
 

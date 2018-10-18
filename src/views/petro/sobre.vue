@@ -171,16 +171,7 @@
                 <label class="tab-label" for="tab-2">PARCEIROS</label>
                 <div class="tab-panel">
                   <div class="tab-content">
-                    conteudo do elemento 2
-                    conteudo do elemento 2
-                    conteudo do elemento 2
-                    conteudo do elemento 2
-                    conteudo do elemento 2
-                    conteudo do elemento 2
-                    conteudo do elemento 2
-                    conteudo do elemento 2
-                    conteudo do elemento 2
-                    conteudo do elemento 2
+                    <partners :list="partners"/>
                   </div>
                 </div>
               </div>
@@ -207,7 +198,9 @@
                 <label class="tab-label" for="tab-5">DOWNLOADS</label>
                 <div class="tab-panel">
                   <div class="tab-content">
-                    conteudo do elemento 5
+                    <h2> Central de Downloads </h2>
+                    <hr/>
+                    <downloads :list="downloads"/>
                   </div>
                 </div>
               </div>
@@ -221,19 +214,21 @@
 </template>
 
 <script>
-// import api from '@/api/auto'
+import AboutComponents from '@/layout/components/About'
+import api from '@/api/pt_br'
 export default {
-    // data: () => ({
-    //     events: api.list
-    // }),
-    mounted() {
-      console.log('element is mounted');
-        (function($) {
-          $('.tabs input[type="radio"]:checked').closest('.tab').addClass('checked');
+  components: {
+    ...AboutComponents
+  },
+  data: (app) => ({
+    downloads: _.cloneDeep(api.pg.downloads),
+    partners: _.cloneDeep(api.pg.partners)
+  }),
+  mounted() {
+      (function($) {
+        $('.tabs input[type="radio"]:checked').closest('.tab').addClass('checked');
 
-          $('section').on('click', '.tabs input', function() {
-            console.log('clique', this.name);
-
+        $('section').on('click', '.tabs input', function() {
             $('input[name="' + this.name + '"]')
             .closest('.tab')
             .removeClass('checked');
