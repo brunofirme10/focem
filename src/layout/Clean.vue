@@ -1,7 +1,7 @@
 <template>
     <div>
       <header-home></header-home>
-      <slot/>
+        <slot/>
     </div>
 </template>
 <script>

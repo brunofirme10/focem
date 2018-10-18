@@ -50,7 +50,7 @@
                             </div>
                             <div class="grid-x grid-margin-x">
                                 <div class="cell" style="position: relative">
-                                    <router-link class="subscribe text-center" :to="`/evento/${event.id}`"> Fazer inscrição </router-link>
+                                    <router-link class="subscribe text-center" :to="`/${event.category}/${(event.slug || event.id)}/evento`"> Fazer inscrição </router-link>
                                 </div>
                             </div>
                         </div>
@@ -64,12 +64,12 @@
 </template>
 
 <script>
-import api from '@/api/auto'
+import api from '@/api/pt_br'
 export default {
     computed: {
         events() {
-            api.list.map(e => e.photo = e.photo.includes('static') ? e.photo : `/static/${e.photo}`);
-            return api.list
+            api.events.map(e => e.photo = e.photo.includes('static') ? e.photo : `/static/${e.photo}`);
+            return api.events
         }
     }
 }

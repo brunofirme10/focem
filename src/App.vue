@@ -1,7 +1,9 @@
 <template>
   <div id="app">
     <component :is="layout">
+      <transition name="fade">  
         <router-view/>
+      </transition>  
     </component>
     <navbar/>
   </div>

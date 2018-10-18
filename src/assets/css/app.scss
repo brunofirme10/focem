@@ -1,14 +1,13 @@
 $primary-color: #00a5f5;
-$primary-color-lighter: #a8e0fa;
-$secundary-color: #5b5b5f;
-$secundary-color-lighter: #e5e6e7;
+$primary-color-lighter: #a8e0fa; // #03a9f4
+$secondary-color: #5b5b5f;
+$secondary-color-lighter: #e5e6e7;
 $dark: #000;
-$secondary-color: #03a9f4;
 $white-color: #fff;
 $gray-color: #dadcdd;
 
 body {
-  color: $secundary-color;
+  color: $secondary-color;
   p {
     font-family: 'Montserrat', sans-serif;
   }
@@ -18,8 +17,8 @@ body {
   }
 }
 input[type="text"], textarea {
-  background-color: $secundary-color-lighter;
-  border: solid 1px $secundary-color-lighter;
+  background-color: $secondary-color-lighter;
+  border: solid 1px $secondary-color-lighter;
   color: $dark;
   padding-left: 2rem;
   font-family: 'Montserrat', sans-serif;
@@ -28,7 +27,7 @@ input[type="text"], textarea {
   transition: all .3s;
   &::placeholder {
     text-transform: uppercase;
-    color: $secundary-color;
+    color: $secondary-color;
   }
   &:focus {
     background-color: $primary-color-lighter;
@@ -38,8 +37,16 @@ input[type="text"], textarea {
 
 .btn {
   background: $primary-color;
-  padding: 0.7rem 5rem 0.7rem 5rem;
+  padding: 0.7rem 1.5rem 0.7rem 1.5rem;
+  &.large {
+    padding: 0.7rem 5rem 0.7rem 5rem;
+  }
+  &.primary {
+      background: $primary-color;
+      color: #FFF;
+  }
 }
+
 .btn-primary {
   background: $primary-color;
   color: #FFF;
@@ -57,11 +64,11 @@ input[type="text"], textarea {
     right: -1rem;
   }
   &.button-default {
-    background: $secondary-color;
+    background: $primary-color-lighter;
     &:hover {
       background: $white-color;
-      color: $secondary-color;
-      border-color: $secondary-color;
+      color: $primary-color-lighter;
+      border-color: $primary-color-lighter;
     }
   }
 }
@@ -78,6 +85,7 @@ header {
         width: 100px;
         margin: auto;
         padding: .5rem;
+        cursor: pointer;
         img {
           max-width: 110px;
         }
@@ -296,6 +304,7 @@ section {
     &#home {
       background:url('./assets/img/bg-home.jpg');
       object-fit: cover;
+      background-size: cover;
       background-repeat: no-repeat;
       height: 100vh;
       width: 100vw;

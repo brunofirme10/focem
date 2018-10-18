@@ -85,10 +85,10 @@
 </template>
 
 <script>
-import api from '@/api/auto'
+// import api from '@/api/auto'
 export default {
-    data: () => ({
-        events: api.list
-    })
+    // data: () => ({
+    //     events: api.list
+    // })
 }
 </script>

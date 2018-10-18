@@ -17,7 +17,7 @@ export default new Router({
       }
     },
     {
-      path: '/auto',
+      path: '/automotivo',
       component: {
         render: c => c('router-view')
       },
@@ -26,15 +26,14 @@ export default new Router({
           path: 'sobre',
           component: load('auto/sobre')
         },
-        
         {
-          path: 'evento/:id',
-          component: load('auto/evento_interna')
+          path: ':id/evento',
+          component: load('evento.interna')
         },
       ]
     },
     {
-      path: '/petro',
+      path: '/petroleo-gas',
       component: {
         render: c => c('router-view')
       },
@@ -43,16 +42,15 @@ export default new Router({
           path: 'sobre',
           component: load('petro/sobre')
         },
-        
+        {
+          path: ':id/evento',
+          component: load('evento.interna')
+        },
       ]
     },
     {
       path: '/eventos',
       component: load('eventos')
-    },
-    {
-      path: '/evento/:id',
-      component: load('evento.interna')
     },
     {
       path: '/focem',
@@ -65,6 +63,10 @@ export default new Router({
           component: load('focem/sobre')
         }
       ]
+    },
+    {
+      path: '/downloads',
+      component: require('@/layout/components/About/Downloads').default
     }
   ]
 })
