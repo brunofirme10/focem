@@ -46,15 +46,71 @@
                             <label class="tab-label" for="tab-1">TIMELINE</label>
                             <div class="tab-panel">
                                 <div class="tab-content">
-                                    conteudo do elemento
-                                    conteudo do elemento
-                                    conteudo do elemento
-                                    conteudo do elemento
-                                    conteudo do elemento
-                                    conteudo do elemento
-                                    conteudo do elemento
-                                    conteudo do elemento
-                                    conteudo do elemento
+                                    <div class="timeline__slideshow">
+                                        <!-- <div class="pagination__slide">
+                                                <div class="item is-active">
+                                                <span class="icon">2015</span>
+                                            </div>
+                                                <div class="item">
+                                                <span class="icon">2014</span>
+                                            </div>
+                                                <div class="item">
+                                                <span class="icon">2013</span>
+                                            </div>
+                                        </div> -->
+                                        <div class="timeline__slides">
+                                            <div class="timeline__slide is-active">
+                                                <div class="timeline__slide_img">
+                                                    <img src="@/assets/img/pg/timeline/ilustracao.png" alt="">
+                                                </div>
+                                            <div class="timeline__slide_content">
+                                                <div class="timeline__slide_content__title"></div>
+                                                    <div class="timeline__slide_content__text">
+                                                    <p> 1 Seleção com base em critérios de inserção na cadeia, faturamento bruto anual e presença na região de abrangência do projeto.</p>
+                                                    <p>Executores: Dinamus Consultoria </p>
+                                                    </div>
+                                            </div>
+                                            </div>
+                                            <div class="timeline__slide">
+                                            <div class="timeline__slide_img">
+                                                <img src="@/assets/img/pg/timeline/ilustracao.png" alt="">
+                                            </div>
+                                            <div class="timeline__slide_content">
+                                                <div class="timeline__slide_content__title"></div>
+                                                <div class="timeline__slide_content__text">
+                                                <p>2 Seleção com base em critérios de inserção na cadeia, faturamento bruto anual e presença na região de abrangência do projeto.</p>
+                                                <p>Executores: Dinamus Consultoria </p>
+                                                </div>
+                                            </div>
+                                            </div>
+                                        </div>
+                                        <div class="pagination__slide">
+                                            <div class="item is-active">
+                                                <h1>2015</h1>
+                                                <h3>Estudo de mercado </h3>
+                                                <p>(maio a outubro/2014)</p>
+                                            </div>
+                                            <div class="item">
+                                                <h1>2014</h1>
+                                                <h3>Estudo de mercado </h3>
+                                                <p>(maio a outubro/2014)</p>
+                                            </div>
+                                        </div>
+                                        <div class="arrows">
+                                            <div class="arrow prev">
+                                                <span class="svg svg-arrow-left">
+                                                    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="25px" height="36px" viewBox="0 0 14 26" enable-background="new 0 0 25 36" xml:space="preserve"> <path d="M13,26c-0.256,0-0.512-0.098-0.707-0.293l-12-12c-0.391-0.391-0.391-1.023,0-1.414l12-12c0.391-0.391,1.023-0.391,1.414,0s0.391,1.023,0,1.414L2.414,13l11.293,11.293c0.391,0.391,0.391,1.023,0,1.414C13.512,25.902,13.256,26,13,26z"/> </svg>
+                                                    <span class="alt sr-only"></span>
+                                                </span>
+                                            </div>
+                                            <div class="arrow next">
+                                                <span class="svg svg-arrow-right">
+                                                    <svg version="1.1"  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="25px" height="36px" viewBox="0 0 14 26" enable-background="new 0 0 25 36" xml:space="preserve"> <path d="M1,0c0.256,0,0.512,0.098,0.707,0.293l12,12c0.391,0.391,0.391,1.023,0,1.414l-12,12c-0.391,0.391-1.023,0.391-1.414,0s-0.391-1.023,0-1.414L11.586,13L0.293,1.707c-0.391-0.391-0.391-1.023,0-1.414C0.488,0.098,0.744,0,1,0z"/> </svg>
+                                                    <span class="alt sr-only"></span>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -73,7 +129,7 @@
                             <div class="tab-panel">
                                 <div class="tab-content">
                                     <div class="grid-container full">
-                                        <div class="results">
+                                        <div class="results-auto">
                                             <h6>IMPORTANTES RESULTADOS FORAM CONQUISTADOS:</h6>
                                             <div class="grid-x grid-padding-x grid-padding-y align-center text-center">
                                                 <div class="cell small-6">
@@ -142,14 +198,14 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="tab">
+                        <div class="tab" @click=" tabSelected = 'gallery' ">
                             <input class="tab-radio" type="radio" id="tab-4" name="tab-group-1">
-                            <label class="tab-label" for="tab-4">GALERIA</label>
-                            <div class="tab-panel">
-                                <div class="tab-content">
-                                    conteudo do elemento 4
+                            <label class="tab-label" for="tab-4" >GALERIA</label>
+                                <div class="tab-panel">
+                                    <div class="tab-content">
+                                        <gallery :images="gallery" v-if="tabSelected.includes('gallery')"/>
+                                    </div>
                                 </div>
-                            </div>
                         </div>
                         <div class="tab">
                             <input class="tab-radio" type="radio" id="tab-5" name="tab-group-1">
