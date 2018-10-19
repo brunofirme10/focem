@@ -1,169 +1,240 @@
 <template>
 <div>
-    <cover img="pg/cover-header.jpg"/>
-    <section id="petro" class="interna">
-      <div class="grid-container">
-        <div class="grid-x grid-padding-x grid-padding-y align-center text-center">
-            <div class="cell medium-9">
-              <h1>FOCEM PETRÓLEO & GÁS</h1>
-              <div class="grid-container">
-                <div class="grid-x grid-padding-x align-center">
-                  <div class="cell medium-6">
-                    <h3>Fundo para Convergência Estrutural do Mercosul</h3>
-                  </div>
+    <cover img="auto/focem/cover-header.jpg"/>
+    <section id="focem" class="interna focem-auto" >
+        <div class="grid-container full">
+            <div class="grid-x">
+                <div class="cell small-2">  
+                    <div class="link">
+                        <a href=""> Saiba como funciona o programa >></a>
+                    </div>
+                </div>    
+            </div>  
+        </div>    
+            <div class="grid-container">
+                <div class="grid-x grid-padding-x grid-padding-y align-center text-center">
+                    <div class="cell">
+                        <h1>FOCEM AUTOMOTIVO </h1>
+                        <h3>Fundo para Convergência Estrutural do Mercosul</h3>
+                    </div>
+                </div>  
+                <div class="grid-x grid-padding-x grid-padding-y align-center">
+                    <div class="cell medium-4">
+                        <div class="content__scrollable">
+                        <p> O projeto de Adensamento e Complementação Automotiva no âmbito do Mercosul (FOCEM Automotivo) é uma iniciativa executada pela ABDI, com recursos majoritatiamente provenientes do FOCEM, que foi aprovada em 2010.</p>
+                        </div>  
+                    </div>
+                    <div class="cell medium-4">
+                            <img src="@/assets/img/carro.png" alt="">
+                    </div>
                 </div>
-              </div>
             </div>
-        </div>
-        <div class="grid-x grid-padding-x grid-padding-y align-center">
-            <div class="cell medium-1">&nbsp;</div>
-          <div class="cell medium-4">
-              <div class="content__scrollable">
-                  <p>O Projeto de Adensamento e Complementação Automotiva no âmbito do Mercosul (FOCEM Automotivo) é uma iniciativa executada pela ABDI, com recursos majoritariamente provenientes do FOCEM, que foi aprovada em 2010.</p>
-                  <p>Finalidade: fortalecer a competitividade de PMEs - pequenas e médias empresas fornecedoras (ou potenciais fornecedoras) de bens e serviços para a cadeia produtiva, em especial a indústria de autopeças.</p>
-                  <p>Como: por meio da extensão produtiva e tecnológica (melhoria de processos técnicos e gerenciais, produtos e infraestrutura) e abertura de mercado (realização de encontros comerciais/rodadas de negócio) e estímulo à inovação e desenvolvimento tecnológico.</p>
-              </div>
-          </div>
-
-          <div class="cell medium-4">
-            <img src="@/assets/img/refinaria.png" alt="">
-          </div>
-        </div>
-      </div>
-      <div class="grid-container full">
-        <div class="grid-x">
-          <div class="cell text-center">
-            <a class="action">
-                <svg class="arrow-down">
-                    <text x="-26" y="-10" class="text">EXPLORAR</text>
-                    <path class="a1" d="M0 0 L15 16 L30 0"></path>
-                    <path class="a2" d="M0 10 L15 26 L30 10"></path>
-                    <path class="a3" d="M0 20 L15 36 L30 20"></path>
-                </svg>
-            </a>
-            <div class="choose-section space">
+            <!-- <div class="grid-container full">
+                <div class="grid-x">
+                    <div class="cell text-center">
+                            <div class="choose-section">
+                              <object data="/static/map.svg" type="image/svg+xml" id="map"></object>
+                            </div>
+                    </div>
+                </div>
+            </div> -->
+            <div class="choose-section space" id="about-details">
               <div class="grid-container">
                 <div class="grid-x grid-padding-x">
-                    <div class="medium-5 cell">
-                      <div class="infographic">
-                        <div class="infographic__data">
-                          <h1 class="dot">Público-alvo</h1>
-                          <div class="grid-x">
-                            <div class="small-9 cell">
-                              <h2>99 empresas  que participam  deste projeto. </h2>
-                            </div>
-                            <div class="small-3 cell">
-                              <img src="@/assets/img/pg/icon-empresa.png" alt="">
+                  <div class="medium-6 cell">
+                    <div class="grid-y grid-padding-y">
+                      <div class="medium-6 cell">
+                        <div class="infographic">
+                          <div class="infographic__data">
+                            <h1 class="dot">Público-alvo</h1>
+                            <div class="grid-x grid-padding-x">
+                              <div class="small-9 cell">
+                                <h2>99 empresas  que participam  deste projeto. </h2>
+                              </div>
+                              <div class="small-3 cell">
+                                <img src="@/assets/img/pg/icon-empresa.png">
+                              </div>
                             </div>
                           </div>
-                           </div>
-                        <div class="infographic__score">
-                          <h1>34<span>BRASIL</span></h1>
-                        </div>
-                        <div class="infographic__text dot">
-                          <p>As empresas beneficiadas
-                              pelo projeto foram escolhidas
-                              a partir da identificação
-                              de sua capacidade potencial
-                              de atender às demandas
-                              das empresas-âncoras
-                              do setor no Mercosul
-                              por itens estratégicos
-                              e de baixa competitividade,
-                              com dificuldade de suprimento ou que
-                              precisam ser importados
-                              de fora da zona do bloco.
-                              </p>
                         </div>
                       </div>
-                    </div>
-                    <div class="medium-1 cell">&nbsp;</div>
-                    <div class="medium-6 cell">
-                      <img src="@/assets/img/focem-auto/auto-map--dinamico.png" alt="">
-                    </div>
+                      <div class="medium-6 cell">
+                        <div class="grid-x grid-padding-x">
+                            <div class="large-6 cell">
+                              <div class="infographic">
+                                <div class="infographic__score">
+                                  <h1>34<span @click=" classCoutrySelected = 'BR' ">BRASIL</span></h1>
+                                </div>
+                                <div class="infographic__text dot">
+                                  <p>
+                                    As empresas beneficiadas
+                                    pelo projeto foram escolhidas
+                                    a partir da identificação
+                                    de sua capacidade potencial
+                                    de atender às demandas
+                                    das empresas-âncoras
+                                    do setor no Mercosul
+                                    por itens estratégicos
+                                    e de baixa competitividade,
+                                    com dificuldade de suprimento ou que
+                                    precisam ser importados
+                                    de fora da zona do bloco.
+                                  </p>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="large-6 cell">
+                              <div class="grid-x grid-padding-x">
+                                <div class="medium-3 cell" @click=" classCoutrySelected = 'UY' ">
+                                  <div class="infographic">
+                                      <div class="infographic__score">
+                                        <h1><span>Uruguai</span></h1>
+                                      </div>
+                                  </div>
+                              </div>
+                              <div class="medium-3 cell" @click=" classCoutrySelected = 'ARG' ">
+                                  <div class="infographic">
+                                      <div class="infographic__score">
+                                        <h1><span>Argentina</span></h1>
+                                      </div>
+                                  </div>
+                              </div>
+                              <div class="medium-3 cell" @click=" classCoutrySelected = 'PAR' ">
+                                  <div class="infographic">
+                                      <div class="infographic__score">
+                                        <h1><span>Paraguai</span></h1>
+                                      </div>
+                                  </div>
+                              </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                  </div>
+                  <div class="medium-6 cell" id="container-map">
+                      <object data="/static/map.svg" type="image/svg+xml" id="map"></object>
+                    <!-- <img src="@/assets/img/focem-auto/auto-map--dinamico.png" alt=""> -->
+                  </div>
                 </div>
               </div>
             </div>
+        <div class="grid-container">
+            <div class="grid-x grid-padding-x">
+                <div class="cell">
+                    <div class="tabs-section">
+                        <div class="tab">
+                            <input class="tab-radio" type="radio" id="tab-1" name="tab-group-1" checked>
+                            <label class="tab-label" for="tab-1">TIMELINE</label>
+                            <div class="tab-panel">
+                                <div class="tab-content">
+                                    conteudo do elemento
+                                    conteudo do elemento
+                                    conteudo do elemento
+                                    conteudo do elemento
+                                    conteudo do elemento
+                                    conteudo do elemento
+                                    conteudo do elemento
+                                    conteudo do elemento
+                                    conteudo do elemento
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab">
+                            <input class="tab-radio" type="radio" id="tab-2" name="tab-group-1">
+                            <label class="tab-label" for="tab-2">PARCEIROS</label>
+                            <div class="tab-panel">
+                                <div class="tab-content">
+                                    <partners :list="partners"/>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab">
+                            <input class="tab-radio" type="radio" id="tab-3" name="tab-group-1">
+                            <label class="tab-label" for="tab-3">RESULTADOS</label>
+                            <div class="tab-panel">
+                                <div class="tab-content">
+                                    <div class="grid-container full">
+                                        <div class="results">
+                                            <h6>IMPORTANTES RESULTADOS FORAM CONQUISTADOS:</h6>
+                                            <div class="grid-x grid-padding-x grid-padding-y align-center text-center">
+                                                <div class="cell small-3">
+                                                    <h1>46,14%</h1>
+                                                    <p>DE AUMENTO DE PRODUTIVIDADE</p>
+                                                </div> 
+                                                <div class="cell small-3">   
+                                                    <img src="@/assets/img/focem-auto/icon/resultados-seta.png" alt="">
+                                                </div>
+                                                <div class="cell small-3">
+                                                    <h1>51%</h1>
+                                                    <p>DE PREPARAÇÃO DA MÁQUINA PARA CORRETA PRODUÇÃO</p>
+                                                </div>
+                                                <div class="cell small-3">    
+                                                    <img src="@/assets/img/focem-auto/icon/resultados-seta.png" alt="">
+                                                </div>
+                                            </div>
+                                            <div class="grid-x grid-padding-x grid-padding-y align-center text-center">    
+                                                <div class="cell small-3">
+                                                    <h1>87%</h1>
+                                                    <p>DE REDUÇÃO NAS ENTREGAS</p>
+                                                </div>
+                                                <div class="cell small-3">        
+                                                    <img src="@/assets/img/focem-auto/icon/resultados-entrega.png" alt="">
+                                                </div>
+                                                <div class="cell small-3">
+                                                    <h1>30,13%</h1>
+                                                    <p>DE AUMENTO NA EFICIÊNCIA DE EQUIPAMENTOS</p>
+                                                </div>
+                                                <div class="cell small-3">        
+                                                    <img src="@/assets/img/focem-auto/icon/resultados-eng.png" alt="">
+                                                </div>
+                                            </div>
+                                            <div class="grid-x grid-padding-x grid-padding-y align-center text-center">
+                                                <div class="cell small-3">
+                                                    <h1>76%</h1>
+                                                    <img src="@/assets/img/focem-auto/icon/resultados-prod.png" alt="">                                            
+                                                    <p>DE REDUÇÃO NO TEMPO DE INÍCIO E CONCLUSÃO DAS ATIVIDADES</p>
+                                                    <img src="@/assets/img/focem-auto/icon/resultados-entrega-rapida.png" alt="">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab" @click=" tabSelected = 'gallery' ">
+                          <input class="tab-radio" type="radio" id="tab-4" name="tab-group-1">
+                          <label class="tab-label" for="tab-4" >GALERIA</label>
+                          <div class="tab-panel">
+                            <div class="tab-content gallery-slider">
+                              <gallery :images="gallery" v-if="tabSelected.includes('gallery')"/>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="tab">
+                            <input class="tab-radio" type="radio" id="tab-5" name="tab-group-1">
+                            <label class="tab-label" for="tab-5">DOWNLOADS</label>
+                            <div class="tab-panel">
+                                <div class="tab-content">
+                                    <h2> Central de Downloads </h2>
+                                    <hr/>
+                                    <downloads :list="downloads"/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-      </div>
-      <div class="grid-container">
-        <div class="grid-x grid-padding-x">
-          <div class="cell">
-            <div class="tabs-section">
-              <div class="tab">
-                <input class="tab-radio" type="radio" id="tab-1" name="tab-group-1" checked>
-                <label class="tab-label" for="tab-1">TIMELINE</label>
-                <div class="tab-panel">
-                  <div class="tab-content">
-                    conteudo do elemento
-                    conteudo do elemento
-                    conteudo do elemento
-                    conteudo do elemento
-                    conteudo do elemento
-                    conteudo do elemento
-                    conteudo do elemento
-                    conteudo do elemento
-                    conteudo do elemento
-                  </div>
-                </div>
-              </div>
-              <div class="tab">
-                <input class="tab-radio" type="radio" id="tab-2" name="tab-group-1">
-                <label class="tab-label" for="tab-2">PARCEIROS</label>
-                <div class="tab-panel">
-                  <div class="tab-content">
-                    conteudo do elemento 2
-                    conteudo do elemento 2
-                    conteudo do elemento 2
-                    conteudo do elemento 2
-                    conteudo do elemento 2
-                    conteudo do elemento 2
-                    conteudo do elemento 2
-                    conteudo do elemento 2
-                    conteudo do elemento 2
-                    conteudo do elemento 2
-                  </div>
-                </div>
-              </div>
-              <div class="tab">
-                <input class="tab-radio" type="radio" id="tab-3" name="tab-group-1">
-                <label class="tab-label" for="tab-3">RESULTADOS</label>
-                <div class="tab-panel">
-                  <div class="tab-content">
-                    conteudo do elemento 3
-                  </div>
-                </div>
-              </div>
-              <div class="tab">
-                <input class="tab-radio" type="radio" id="tab-4" name="tab-group-1">
-                <label class="tab-label" for="tab-4">GALERIA</label>
-                <div class="tab-panel">
-                  <div class="tab-content">
-                    conteudo do elemento 4
-                  </div>
-                </div>
-              </div>
-              <div class="tab">
-                <input class="tab-radio" type="radio" id="tab-5" name="tab-group-1">
-                <label class="tab-label" for="tab-5">DOWNLOADS</label>
-                <div class="tab-panel">
-                  <div class="tab-content">
-                    conteudo do elemento 5
-                  </div>
-                </div>
-              </div>
-            </div>
-
-          </div>
-        </div>
-      </div>
     </section>
 </div>
 </template>
 <script>
 import AboutComponents from '@/layout/components/About'
 import api from '@/api/pt_br'
+
+
+
 export default {
   components: {
     ...AboutComponents
@@ -172,7 +243,118 @@ export default {
     downloads: _.cloneDeep(api.auto.downloads),
     partners: _.cloneDeep(api.auto.partners),
     gallery: _.cloneDeep(api.auto.gallery),
-    tabSelected: 'timeline'
+    tabSelected: 'timeline',
+    classCoutrySelected: ''
   }),
+  mounted() {
+    this.renderMap()
+  },
+  watch: {
+    classCoutrySelected(val) {
+      if(val) this.mapIlluminate(val, this.svgElements)
+    }
+  },
+  methods: {
+    mapIlluminate(elClass, elements) {
+
+      // let elClass = this.classCoutrySelected
+
+      if(!elClass) return;
+
+      var addColor = function(el, color, time) {
+        setTimeout(() => {
+            $(el).css({
+            fill: color
+          })
+        }, time)
+      }
+
+      // _.debounce(function() {
+        $(`:not(path.${elClass})`, elements).each(function (i) {
+          addColor(this, '#0078b1', i/20)
+        })
+        $(`path.${elClass}`, elements).each(function (i) {
+          addColor(this, 'white', i/20)
+        })
+      // }, 20);
+
+      // $(`path.${elClass}`, elements).each(function (i) {
+      //   addColor(this, 'white', i/20)
+      //   // setTimeout(() => {
+      //     //   $(this).css({
+      //     //   fill: 'white'
+      //     // })
+      //   // }, i)
+      // })
+
+      
+    },
+    shuffleElements($elements) {
+      // let $elements = $(this.svgElements)
+      var i, index1, index2, temp_val;
+
+      var count = $elements.length;
+      var $parent = $elements.parent();
+      var shuffled_array = [];
+
+
+      // populate array of indexes
+      for (i = 0; i < count; i++) {
+        shuffled_array.push(i);
+      }
+
+      // shuffle indexes
+      for (i = 0; i < count; i++) {
+        index1 = (Math.random() * count) | 0;
+        index2 = (Math.random() * count) | 0;
+
+        temp_val = shuffled_array[index1];
+        shuffled_array[index1] = shuffled_array[index2];
+        shuffled_array[index2] = temp_val;
+      }
+
+      // apply random order to elements
+      $elements.detach();
+      for (i = 0; i < count; i++) {
+        $parent.append( $elements.eq(shuffled_array[i]) );
+      }
+    },
+    renderMap() {
+      let self = this
+      let map = document.querySelector('#map')
+        map.addEventListener('load', function() {
+
+        var svgDoc = map.contentDocument;
+        self.svgElements = svgDoc.getElementsByTagName('g')
+
+        self.shuffleElements($(svgDoc.querySelectorAll('g[role="menuitem"]')))
+        let svgWidth = svgDoc.getElementsByTagName('svg')[0].getBBox().width;
+
+        $('svg', svgDoc).attr('width',  $('#container-map').width());
+        $('svg', svgDoc).attr('height', $('#container-map').height());
+        
+        let proportionContainerSvg = svgWidth/$('#container-map').width()
+
+        $('svg', svgDoc).children('g').attr('transform', `translate(0, -80) scale(${proportionContainerSvg})`)
+        
+        var paths = svgDoc.getElementsByTagName('path');
+          $(paths).each(function () {
+            $(this).hover( function() {
+                self.mapIlluminate($(this).attr('class'), svgDoc)
+              })
+          }, false);
+
+      })
+    }
+  }
 }
+
 </script>
+<style lang="scss">
+  #map {
+    path {
+      fill: red
+    }
+  }
+</style>
+
