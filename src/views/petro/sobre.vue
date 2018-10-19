@@ -121,8 +121,7 @@
                 <input class="tab-radio" type="radio" id="tab-3" name="tab-group-1">
                 <label class="tab-label" for="tab-3">RESULTADOS</label>
                 <div class="tab-panel">
-                  <div class="tab-content">
-                    conteudo do elemento 3
+                  <div class="tab-content"> 
                   </div>
                 </div>
               </div>
