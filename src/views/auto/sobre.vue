@@ -171,10 +171,91 @@
 </template>
 
 <script>
-// import api from '@/api/auto'
-// export default {
-//     data: () => ({
-//         events: api.list
-//     })
-// }
+import AboutComponents from '@/layout/components/About'
+import api from '@/api/pt_br'
+export default {
+  components: {
+    ...AboutComponents
+  },
+  data: (app) => ({
+    downloads: _.cloneDeep(api.pg.downloads),
+    partners: _.cloneDeep(api.pg.partners),
+    gallery: _.cloneDeep(api.pg.gallery),
+    tabSelected: 'timeline'
+  }),
+  mounted() {
+      this.renderTabs()
+  },
+  methods: {
+    renderTabs() {
+      (function($) {
+        $('.tabs input[type="radio"]:checked').closest('.tab').addClass('checked');
+
+        $('section').on('click', '.tabs input', function() {
+            $('input[name="' + this.name + '"]')
+            .closest('.tab')
+            .removeClass('checked');
+            $(this)
+            .closest('.tab')
+            .addClass('checked');
+          });
+          //SLIDESHOW
+        function slideshowSwitch(slideshow,index,auto, paginationItem){
+            var slides = slideshow.find('.timeline__slide');
+            var activeSlide = slides.filter('.is-active');
+
+            TweenMax.to(activeSlide, .4, {alpha: 0, onComplete: function(){
+              activeSlide.removeClass('is-active');
+              TweenMax.set(activeSlide, { alpha: 0,  display:'hide'});
+            }});
+
+            var newSlide = slides.eq(index);
+            TweenMax.set(newSlide, { alpha: 0,  display:'block'});
+
+            TweenMax.to(newSlide, .4, {alpha: 1});
+            newSlide.addClass('is-active');
+
+            TweenMax.set(paginationItem, { scale: .7 });
+             TweenMax.to(paginationItem, .4, {scale: 1, x: 0 , onComplete: function(){
+              paginationItem.removeClass('is-active');
+              // TweenMax.set(paginationItem, { alpha: 0,  display:'hide'});
+            }});
+            // if(newSlide.is(activeSlide))return;
+
+        }
+
+          function slideshowNext(slideshow,previous,auto){
+            var slides= slideshow.find('.timeline__slide');
+            var activeSlide=slides.filter('.is-active');
+            var newSlide=null;
+
+            var paginationItem = null;
+            var paginations = slideshow.find('.pagination__slide .item');
+            var activePaginationItem = paginations.filter('.is-active');
+
+            if(previous){
+              newSlide = activeSlide.prev('.timeline__slide');
+              if(newSlide.length === 0) {
+                newSlide=slides.last();
+              }
+            } else {
+              newSlide=activeSlide.next('.timeline__slide');
+              if(newSlide.length==0)
+                newSlide=slides.filter('.timeline__slide').first();
+
+              paginationItem = activePaginationItem.next('.item');
+              if(paginationItem.length==0)
+                paginationItem=paginations.filter('.paginations').first();
+            }
+            slideshowSwitch(slideshow, newSlide.index(), auto, paginationItem );
+          }
+          $('.timeline__slideshow .arrows .arrow').on('click',function(){
+            slideshowNext($(this).closest('.timeline__slideshow'), $(this).hasClass('prev'));
+          });
+
+        })(window.jQuery);
+    }
+  }
+}
 </script>
+
