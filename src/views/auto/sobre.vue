@@ -1,33 +1,18 @@
 <template>
 <div>
-    <cover img="auto/focem/cover-header.jpg"/>
-    <section id="focem" class="interna focem-auto" >
-        <div class="grid-container full">
-            <div class="grid-x">
-                <div class="cell small-2">  
-                    <div class="link">
-                        <a href=""> Saiba como funciona o programa >></a>
-                    </div>
-                </div>    
-            </div>  
-        </div>    
-            <div class="grid-container">
-                <div class="grid-x grid-padding-x grid-padding-y align-center text-center">
-                    <div class="cell">
-                        <h1>FOCEM AUTOMOTIVO </h1>
-                        <h3>Fundo para Convergência Estrutural do Mercosul</h3>
-                    </div>
-                </div>  
-                <div class="grid-x grid-padding-x grid-padding-y align-center">
-                    <div class="cell medium-4">
-                        <div class="content__scrollable">
-                        <p> O projeto de Adensamento e Complementação Automotiva no âmbito do Mercosul (FOCEM Automotivo) é uma iniciativa executada pela ABDI, com recursos majoritatiamente provenientes do FOCEM, que foi aprovada em 2010.</p>
-                        </div>  
-                    </div>
-                    <div class="cell medium-4">
-                            <img src="@/assets/img/carro.png" alt="">
+    <cover img="pg/cover-header.jpg"/>
+    <section id="petro" class="interna">
+      <div class="grid-container">
+        <div class="grid-x grid-padding-x grid-padding-y align-center text-center">
+            <div class="cell medium-9">
+              <h1>FOCEM PETRÓLEO & GÁS</h1>
+              <div class="grid-container">
+                <div class="grid-x grid-padding-x align-center">
+                  <div class="cell medium-6">
+                    <h3>Fundo para Convergência Estrutural do Mercosul</h3>
+                  </div>
                 </div>
-                </div>
+              </div>
             </div>
             <div class="grid-container full">
                 <div class="grid-x">
@@ -140,8 +125,29 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="infographic__text dot">
+                          <p>As empresas beneficiadas
+                              pelo projeto foram escolhidas
+                              a partir da identificação
+                              de sua capacidade potencial
+                              de atender às demandas
+                              das empresas-âncoras
+                              do setor no Mercosul
+                              por itens estratégicos
+                              e de baixa competitividade,
+                              com dificuldade de suprimento ou que
+                              precisam ser importados
+                              de fora da zona do bloco.
+                              </p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="medium-1 cell">&nbsp;</div>
+                    <div class="medium-6 cell">
+                      <img src="@/assets/img/focem-auto/auto-map--dinamico.png" alt="">
                     </div>
                 </div>
+              </div>
             </div>
         </div>
     </section>

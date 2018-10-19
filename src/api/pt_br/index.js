@@ -9,6 +9,9 @@ import PGDownloads from './pg/downloads'
 import AutoPartners from './auto/partners'
 import PGPartners from './pg/partners'
 
+// import AutoPartners from './auto/partners'
+import PGGallery from './pg/gallery'
+
 
 let auto = {
     downloads: AutoDownloads,
@@ -21,7 +24,8 @@ let auto = {
 let pg = {
     downloads: PGDownloads,
     events: PGEvents,
-    partners: PGPartners
+    partners: PGPartners,
+    gallery: PGGallery
 }
 
 // Vue.prototype.$pg = pg
