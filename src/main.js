@@ -6,6 +6,7 @@ import router from './router'
 
 window.$ = window.jQuery = require('jquery')
 window.TweenMax = require('gsap').TweenMax
+require("gsap/ScrollToPlugin") 
 window._ = require('lodash')
 
 import 'foundation-sites/dist/css/foundation.min.css';

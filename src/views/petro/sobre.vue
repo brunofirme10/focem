@@ -33,7 +33,7 @@
       <div class="grid-container full">
         <div class="grid-x">
           <div class="cell text-center">
-            <a class="action">
+            <a class="action" @click.prevent="goWithScroll('#about-details')">
                 <svg class="arrow-down">
                     <text x="-26" y="-10" class="text">EXPLORAR</text>
                     <path class="a1" d="M0 0 L15 16 L30 0"></path>
@@ -41,7 +41,7 @@
                     <path class="a3" d="M0 20 L15 36 L30 20"></path>
                 </svg>
             </a>
-            <div class="choose-section space">
+            <div class="choose-section space" id="about-details">
               <div class="grid-container">
                 <div class="grid-x grid-padding-x">
                     <div class="medium-5 cell">
@@ -188,7 +188,7 @@
                 <input class="tab-radio" type="radio" id="tab-4" name="tab-group-1">
                 <label class="tab-label" for="tab-4" >GALERIA</label>
                 <div class="tab-panel">
-                  <div class="tab-content">
+                  <div class="tab-content gallery-slider">
                     <gallery :images="gallery" v-if="tabSelected.includes('gallery')"/>
                   </div>
                 </div>
@@ -230,6 +230,12 @@ export default {
       this.renderTabs()
   },
   methods: {
+    goWithScroll(el) {
+      TweenMax.to(window, 1, {
+        ease: Power4.easeOut,
+        scrollTo:{ y: el }
+      });
+    },
     renderTabs() {
       (function($) {
         $('.tabs input[type="radio"]:checked').closest('.tab').addClass('checked');

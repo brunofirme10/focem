@@ -161,3 +161,18 @@
     </section>
 </div>
 </template>
+<script>
+import AboutComponents from '@/layout/components/About'
+import api from '@/api/pt_br'
+export default {
+  components: {
+    ...AboutComponents
+  },
+  data: (app) => ({
+    downloads: _.cloneDeep(api.auto.downloads),
+    partners: _.cloneDeep(api.auto.partners),
+    gallery: _.cloneDeep(api.auto.gallery),
+    tabSelected: 'timeline'
+  }),
+}
+</script>
