@@ -421,7 +421,7 @@ section {
 }
 .tabs-section {
   font-size: 0;
-  margin: 25px 0;
+  // margin: 0 0;
   background: #0392d3;
   position: relative;
   &:after {
@@ -525,6 +525,9 @@ section {
     margin-top: -1px;
     width: 100%;
     min-height: 50vh;
+    &.gallery-slider {
+      padding: 0px;
+    }
   }
 }
 // componentes tab
