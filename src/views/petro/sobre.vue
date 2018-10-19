@@ -320,7 +320,7 @@ export default {
               TweenMax.set(paginationItem.activePaginationItem, { opacity: 1, x:0  });
               TweenMax.to( paginationItem.activePaginationItem, .3, { opacity: 0, scale:.6 } );
 
-              paginationItem.activePaginationItem.removeClass('is-active is-disable').addClass('is-off');
+              paginationItem.activePaginationItem.removeClass('is-active is-disable is-disable-first is-disable-text').addClass('is-off');
 
               TweenMax.to(paginationItem.nextPagination, .4, {scale: 1, left: 0 , onComplete: function(){
                 paginationItem.nextPagination.addClass('is-active');
@@ -328,7 +328,7 @@ export default {
               }});
             }
             if(paginationItem.prevPagination){
-              paginationItem.prevPagination.removeClass('is-off').addClass('is-active');
+              paginationItem.prevPagination.removeClass('is-off is-disable-text is-disable-first').addClass('is-active');
               paginationItem.activePaginationItem.removeClass('is-active');
               calcPosition();
               TweenMax.to( paginationItem.activePaginationItem, .3, { scale:.6 } );
