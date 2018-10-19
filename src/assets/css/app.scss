@@ -284,6 +284,18 @@ section {
       iframe {
         width: 100%;
       }
+
+      .results-petro {
+        
+        padding: 15px;
+        margin: 15px;
+      
+
+        h5 {
+          color: $primary-color;
+          text-align: center;
+        }
+      }
     }
     .event-info {
         display: flex;
@@ -390,11 +402,8 @@ section {
           }
         }
 
-        .results {
+        .results-auto {
           
-          padding: 50px;
-          text-align: center;
-
           h6 {
             color: #696969;
             text-align: center;
@@ -403,6 +412,7 @@ section {
           h1{
             color: #696969;
           }
+
         }
 
       }
