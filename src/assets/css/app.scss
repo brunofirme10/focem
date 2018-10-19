@@ -567,6 +567,17 @@ section {
           opacity: 1;
         }
       }
+      &.is-disable {
+        opacity: 0;
+        background:red;
+      }
+      &.is-disable.is-disable-first{
+        opacity: 1;
+      }
+      &.is-disable.is-disable-text {
+        opacity: 1;
+        background: blue;
+      }
     }
   }
   .timeline__slides {

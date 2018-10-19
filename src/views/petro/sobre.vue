@@ -314,14 +314,13 @@ export default {
             TweenMax.to(newSlide, .4, {alpha: 1});
             newSlide.addClass('is-active');
 
-            console.log(paginationItem);
             /* PAGINATION */
             if( paginationItem.nextPagination ){
-              console.log('bruno');
               TweenMax.set(paginationItem.nextPagination, { scale: .6 });
               TweenMax.set(paginationItem.activePaginationItem, { opacity: 1, x:0  });
               TweenMax.to( paginationItem.activePaginationItem, .3, { opacity: 0, scale:.6 } );
-              paginationItem.activePaginationItem.removeClass('is-active').addClass('is-off');
+
+              paginationItem.activePaginationItem.removeClass('is-active is-disable').addClass('is-off');
 
               TweenMax.to(paginationItem.nextPagination, .4, {scale: 1, left: 0 , onComplete: function(){
                 paginationItem.nextPagination.addClass('is-active');
@@ -346,6 +345,18 @@ export default {
               var distance = ((200) * index);
               TweenMax.to( item, .3, { css: {'left' : distance } } );
             });
+            disablePositionItem();
+        }
+        function disablePositionItem(){
+          $('.pagination__slide .item:not(.is-active, .is-off)').each(function(index, item){
+            if(index == 0){
+              $(item).addClass('is-disable-first');
+            }
+            if(index == 1){
+              $(item).addClass('is-disable-text');
+            }
+            $(item).addClass('is-disable');
+          })
         }
           function slideshowNext(slideshow,previous,auto){
             var slides= slideshow.find('.timeline__slide');
