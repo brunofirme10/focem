@@ -5,13 +5,15 @@
             <div class="grid-x grid-padding-x grid-padding-y align-center text-left">
                 <div class="cell medium-4">
                     <div class="grid-x grid-padding-x grid-padding-y align-center text-left">
-                        <div class="nav-footer">
-                            <ul>
-                                <li><router-link to="/focem/sobre"><span>FOCEM</span></router-link></li>
-                                <li><router-link to="/automotivo/sobre"><span>AUTOMOTIVO</span></router-link></li>
-                                <li><router-link to="/petroleo-gas/sobre"><span>PETRÓLEO & GÁS</span></router-link></li>
-                                <li><router-link to="/eventos"><span>EVENTOS</span></router-link></li>
-                            </ul>
+                        <div class="cell">
+                            <div class="nav-footer">
+                                <ul>
+                                    <li><router-link to="/focem/sobre"><span>FOCEM</span></router-link></li>
+                                    <li><router-link to="/automotivo/sobre"><span>AUTOMOTIVO</span></router-link></li>
+                                    <li><router-link to="/petroleo-gas/sobre"><span>PETRÓLEO & GÁS</span></router-link></li>
+                                    <li><router-link to="/eventos"><span>EVENTOS</span></router-link></li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
                 </div>
