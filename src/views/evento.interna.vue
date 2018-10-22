@@ -57,14 +57,14 @@
                                     </div>
                                     <div class="grid-x grid-margin-x align-center">
                                         <div class="cell text-right">
-                                            <button class="btn btn-primary" type="submit"> Inscrever </button>
+                                            <button class="button button-primary" type="submit"> Inscrever </button>
                                         </div>
                                     </div>
                                 </form>
                             </div>
                         </div>
                     </div>
-                    <div v-show="_.isEmpty(event)"> 
+                    <div v-show="_.isEmpty(event)">
                         <h1> Evento não encontrado </h1>
                     </div>
                 </div>
@@ -81,8 +81,8 @@ export default {
     }),
     computed: {
         event() {
-            return api.events.find(e => 
-                        (e.id == this.$route.params.id || e.slug == this.$route.params.id) 
+            return api.events.find(e =>
+                        (e.id == this.$route.params.id || e.slug == this.$route.params.id)
                         && e.category == this.category) || {}
         },
         _() {
