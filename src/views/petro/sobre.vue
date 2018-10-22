@@ -96,19 +96,7 @@
                 <div class="tab-panel">
                   <div class="tab-content">
                    <div class="timeline__slideshow">
-                     <!-- <div class="pagination__slide">
-                        <div class="item is-active">
-                          <span class="icon">2015</span>
-                        </div>
-                        <div class="item">
-                          <span class="icon">2014</span>
-                        </div>
-                        <div class="item">
-                          <span class="icon">2013</span>
-                        </div>
-                      </div> -->
                       <div class="timeline__slides">
-
                         <div class="timeline__slide is-active">
                           <div class="timeline__slide_img">
                             <img src="@/assets/img/pg/timeline/ilustracao.png" alt="">
@@ -133,17 +121,51 @@
                             </div>
                           </div>
                         </div>
+                        <div class="timeline__slide">
+                          <div class="timeline__slide_img">
+                            <img src="@/assets/img/pg/timeline/ilustracao.png" alt="">
+                          </div>
+                          <div class="timeline__slide_content">
+                            <div class="timeline__slide_content__title"></div>
+                            <div class="timeline__slide_content__text">
+                              <p>3 Seleção com base em critérios de inserção na cadeia, faturamento bruto anual e presença na região de abrangência do projeto.</p>
+                              <p>Executores: Dinamus Consultoria </p>
+                            </div>
+                          </div>
+                        </div>
+                         <div class="timeline__slide">
+                          <div class="timeline__slide_img">
+                            <img src="@/assets/img/pg/timeline/ilustracao.png" alt="">
+                          </div>
+                          <div class="timeline__slide_content">
+                            <div class="timeline__slide_content__title"></div>
+                            <div class="timeline__slide_content__text">
+                              <p>4 Seleção com base em critérios de inserção na cadeia, faturamento bruto anual e presença na região de abrangência do projeto.</p>
+                              <p>Executores: Dinamus Consultoria </p>
+                            </div>
+                          </div>
+                        </div>
                       </div>
                       <div class="pagination__slide">
                         <div class="item is-active">
                             <h1>2015</h1>
                             <h3>Estudo de mercado </h3>
-                            <p>(maio a outubro/2014)</p>
+                            <p>(maio a outubro/2015)</p>
                         </div>
                         <div class="item">
-                            <h1>2014</h1>
+                            <h1>2016</h1>
                             <h3>Estudo de mercado </h3>
-                            <p>(maio a outubro/2014)</p>
+                            <p>(maio a outubro/20201614)</p>
+                        </div>
+                        <div class="item">
+                            <h1>2017</h1>
+                            <h3>Estudo de mercado </h3>
+                            <p>(maio a outubro/2017)</p>
+                        </div>
+                        <div class="item">
+                            <h1>2018</h1>
+                            <h3>Estudo de mercado </h3>
+                            <p>(maio a outubro/2018)</p>
                         </div>
                       </div>
                        <div class="arrows">
@@ -186,12 +208,12 @@
                                     <div class="cell small-4">
                                       <img src="@/assets/img/pg/resultados/ilustracao.png" alt="">
                                     </div>
-                                    <div class="cell small-4">   
-                                        <p>Com o projeto ainda em execução, pequenas e 
+                                    <div class="cell small-4">
+                                        <p>Com o projeto ainda em execução, pequenas e
                                           médias empresas já estão sendo beneficiadas graças
-                                          ao estímulo, ao desenvolvimento do mercado regional, 
+                                          ao estímulo, ao desenvolvimento do mercado regional,
                                           principamente por meio de capacitaões,
-                                          processos de melhoria e adequeções dos padrões técnicos 
+                                          processos de melhoria e adequeções dos padrões técnicos
                                         </p>
                                     </div>
                                   </div>
@@ -266,6 +288,7 @@ export default {
           });
           //SLIDESHOW
         function slideshowSwitch(slideshow,index,auto, paginationItem){
+            var scaleDefault = .5;
             var slides = slideshow.find('.timeline__slide');
             var activeSlide = slides.filter('.is-active');
 
@@ -280,43 +303,92 @@ export default {
             TweenMax.to(newSlide, .4, {alpha: 1});
             newSlide.addClass('is-active');
 
-            TweenMax.set(paginationItem, { scale: .7 });
-             TweenMax.to(paginationItem, .4, {scale: 1, x: 0 , onComplete: function(){
-              paginationItem.removeClass('is-active');
-              // TweenMax.set(paginationItem, { alpha: 0,  display:'hide'});
-            }});
-            // if(newSlide.is(activeSlide))return;
+            /* PAGINATION */
+            if( paginationItem.nextPagination ){
+              TweenMax.set(paginationItem.nextPagination, { scale: scaleDefault });
+              TweenMax.set(paginationItem.activePaginationItem, { opacity: 1, x:0  });
+              TweenMax.to( paginationItem.activePaginationItem, .3, { opacity: 0, scale: scaleDefault } );
 
+              // Item ativo de paginacao
+              paginationItem.activePaginationItem.removeClass('is-active is-disable').addClass('is-off');
+
+              TweenMax.to(paginationItem.nextPagination, .4, {scale: 1, left: 0 , onComplete: function(){
+                paginationItem.nextPagination.removeClass('is-disable').addClass('is-active');
+                calcPosition();
+              }});
+            }
+            if(paginationItem.prevPagination){
+              paginationItem.prevPagination.removeClass('is-off is-disable-text is-disable-first').addClass('is-active');
+              paginationItem.activePaginationItem.removeClass('is-active');
+              calcPosition();
+              TweenMax.to( paginationItem.activePaginationItem, .3, { scale: scaleDefault } );
+              TweenMax.set(paginationItem.prevPagination, { scale: 1, opacity:1 });
+            }
         }
-
+        function calcPosition(){
+           $('.pagination__slide .item:not(.is-off)').each(function(index, item) {
+              var distance = ((220) * index);
+              TweenMax.to( item, .3, { css: {'left' : distance } } );
+            });
+            disablePositionItem();
+        }
+        function disablePositionItem(){
+          $('.pagination__slide .item:not(.is-active, .is-off)').each(function(index, item){
+            $(item).removeClass('is-disable-text is-disable-first').addClass('is-disable');
+            if(index == 0){ $(item).addClass('is-disable-first'); }
+            if(index == 1){ $(item).addClass('is-disable-text'); }
+          })
+        }
+        function disableNextPrevButton(pagination){
+            if(!pagination.prev('.item').length ){ $('.arrow.prev').addClass('disable'); }else {$('.arrow.prev').removeClass('disable'); }
+            if( !pagination.next('.item').length ){ $('.arrow.next').addClass('disable'); }else { $('.arrow.next').removeClass('disable'); }
+        }
           function slideshowNext(slideshow,previous,auto){
-            var slides= slideshow.find('.timeline__slide');
-            var activeSlide=slides.filter('.is-active');
-            var newSlide=null;
+
+            var slides = slideshow.find('.timeline__slide');
+            var activeSlide =slides.filter('.is-active');
+            var newSlide = null;
 
             var paginationItem = null;
             var paginations = slideshow.find('.pagination__slide .item');
+
             var activePaginationItem = paginations.filter('.is-active');
+            const pagination  = {
+                nextPagination: null,
+                prevPagination: null,
+                activePaginationItem: paginations.filter('.is-active'),
+            };
 
             if(previous){
               newSlide = activeSlide.prev('.timeline__slide');
-              if(newSlide.length === 0) {
-                newSlide=slides.last();
-              }
+              if(newSlide.length === 0) return;
+
+                // newSlide=slides.last();
+              // }
+              pagination.prevPagination = pagination.activePaginationItem.prev('.item');
+              if(pagination.prevPagination.length==0)
+                return;
+
+              disableNextPrevButton(pagination.prevPagination);
+
             } else {
               newSlide=activeSlide.next('.timeline__slide');
               if(newSlide.length==0)
-                newSlide=slides.filter('.timeline__slide').first();
+                return;
+                // newSlide=slides.filter('.timeline__slide').first();
 
-              paginationItem = activePaginationItem.next('.item');
-              if(paginationItem.length==0)
-                paginationItem=paginations.filter('.paginations').first();
+              pagination.nextPagination = pagination.activePaginationItem.next('.item');
+              if(pagination.nextPagination.length==0)
+                return;
+                // pagination.nextPagination=paginations.filter('.paginations').first();
+              disableNextPrevButton(pagination.nextPagination);
             }
-            slideshowSwitch(slideshow, newSlide.index(), auto, paginationItem );
+            slideshowSwitch(slideshow, newSlide.index(), auto, pagination );
           }
           $('.timeline__slideshow .arrows .arrow').on('click',function(){
             slideshowNext($(this).closest('.timeline__slideshow'), $(this).hasClass('prev'));
           });
+          calcPosition();
 
         })(window.jQuery);
     }

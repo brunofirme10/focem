@@ -286,10 +286,10 @@ section {
       }
 
       .results-petro {
-        
+
         padding: 15px;
         margin: 15px;
-      
+
 
         h5 {
           color: $primary-color;
@@ -359,17 +359,17 @@ section {
         font-size: 6rem;
         font-weight: 900;
       }
-      
+
 
       &.focem-auto{
-        
+
         h1{
           font-size: 4rem;
           font-weight: 900;
           line-height: 4rem;
           position: relative;
         }
-  
+
         h3{
           font-size: 1rem;
           font-weight: 400;
@@ -403,7 +403,7 @@ section {
         }
 
         .results-auto {
-          
+
           h6 {
             color: #696969;
             text-align: center;
@@ -540,10 +540,51 @@ section {
     width: 70%;
     max-height: 200px;
     .item  {
+      position: absolute;
       display: inline-block;
       transform: scale(.5);
+      h1 {
+        font-weight: 600;
+        font-size: 6rem;
+        font-family: 'Montserrat', sans-serif;
+      }
+      h3 {
+        font-weight: 300;
+        opacity: 0;
+        transition: .3s all;
+        margin: 0;
+        padding: 0;
+      }
+      p {
+        opacity: 0;
+        transition: .2s all;
+      }
       &.is-active {
         transform: scale(1);
+        h3 {
+          opacity: 1;
+          text-align: center;
+        }
+        p {
+          text-align: center;
+          opacity: 1;
+          color: #03a9f4;
+        }
+      }
+      &.is-disable {
+        opacity: 0;
+        h1 {
+          color: #8ed8f9
+        }
+      }
+      &.is-disable.is-disable-first{
+        opacity: 1;
+      }
+      &.is-disable.is-disable-text {
+        opacity: 1;
+      }
+      &.is-disable-first {
+        color: #8ed8f9;
       }
     }
   }
@@ -609,6 +650,9 @@ section {
     }
     .prev {
       left: 30px;
+      &.disable {
+        opacity: .2;
+      }
 
       &:hover .svg {
         left: -10px;
@@ -616,7 +660,9 @@ section {
     }
     .next {
       right: 30px;
-
+      &.disable {
+        opacity: .2;
+      }
       &:hover .svg {
         left: 10px;
       }
