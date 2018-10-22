@@ -107,8 +107,12 @@ header {
 }
 
 .footer {
-  background-color: $dark;
-  padding: 20px;
+  background-color: #363436;
+  padding: 50px 0 20px 0;
+
+  p {
+    font-size: 0.7em; 
+  }
 
   .nav-footer {
       display: block;

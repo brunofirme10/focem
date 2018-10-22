@@ -63,7 +63,7 @@
                             <div class="large-6 cell">
                               <div class="infographic">
                                 <div class="infographic__score">
-                                  <h1>34<span data-location="BR" class="country-select">BRASIL</span></h1>
+                                  <h1>34<span @click=" classCoutrySelected = 'BR' ">BRASIL</span></h1>
                                 </div>
                                 <div class="infographic__text dot">
                                   <p>
@@ -84,32 +84,28 @@
                               </div>
                             </div>
                             <div class="large-6 cell">
-                                <div class="grid-x grid-padding-x" style="height: 100%">
-                                    <div class="medium-3 cell">
-                                        <div class="infographic">
-                                            <div class="infographic__score ">
-                                            <h1><span data-location="UY" class="country-select">Uruguai</span></h1>
-                                        </div>
-                                        </div>
-                                    </div>
-                                    <div class="medium-3 cell">
-                                        <div class="grid-y grid-padding-y">
-                                            <div class="cell medium-3">
-                                                <div class="infographic" >
-                                                    <div class="infographic__score">
-                                                        <h1><span data-location="ARG" class="country-select">Argentina</span></h1>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                <div class="medium-3 cell">
-                                    <div class="infographic" >
-                                        <div class="infographic__score">
-                                            <h1><span data-location="PAR" class="country-select">Paraguai</span></h1>
-                                        </div>
-                                    </div>
-                                </div>
+                              <div class="grid-x grid-padding-x">
+                                <div class="medium-3 cell" @click=" classCoutrySelected = 'UY' ">
+                                  <div class="infographic">
+                                      <div class="infographic__score">
+                                        <h1><span>Uruguai</span></h1>
+                                      </div>
+                                  </div>
+                              </div>
+                              <div class="medium-3 cell" @click=" classCoutrySelected = 'ARG' ">
+                                  <div class="infographic">
+                                      <div class="infographic__score">
+                                        <h1><span>Argentina</span></h1>
+                                      </div>
+                                  </div>
+                              </div>
+                              <div class="medium-3 cell" @click=" classCoutrySelected = 'PAR' ">
+                                  <div class="infographic">
+                                      <div class="infographic__score">
+                                        <h1><span>Paraguai</span></h1>
+                                      </div>
+                                  </div>
+                              </div>
                               </div>
                             </div>
                           </div>
@@ -117,7 +113,7 @@
                       </div>
                   </div>
                   <div class="medium-6 cell" id="container-map">
-                      <object data="/static/map.svg" type="image/svg+xml" id="map" @load="mapLoaded"></object>
+                      <object data="/static/map.svg" type="image/svg+xml" id="map"></object>
                     <!-- <img src="@/assets/img/focem-auto/auto-map--dinamico.png" alt=""> -->
                   </div>
                 </div>
@@ -214,9 +210,9 @@
                                         <p>Executores: Dinamus Consultoria </p>
                                       </div>
                                     </div>
-                                  </div>
                                 </div>
-                                <div class="pagination__slide ">
+                            </div>
+                              <div class="pagination__slide ">
                                   <div class="item is-active">
                                       <h1>2015</h1>
                                   </div>
@@ -245,8 +241,8 @@
                                 </div>
                               </div>
                             </div>
-                            </div>
                           </div>
+                        </div>
                         </div>
                         <div class="tab">
                             <input class="tab-radio" type="radio" id="tab-2" name="tab-group-1">
@@ -261,75 +257,7 @@
                             <input class="tab-radio" type="radio" id="tab-3" name="tab-group-1">
                             <label class="tab-label" for="tab-3">RESULTADOS</label>
                             <div class="tab-panel">
-                                <div class="tab-content">
-                                    <div class="grid-container full">
-                                        <div class="results-auto">
-                                            <h6>IMPORTANTES RESULTADOS FORAM CONQUISTADOS:</h6>
-                                            <div class="grid-x grid-padding-x grid-padding-y align-center text-center">
-                                                <div class="cell small-6">
-                                                    <div class="grid-x grid-padding-x grid-padding-y align-center text-center">
-                                                        <div class="cell small-6">
-                                                            <h1>46,14%</h1>
-                                                            <p>DE AUMENTO DE PRODUTIVIDADE</p>
-                                                        </div>
-                                                        <div class="cell small-4">
-                                                            <img src="@/assets/img/focem-auto/icon/resultados-seta.png" alt="">
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                               <div class="cell small-6">
-                                                    <div class="grid-x grid-padding-x grid-padding-y align-center text-center">
-                                                        <div class="cell small-6">
-                                                            <h1>51%</h1>
-                                                            <p>DE PREPARAÇÃO DA MÁQUINA PARA CORRETA PRODUÇÃO</p>
-                                                        </div>
-                                                        <div class="cell small-4">
-                                                            <img src="@/assets/img/focem-auto/icon/resultados-seta.png" alt="">
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="grid-x grid-padding-x grid-padding-y align-center text-center">
-                                                <div class="cell small-6">
-                                                    <div class="grid-x grid-padding-x grid-padding-y align-center text-center">
-                                                        <div class="cell small-6">
-                                                            <h1>87%</h1>
-                                                            <p>DE REDUÇÃO NAS ENTREGAS</p>
-                                                        </div>
-                                                        <div class="cell small-4">
-                                                            <img src="@/assets/img/focem-auto/icon/resultados-entrega.png" alt="">
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="cell small-6">
-                                                    <div class="grid-x grid-padding-x grid-padding-y align-center text-center">
-                                                        <div class="cell small-6">
-                                                            <h1>30,13%</h1>
-                                                            <p>DE AUMENTO NA EFICIÊNCIA DE EQUIPAMENTOS</p>
-                                                        </div>
-                                                        <div class="cell small-4">
-                                                            <img src="@/assets/img/focem-auto/icon/resultados-eng.png" alt="">
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="grid-x grid-padding-x grid-padding-y align-center text-center">
-                                                <div class="cell small-2">
-                                                    <img src="@/assets/img/focem-auto/icon/resultados-prod.png" alt="">
-                                                </div >
-                                                <div class="cell small-2">
-                                                    <h1>76%</h1>
-                                                </div>
-                                                <div class="cell small-2">
-                                                    <p>DE REDUÇÃO NO TEMPO DE INÍCIO E CONCLUSÃO DAS ATIVIDADES</p>
-                                                </div>
-                                                <div class="cell small-2">
-                                                    <img src="@/assets/img/focem-auto/icon/resultados-entrega-rapida.png" alt="">
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                                <results-auto/>
                             </div>
                         </div>
                         <div class="tab" @click=" tabSelected = 'gallery' ">
@@ -360,7 +288,6 @@
 </div>
 </template>
 <script>
-
 import AboutComponents from '@/layout/components/About'
 import components from '@/layout/components'
 import api from '@/api/pt_br'
@@ -378,60 +305,57 @@ export default {
     classCoutrySelected: ''
   }),
   mounted() {
-    this.renderTimeline()
+    // this.renderMap();
+    this.renderTimeline();
+  },
+  watch: {
+    classCoutrySelected(val) {
+      if(val) this.mapIlluminate(val, this.svgElements)
+    }
   },
   methods: {
-    mapLoaded() {
-        let self = this
-        const map = document.querySelector('#map')
-        var svgDoc = map.contentDocument;
-        const mapElements = $(svgDoc.getElementsByTagName('g'))
-
-        this.adjustSizeMap(svgDoc)
-
-        // this.shuffleElements($(svgDoc.querySelectorAll('g[role="menuitem"]')))
-
-        $('.country-select').each(function () {
-            $(this).hover( function() {
-                self.mapIlluminate($(this).data('location'), svgDoc)
-            })
-        });
-
-        var paths = svgDoc.getElementsByTagName('path');
-          $(paths).each(function () {
-            $(this).hover( function() {
-                self.mapIlluminate($(this).attr('class'), svgDoc)
-              })
-            });
-    },
-    adjustSizeMap(svgDoc) {
-
-        let svgWidth = svgDoc.getElementsByTagName('svg')[0].getBBox().width;
-
-        $('svg', svgDoc).attr('width',  $('#container-map').width());
-        $('svg', svgDoc).attr('height', $('#container-map').height());
-
-        let proportionContainerSvg = svgWidth/$('#container-map').width()
-
-        $('svg', svgDoc).children('g').attr('transform', `translate(0, -80) scale(${proportionContainerSvg})`)
-    },
     mapIlluminate(elClass, elements) {
-        if(!elClass) return;
 
+      // let elClass = this.classCoutrySelected
+
+      if(!elClass) return;
+
+      var addColor = function(el, color, time) {
+        setTimeout(() => {
+            $(el).css({
+            fill: color
+          })
+        }, time)
+      }
+
+      // _.debounce(function() {
         $(`:not(path.${elClass})`, elements).each(function (i) {
-            TweenMax.to(this, .5, { fill: '#0078b1' });
+          addColor(this, '#0078b1', i/20)
         })
-
         $(`path.${elClass}`, elements).each(function (i) {
-            TweenMax.to(this, .5, { fill: 'white' });
+          addColor(this, 'white', i/20)
         })
+      // }, 20);
+
+      // $(`path.${elClass}`, elements).each(function (i) {
+      //   addColor(this, 'white', i/20)
+      //   // setTimeout(() => {
+      //     //   $(this).css({
+      //     //   fill: 'white'
+      //     // })
+      //   // }, i)
+      // })
+
+
     },
     shuffleElements($elements) {
+      // let $elements = $(this.svgElements)
       var i, index1, index2, temp_val;
 
       var count = $elements.length;
       var $parent = $elements.parent();
       var shuffled_array = [];
+
 
       // populate array of indexes
       for (i = 0; i < count; i++) {
@@ -496,7 +420,6 @@ export default {
                 TweenMax.to( paginationItem.activePaginationItem, .3, { scale: scaleDefault } );
                 TweenMax.set(paginationItem.prevPagination, { scale: 1, opacity: 1 });
               }
-
           }
           function calcPosition(){
             $('.pagination__slide .item:not(.is-off)').each(function(index, item) {
@@ -517,64 +440,59 @@ export default {
               if( !pagination.next('.item').length ){ $('.arrow.next').addClass('disable'); }else { $('.arrow.next').removeClass('disable'); }
           }
           function setHeightActive() {
-            console.log('setHeightActive');
-
-            // setTimeout(function(){
               var contentTextHeight = $('.timeline__slide.is-active .timeline__slide_content__text').outerHeight();
               $('.timeline__slideshow').height(contentTextHeight +  150);
-            // },2000);
           }
-            function slideshowNext(slideshow,previous,auto){
+          function slideshowNext(slideshow,previous,auto){
 
-              var slides = slideshow.find('.timeline__slide');
-              var activeSlide =slides.filter('.is-active');
-              var newSlide = null;
+            var slides = slideshow.find('.timeline__slide');
+            var activeSlide =slides.filter('.is-active');
+            var newSlide = null;
 
-              var paginationItem = null;
-              var paginations = slideshow.find('.pagination__slide .item');
+            var paginationItem = null;
+            var paginations = slideshow.find('.pagination__slide .item');
 
-              var activePaginationItem = paginations.filter('.is-active');
-              const pagination  = {
-                  nextPagination: null,
-                  prevPagination: null,
-                  activePaginationItem: paginations.filter('.is-active'),
-              };
+            var activePaginationItem = paginations.filter('.is-active');
+            const pagination  = {
+                nextPagination: null,
+                prevPagination: null,
+                activePaginationItem: paginations.filter('.is-active'),
+            };
 
-              if(previous){
-                newSlide = activeSlide.prev('.timeline__slide');
-                if(newSlide.length === 0) return;
+            if(previous){
+              newSlide = activeSlide.prev('.timeline__slide');
+              if(newSlide.length === 0) return;
 
-                  // newSlide=slides.last();
-                // }
-                pagination.prevPagination = pagination.activePaginationItem.prev('.item');
-                if(pagination.prevPagination.length==0)
-                  return;
+                // newSlide=slides.last();
+              // }
+              pagination.prevPagination = pagination.activePaginationItem.prev('.item');
+              if(pagination.prevPagination.length==0)
+                return;
 
-                disableNextPrevButton(pagination.prevPagination);
+              disableNextPrevButton(pagination.prevPagination);
 
-              } else {
-                newSlide=activeSlide.next('.timeline__slide');
-                if(newSlide.length==0)
-                  return;
-                  // newSlide=slides.filter('.timeline__slide').first();
+            } else {
+              newSlide=activeSlide.next('.timeline__slide');
+              if(newSlide.length==0)
+                return;
+                // newSlide=slides.filter('.timeline__slide').first();
 
-                pagination.nextPagination = pagination.activePaginationItem.next('.item');
-                if(pagination.nextPagination.length==0)
-                  return;
-                  // pagination.nextPagination=paginations.filter('.paginations').first();
-                disableNextPrevButton(pagination.nextPagination);
-              }
-              slideshowSwitch(slideshow, newSlide.index(), auto, pagination );
+              pagination.nextPagination = pagination.activePaginationItem.next('.item');
+              if(pagination.nextPagination.length==0)
+                return;
+                // pagination.nextPagination=paginations.filter('.paginations').first();
+              disableNextPrevButton(pagination.nextPagination);
             }
-            $('.timeline__slideshow .arrows .arrow').on('click',function(){
-              slideshowNext($(this).closest('.timeline__slideshow'), $(this).hasClass('prev'));
-            });
-            calcPosition();
-            setHeightActive();
-
-          })(window.jQuery);
-      }
+            slideshowSwitch(slideshow, newSlide.index(), auto, pagination );
+          }
+           $('.timeline__slideshow .arrows .arrow').on('click',function(){
+            slideshowNext($(this).closest('.timeline__slideshow'), $(this).hasClass('prev'));
+          });
+          calcPosition();
+          setHeightActive();
+      })(window.jQuery);
     }
+  }
 }
 
 </script>
