@@ -133,7 +133,7 @@
                           <div class="tab-panel">
                             <div class="tab-content">
                             <div class="timeline__slideshow">
-                                <div class="timeline__slides">
+                                <div class="timeline__slides timeline_two">
                                   <div class="timeline__slide is-active">
                                     <div class="timeline__slide_img">
                                       <img src="@/assets/img/pg/timeline/ilustracao.png" alt="">
@@ -141,8 +141,40 @@
                                     <div class="timeline__slide_content">
                                       <div class="timeline__slide_content__title"></div>
                                       <div class="timeline__slide_content__text">
-                                        <p> 1 Seleção com base em critérios de inserção na cadeia, faturamento bruto anual e presença na região de abrangência do projeto.</p>
-                                        <p>Executores: Dinamus Consultoria </p>
+                                        <div class="grid-container">
+                                          <div class="grid-x grid-padding-x small-up-2 medium-up-5 large-up-5">
+                                            <div class="cell">
+                                               <figure><img src="@/assets/img/focem-auto/timeline/icon-selecao-empresas-beneficiarias.png"></figure>
+                                              <h5>Seleção das empresas beneficiárias</h5>
+                                              <p>Seleção com base em critérios de inserção na cadeia, faturamento bruto anual e presença na região de abrangência do projeto.</p>
+                                              <p> <strong>Executores:</strong> ABDI
+                                              Comitês Consultivos Locais
+                                              </p>
+                                            </div>
+                                             <div class="cell">
+                                               <figure><img src="@/assets/img/focem-auto/timeline/icon-manual-fornecimento.png"></figure>
+                                              <h5>Manual de fornecimento (setembro/13)</h5>
+                                              <p>Levantamento das exigências básicas para o fornecimento de partes e peças exigidas por sistemistas e montadoras.</p>
+                                              <p><strong>Executores:</strong> Produttare </p>
+                                            </div>
+                                             <div class="cell">
+                                               <figure><img src="@/assets/img/focem-auto/timeline/icon-capacitacao-quadro.png"></figure>
+                                              <h5>Capacitações do quadro técnico  (setembro/2013)</h5>
+                                              <p>Levantamento das exigências básicas para o fornecimento de partes e peças exigidas por sistemistas e montadoras. Executores: Produttare</p>
+                                              <p><strong>Executores:</strong> Produttare Local: Porto Alegre - RS</p>
+                                            </div>
+                                             <div class="cell">
+                                               <figure><img src="@/assets/img/focem-auto/timeline/icon-estudo-setorial.png"></figure>
+                                              <h5>Estudo setorial (novembro/13)</h5>
+                                              <p>Levantamento do cenário e das tendências da indústria automobilística e dos fatores que influenciam a competitividade das empresas atendidas pelo projeto. Realizado por: Produttare</p>
+                                            </div>
+                                             <div class="cell">
+                                               <figure><img src="@/assets/img/focem-auto/timeline/icon-extensionismo.png"></figure>
+                                              <h5>Extensionismo gerencial e tecnológico - 80h por empresa (início: julho de 2013 fim: setembro de 2014)</h5>
+                                              <p>Serviço de consultoria individualizada às empresas com o objetivo de aportar as mais modernas tecnologias de produção e gestão às empresas beneficiárias. Executor Brasil (Rio Grande do Sul e São Paulo): Instituto de Competências Gerenciais (ICE) Executor Argentina, Paraguai e Uruguai Consórcio Engenho/ABECEB Brasil e Argentina</p>
+                                            </div>
+                                          </div>
+                                        </div>
                                       </div>
                                     </div>
                                   </div>
