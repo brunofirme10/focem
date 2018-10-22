@@ -105,6 +105,26 @@ header {
     }
   }
 }
+
+.footer {
+  background-color: $dark;
+  padding: 20px;
+
+  .nav-footer {
+      display: block;
+
+    }
+      ul {
+        list-style-type: none;
+        
+      }
+
+      span {
+        color: #5b5b5f;
+        font-family: 'Montserrat', sans-serif;
+      }
+
+}
 .cover {
   object-fit: cover;
   max-height: 50vh;
