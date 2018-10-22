@@ -41,12 +41,12 @@
             <div class="choose-section space" id="about-details">
               <div class="grid-container">
                 <div class="grid-x grid-padding-x">
-                  <div class="medium-6 cell">
+                  <div class="medium-7 cell">
                     <div class="grid-y grid-padding-y">
                       <div class="medium-6 cell">
                         <div class="infographic">
                           <div class="infographic__data">
-                            <h1 class="dot">Público-alvo</h1>
+                            <h1 class="dot active">Público-alvo</h1>
                             <div class="grid-x grid-padding-x">
                               <div class="small-9 cell">
                                 <h2>99 empresas  que participam  deste projeto. </h2>
@@ -60,13 +60,9 @@
                       </div>
                       <div class="medium-6 cell">
                         <div class="grid-x grid-padding-x">
-                            <div class="large-6 cell">
-                              <div class="infographic">
-                                <div class="infographic__score">
-                                  <h1>34<span @click=" classCoutrySelected = 'BR' ">BRASIL</span></h1>
-                                </div>
+                            <div class="cell large-5 infographic">
                                 <div class="infographic__text dot">
-                                  <p>
+                                <p>
                                     As empresas beneficiadas
                                     pelo projeto foram escolhidas
                                     a partir da identificação
@@ -79,42 +75,67 @@
                                     com dificuldade de suprimento ou que
                                     precisam ser importados
                                     de fora da zona do bloco.
-                                  </p>
+                                </p>
                                 </div>
-                              </div>
                             </div>
-                            <div class="large-6 cell">
-                              <div class="grid-x grid-padding-x">
-                                <div class="medium-3 cell" @click=" classCoutrySelected = 'UY' ">
-                                  <div class="infographic">
-                                      <div class="infographic__score">
-                                        <h1><span>Uruguai</span></h1>
-                                      </div>
-                                  </div>
-                              </div>
-                              <div class="medium-3 cell" @click=" classCoutrySelected = 'ARG' ">
-                                  <div class="infographic">
-                                      <div class="infographic__score">
-                                        <h1><span>Argentina</span></h1>
-                                      </div>
-                                  </div>
-                              </div>
-                              <div class="medium-3 cell" @click=" classCoutrySelected = 'PAR' ">
-                                  <div class="infographic">
-                                      <div class="infographic__score">
-                                        <h1><span>Paraguai</span></h1>
-                                      </div>
-                                  </div>
-                              </div>
-                              </div>
+                            <div class="cell large-7">
+                                <div class="grid-x">
+                                    <div class="cell">
+                                        <div class="grid-x">
+                                            <div class="large-5 cell">
+                                                <div class="infographic country-select" data-location="BR">
+                                                    <div class="infographic__score">
+                                                        <h1>
+                                                            <span class="score">34</span>
+                                                            <span class="country">BRASIL</span>
+                                                        </h1>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="large-5 cell">
+                                                <div class="infographic country-select" data-location="UY">
+                                                    <div class="infographic__score">
+                                                        <h1>
+                                                            <span class="score">30</span>
+                                                            <span class="country">Uruguai</span>
+                                                        </h1>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="cell">
+                                        <div class="grid-x align-right">
+                                            <div class="large-5 cell">
+                                                <div class="infographic country-select" data-location="ARG">
+                                                    <div class="infographic__score">
+                                                        <h1>
+                                                            <span class="score">23</span>
+                                                            <span class="country">Argentina</span>
+                                                        </h1>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="large-5 cell">
+                                                <div class="infographic country-select" data-location="PAR">
+                                                    <div class="infographic__score">
+                                                        <h1>
+                                                            <span class="score">21</span>
+                                                            <span class="country">Paraguai</span>
+                                                        </h1>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                           </div>
                         </div>
                       </div>
                   </div>
-                  <div class="medium-6 cell" id="container-map">
-                      <object data="/static/map.svg" type="image/svg+xml" id="map"></object>
-                    <!-- <img src="@/assets/img/focem-auto/auto-map--dinamico.png" alt=""> -->
+                  <div class="medium-5 cell" id="container-map">
+                      <object data="/static/map.svg" type="image/svg+xml" id="map" @load="mapLoaded"></object>
                   </div>
                 </div>
               </div>
@@ -305,78 +326,78 @@ export default {
     classCoutrySelected: ''
   }),
   mounted() {
-    // this.renderMap();
     this.renderTimeline();
   },
-  watch: {
-    classCoutrySelected(val) {
-      if(val) this.mapIlluminate(val, this.svgElements)
-    }
-  },
   methods: {
-    mapIlluminate(elClass, elements) {
+    mapLoaded() {
+        let self = this
 
-      // let elClass = this.classCoutrySelected
+        const map = document.querySelector('#map')
+        var svgDoc = map.contentDocument;
+        const mapElements = $('g.main-country', svgDoc)
+        this.ajustSizeMap(svgDoc)
 
-      if(!elClass) return;
+        $('.country-select').each(function () {
+            $(this).hover( function() {
+                self.scoreEffectIn(this)
+                self.mapIlluminate($(this).data('location'), mapElements)
+            },
+            function() {
+                self.scoreEffectOut(this)
+            })
+        });
 
-      var addColor = function(el, color, time) {
-        setTimeout(() => {
-            $(el).css({
-            fill: color
-          })
-        }, time)
-      }
+        $(mapElements).each(function () {
+            $(this).hover(_.debounce(function(e) {
+                if(self.classCoutrySelected == $(this).attr('id')) return;
 
-      // _.debounce(function() {
-        $(`:not(path.${elClass})`, elements).each(function (i) {
-          addColor(this, '#0078b1', i/20)
-        })
-        $(`path.${elClass}`, elements).each(function (i) {
-          addColor(this, 'white', i/20)
-        })
-      // }, 20);
-
-      // $(`path.${elClass}`, elements).each(function (i) {
-      //   addColor(this, 'white', i/20)
-      //   // setTimeout(() => {
-      //     //   $(this).css({
-      //     //   fill: 'white'
-      //     // })
-      //   // }, i)
-      // })
-
-
+                self.scoreEffectOut($(`[data-location='${self.classCoutrySelected}']`))
+                self.scoreEffectIn($(`[data-location='${$(this).attr('id')}']`))
+                self.mapIlluminate($(this).attr('id'), mapElements)
+                self.classCoutrySelected = $(this).attr('id')
+            }, 200))
+        });
     },
-    shuffleElements($elements) {
-      // let $elements = $(this.svgElements)
-      var i, index1, index2, temp_val;
+    scoreEffectIn(el) {
+        let self = this
+        $('.infographic h1.active').each(function() {
+            self.scoreEffectOut($(this).parents('.infographic'))
+        })
+        $(el).find('h1').addClass('active');
+        TweenMax.fromTo($(el).find('h1 span.score'), .5, { x: 30, opacity: 0, display: 'block' }, { x: 0, opacity: 1 });
+        
+    },
+    scoreEffectOut(el) {
+        // let el = this
+        TweenMax.to($(el).find('h1 span.score'), .2, { x: 30, opacity: 0 , 
+            onComplete: function() {
+                $(el).find('h1').removeClass('active')
+                TweenMax.set($(el).find('h1 span.score'), { clearProps: 'all' });
+            }
+        })
+    },
+    ajustSizeMap(svgDoc) {
+        
+        let svgWidth = svgDoc.getElementsByTagName('svg')[0].getBBox().width;
 
-      var count = $elements.length;
-      var $parent = $elements.parent();
-      var shuffled_array = [];
+        $('svg', svgDoc).attr('width',  $('#container-map').width());
+        $('svg', svgDoc).attr('height', $('#container-map').height() + 100);
+        
+        let proportionContainerSvg = svgWidth/$('#container-map').width()
 
+        $('svg', svgDoc).children('g').attr('transform', `translate(0, -80) scale(${proportionContainerSvg})`)
+    },
+    mapIlluminate(id, elements) {
+        if(!id) return;
 
-      // populate array of indexes
-      for (i = 0; i < count; i++) {
-        shuffled_array.push(i);
-      }
+        $(elements).find(`:not('#${id}') path`).each(function (i) {
+            TweenMax.to(this, .5, { fill: '#0078b1' });
+        })
 
-      // shuffle indexes
-      for (i = 0; i < count; i++) {
-        index1 = (Math.random() * count) | 0;
-        index2 = (Math.random() * count) | 0;
-
-        temp_val = shuffled_array[index1];
-        shuffled_array[index1] = shuffled_array[index2];
-        shuffled_array[index2] = temp_val;
-      }
-
-      // apply random order to elements
-      $elements.detach();
-      for (i = 0; i < count; i++) {
-        $parent.append( $elements.eq(shuffled_array[i]) );
-      }
+        $(elements).find(`#${id} path`).each(function (i) {
+            // TweenMax.to(this, .5, { fill: 'white', delay: i/1000 }); // WITH EFFECT
+            TweenMax.to(this, .5, { fill: 'white' });
+        })
     },
     renderTimeline() {
         (function($) {

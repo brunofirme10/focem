@@ -1,6 +1,6 @@
 <template>
 
-<div class="footer">
+<div class="footer m-t-2">
     <div class="grid-container">
             <div class="grid-x grid-padding-x grid-padding-y align-center text-left">
                 <div class="cell medium-4">

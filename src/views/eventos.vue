@@ -1,7 +1,7 @@
 <template>
 <div>
     <cover img="auto/evento/cover-header.jpg"/>
-    <section id="eventos" class="interna">
+    <section id="eventos" class="interna m-b-5">
         <div class="grid-container">
             <div class="grid-x grid-margin-x">
                 <div class="cell text-center">
