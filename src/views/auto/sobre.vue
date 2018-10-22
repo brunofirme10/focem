@@ -136,7 +136,6 @@
                   </div>
                   <div class="medium-5 cell" id="container-map">
                       <object data="/static/map.svg" type="image/svg+xml" id="map" @load="mapLoaded"></object>
-                    <!-- <img src="@/assets/img/focem-auto/auto-map--dinamico.png" alt=""> -->
                   </div>
                 </div>
               </div>
@@ -327,13 +326,7 @@ export default {
     classCoutrySelected: ''
   }),
   mounted() {
-    // this.renderMap();
     this.renderTimeline();
-  },
-  watch: {
-    classCoutrySelected(val) {
-      if(val) this.mapIlluminate(val, this.svgElements)
-    }
   },
   methods: {
     mapLoaded() {
@@ -355,9 +348,6 @@ export default {
         });
 
         $(mapElements).each(function () {
-
-            // self.shuffleElements($('g[role="menuitem"]', this)) // For best effect
-
             $(this).hover(_.debounce(function(e) {
                 if(self.classCoutrySelected == $(this).attr('id')) return;
 
@@ -369,10 +359,13 @@ export default {
         });
     },
     scoreEffectIn(el) {
-        $(el).find('h1').addClass('active').css({
-            cursor: 'pointer'
-        });
+        let self = this
+        $('.infographic h1.active').each(function() {
+            self.scoreEffectOut($(this).parents('.infographic'))
+        })
+        $(el).find('h1').addClass('active');
         TweenMax.fromTo($(el).find('h1 span.score'), .5, { x: 30, opacity: 0, display: 'block' }, { x: 0, opacity: 1 });
+        
     },
     scoreEffectOut(el) {
         // let el = this
@@ -388,7 +381,7 @@ export default {
         let svgWidth = svgDoc.getElementsByTagName('svg')[0].getBBox().width;
 
         $('svg', svgDoc).attr('width',  $('#container-map').width());
-        $('svg', svgDoc).attr('height', $('#container-map').height());
+        $('svg', svgDoc).attr('height', $('#container-map').height() + 100);
         
         let proportionContainerSvg = svgWidth/$('#container-map').width()
 
@@ -405,36 +398,6 @@ export default {
             // TweenMax.to(this, .5, { fill: 'white', delay: i/1000 }); // WITH EFFECT
             TweenMax.to(this, .5, { fill: 'white' });
         })
-    },
-    shuffleElements($elements) {
-      // let $elements = $(this.svgElements)
-      var i, index1, index2, temp_val;
-
-      var count = $elements.length;
-      var $parent = $elements.parent();
-      var shuffled_array = [];
-
-
-      // populate array of indexes
-      for (i = 0; i < count; i++) {
-        shuffled_array.push(i);
-      }
-
-      // shuffle indexes
-      for (i = 0; i < count; i++) {
-        index1 = (Math.random() * count) | 0;
-        index2 = (Math.random() * count) | 0;
-
-        temp_val = shuffled_array[index1];
-        shuffled_array[index1] = shuffled_array[index2];
-        shuffled_array[index2] = temp_val;
-      }
-
-      // apply random order to elements
-      $elements.detach();
-      for (i = 0; i < count; i++) {
-        $parent.append( $elements.eq(shuffled_array[i]) );
-      }
     },
     renderTimeline() {
         (function($) {

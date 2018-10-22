@@ -43,43 +43,102 @@
             <div class="choose-section space" id="about-details">
               <div class="grid-container">
                 <div class="grid-x grid-padding-x">
-                    <div class="medium-5 cell">
-                      <div class="infographic">
-                        <div class="infographic__data">
-                          <h1 class="dot">Público-alvo</h1>
-                          <div class="grid-x">
-                            <div class="small-9 cell">
-                              <h2>99 empresas  que participam  deste projeto. </h2>
-                            </div>
-                            <div class="small-3 cell">
-                              <img src="@/assets/img/pg/icon-empresa.png" alt="">
+                  <div class="medium-7 cell">
+                    <div class="grid-y grid-padding-y">
+                      <div class="medium-6 cell">
+                        <div class="infographic">
+                          <div class="infographic__data">
+                            <h1 class="dot active">Público-alvo</h1>
+                            <div class="grid-x grid-padding-x">
+                              <div class="small-9 cell">
+                                <h2>99 empresas  que participam  deste projeto. </h2>
+                              </div>
+                              <div class="small-3 cell">
+                                <img src="@/assets/img/pg/icon-empresa.png">
+                              </div>
                             </div>
                           </div>
-                           </div>
-                        <div class="infographic__score">
-                          <h1>34<span>BRASIL</span></h1>
-                        </div>
-                        <div class="infographic__text dot">
-                          <p>As empresas beneficiadas
-                              pelo projeto foram escolhidas
-                              a partir da identificação
-                              de sua capacidade potencial
-                              de atender às demandas
-                              das empresas-âncoras
-                              do setor no Mercosul
-                              por itens estratégicos
-                              e de baixa competitividade,
-                              com dificuldade de suprimento ou que
-                              precisam ser importados
-                              de fora da zona do bloco.
-                              </p>
                         </div>
                       </div>
-                    </div>
-                    <div class="medium-1 cell">&nbsp;</div>
-                    <div class="medium-6 cell">
-                      <img src="@/assets/img/focem-auto/auto-map--dinamico.png" alt="">
-                    </div>
+                      <div class="medium-6 cell">
+                        <div class="grid-x grid-padding-x">
+                            <div class="cell large-5 infographic">
+                                <div class="infographic__text dot">
+                                <p>
+                                    As empresas beneficiadas
+                                    pelo projeto foram escolhidas
+                                    a partir da identificação
+                                    de sua capacidade potencial
+                                    de atender às demandas
+                                    das empresas-âncoras
+                                    do setor no Mercosul
+                                    por itens estratégicos
+                                    e de baixa competitividade,
+                                    com dificuldade de suprimento ou que
+                                    precisam ser importados
+                                    de fora da zona do bloco.
+                                </p>
+                                </div>
+                            </div>
+                            <div class="cell large-7">
+                                <div class="grid-x">
+                                    <div class="cell">
+                                        <div class="grid-x">
+                                            <div class="large-5 cell">
+                                                <div class="infographic country-select" data-location="BR">
+                                                    <div class="infographic__score">
+                                                        <h1>
+                                                            <span class="score">34</span>
+                                                            <span class="country">BRASIL</span>
+                                                        </h1>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="large-5 cell">
+                                                <div class="infographic country-select" data-location="UY">
+                                                    <div class="infographic__score">
+                                                        <h1>
+                                                            <span class="score">30</span>
+                                                            <span class="country">Uruguai</span>
+                                                        </h1>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="cell">
+                                        <div class="grid-x align-right">
+                                            <div class="large-5 cell">
+                                                <div class="infographic country-select" data-location="ARG">
+                                                    <div class="infographic__score">
+                                                        <h1>
+                                                            <span class="score">23</span>
+                                                            <span class="country">Argentina</span>
+                                                        </h1>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="large-5 cell">
+                                                <div class="infographic country-select" data-location="PAR">
+                                                    <div class="infographic__score">
+                                                        <h1>
+                                                            <span class="score">21</span>
+                                                            <span class="country">Paraguai</span>
+                                                        </h1>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                  </div>
+                  <div class="medium-5 cell" id="container-map">
+                      <object data="/static/map.svg" type="image/svg+xml" id="map" @load="mapLoaded"></object>
+                  </div>
                 </div>
               </div>
             </div>
@@ -253,6 +312,188 @@ export default {
         ease: Power4.easeOut,
         scrollTo:{ y: el }
       });
+    },
+    mapLoaded() {
+        let self = this
+
+        const map = document.querySelector('#map')
+        var svgDoc = map.contentDocument;
+        const mapElements = $('g.main-country', svgDoc)
+        this.ajustSizeMap(svgDoc)
+
+        $('.country-select').each(function () {
+            $(this).hover( function() {
+                self.scoreEffectIn(this)
+                self.mapIlluminate($(this).data('location'), mapElements)
+            },
+            function() {
+                self.scoreEffectOut(this)
+            })
+        });
+
+        $(mapElements).each(function () {
+            
+            $(this).hover(_.debounce(function(e) {
+                if(self.classCoutrySelected == $(this).attr('id')) return;
+
+                self.scoreEffectOut($(`[data-location='${self.classCoutrySelected}']`))
+                self.scoreEffectIn($(`[data-location='${$(this).attr('id')}']`))
+                self.mapIlluminate($(this).attr('id'), mapElements)
+                self.classCoutrySelected = $(this).attr('id')
+            }, 200))
+        });
+    },
+    scoreEffectIn(el) {
+        $(el).find('h1').addClass('active').css({
+            cursor: 'pointer'
+        });
+        TweenMax.fromTo($(el).find('h1 span.score'), .5, { x: 30, opacity: 0, display: 'block' }, { x: 0, opacity: 1 });
+    },
+    scoreEffectOut(el) {
+        // let el = this
+        TweenMax.to($(el).find('h1 span.score'), .2, { x: 30, opacity: 0 , 
+            onComplete: function() {
+                $(el).find('h1').removeClass('active')
+                TweenMax.set($(el).find('h1 span.score'), { clearProps: 'all' });
+            }
+        })
+    },
+    ajustSizeMap(svgDoc) {
+        
+        let svgWidth = svgDoc.getElementsByTagName('svg')[0].getBBox().width;
+
+        $('svg', svgDoc).attr('width',  $('#container-map').width());
+        $('svg', svgDoc).attr('height', $('#container-map').height() + 100);
+        
+        let proportionContainerSvg = svgWidth/$('#container-map').width()
+
+        $('svg', svgDoc).children('g').attr('transform', `translate(0, -80) scale(${proportionContainerSvg})`)
+    },
+    mapIlluminate(id, elements) {
+        if(!id) return;
+
+        $(elements).find(`:not('#${id}') path`).each(function (i) {
+            TweenMax.to(this, .5, { fill: '#0078b1' });
+        })
+
+        $(elements).find(`#${id} path`).each(function (i) {
+            // TweenMax.to(this, .5, { fill: 'white', delay: i/1000 }); // WITH EFFECT
+            TweenMax.to(this, .5, { fill: 'white' });
+        })
+    },
+    renderTimeline() {
+        (function($) {
+          //SLIDESHOW
+          function slideshowSwitch(slideshow,index,auto, paginationItem){
+              var scaleDefault = .5;
+              var slides = slideshow.find('.timeline__slide');
+              var activeSlide = slides.filter('.is-active');
+
+              TweenMax.to(activeSlide, .4, {alpha: 0, onComplete: function(){
+                activeSlide.removeClass('is-active');
+                TweenMax.set(activeSlide, { alpha: 0,  display:'hide'});
+                 setHeightActive();
+              }});
+
+              var newSlide = slides.eq(index);
+              TweenMax.set(newSlide, { alpha: 0,  display:'block'});
+
+
+              newSlide.addClass('is-active');
+              TweenMax.to(newSlide, .4, {alpha: 1 });
+
+              /* PAGINATION */
+              if( paginationItem.nextPagination ){
+                TweenMax.set(paginationItem.nextPagination, { scale: scaleDefault });
+                TweenMax.set(paginationItem.activePaginationItem, { opacity: 1, x:0  });
+                TweenMax.to( paginationItem.activePaginationItem, .3, { opacity: 0, scale: scaleDefault } );
+
+                // Item ativo de paginacao
+                paginationItem.activePaginationItem.removeClass('is-active is-disable').addClass('is-off');
+
+                TweenMax.to(paginationItem.nextPagination, .4, {scale: 1, left: 0 , onComplete: function(){
+                  paginationItem.nextPagination.removeClass('is-disable').addClass('is-active');
+                  calcPosition();
+                }});
+              }
+              if(paginationItem.prevPagination){
+                paginationItem.prevPagination.removeClass('is-off is-disable-text is-disable-first').addClass('is-active');
+                paginationItem.activePaginationItem.removeClass('is-active');
+                calcPosition();
+                TweenMax.to( paginationItem.activePaginationItem, .3, { scale: scaleDefault } );
+                TweenMax.set(paginationItem.prevPagination, { scale: 1, opacity: 1 });
+              }
+          }
+          function calcPosition(){
+            $('.pagination__slide .item:not(.is-off)').each(function(index, item) {
+                var distance = ((200) * index);
+                TweenMax.to( item, .3, { css: {'left' : distance } } );
+              });
+              disablePositionItem();
+          }
+          function disablePositionItem(){
+            $('.pagination__slide .item:not(.is-active, .is-off)').each(function(index, item){
+              $(item).removeClass('is-disable-text is-disable-first').addClass('is-disable');
+              if(index == 0){ $(item).addClass('is-disable-first'); }
+              if(index == 1){ $(item).addClass('is-disable-text'); }
+            })
+          }
+          function disableNextPrevButton(pagination){
+              if(!pagination.prev('.item').length ){ $('.arrow.prev').addClass('disable'); }else {$('.arrow.prev').removeClass('disable'); }
+              if( !pagination.next('.item').length ){ $('.arrow.next').addClass('disable'); }else { $('.arrow.next').removeClass('disable'); }
+          }
+          function setHeightActive() {
+              var contentTextHeight = $('.timeline__slide.is-active .timeline__slide_content__text').outerHeight();
+              $('.timeline__slideshow').height(contentTextHeight +  150);
+          }
+          function slideshowNext(slideshow,previous,auto){
+
+            var slides = slideshow.find('.timeline__slide');
+            var activeSlide =slides.filter('.is-active');
+            var newSlide = null;
+
+            var paginationItem = null;
+            var paginations = slideshow.find('.pagination__slide .item');
+
+            var activePaginationItem = paginations.filter('.is-active');
+            const pagination  = {
+                nextPagination: null,
+                prevPagination: null,
+                activePaginationItem: paginations.filter('.is-active'),
+            };
+
+            if(previous){
+              newSlide = activeSlide.prev('.timeline__slide');
+              if(newSlide.length === 0) return;
+
+                // newSlide=slides.last();
+              // }
+              pagination.prevPagination = pagination.activePaginationItem.prev('.item');
+              if(pagination.prevPagination.length==0)
+                return;
+
+              disableNextPrevButton(pagination.prevPagination);
+
+            } else {
+              newSlide=activeSlide.next('.timeline__slide');
+              if(newSlide.length==0)
+                return;
+                // newSlide=slides.filter('.timeline__slide').first();
+
+              pagination.nextPagination = pagination.activePaginationItem.next('.item');
+              if(pagination.nextPagination.length==0)
+                return;
+                // pagination.nextPagination=paginations.filter('.paginations').first();
+              disableNextPrevButton(pagination.nextPagination);
+            }
+            slideshowSwitch(slideshow, newSlide.index(), auto, pagination );
+          }
+           $('.timeline__slideshow .arrows .arrow').on('click',function(){
+            slideshowNext($(this).closest('.timeline__slideshow'), $(this).hasClass('prev'));
+          });
+          calcPosition();
+          setHeightActive();
+      })(window.jQuery);
     },
     renderTabs() {
       (function($) {
