@@ -111,7 +111,7 @@ header {
   padding: 50px 0 20px 0;
 
   p {
-    font-size: 0.7em; 
+    font-size: 0.7em;
   }
 
   .nav-footer {
@@ -368,7 +368,7 @@ section {
           font-weight: 900;
           color: $white-color;
         }
-        .slide__image {
+        .slide__images {
           position: absolute;
           z-index: 1;
           top: 50%;
@@ -685,7 +685,7 @@ section {
         }
       }
     }
-   
+
   }
   .arrows {
     .arrow {
@@ -746,11 +746,11 @@ section {
         }
       }
     }
-    .pagination__slide   { 
+    .pagination__slide   {
       width: 60%;
       margin-top: 20px;
-      .item { 
-        h1 { 
+      .item {
+        h1 {
           font-size: 6rem !important;
         }
       }
