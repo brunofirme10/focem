@@ -132,8 +132,8 @@
                           <label class="tab-label" for="tab-1">TIMELINE</label>
                           <div class="tab-panel">
                             <div class="tab-content">
-                            <div class="timeline__slideshow">
-                                <div class="timeline__slides timeline_two">
+                            <div class="timeline__slideshow timeline_two">
+                                <div class="timeline__slides">
                                   <div class="timeline__slide is-active">
                                     <div class="timeline__slide_img">
                                       <img src="@/assets/img/pg/timeline/ilustracao.png" alt="">
@@ -171,7 +171,8 @@
                                              <div class="cell">
                                                <figure><img src="@/assets/img/focem-auto/timeline/icon-extensionismo.png"></figure>
                                               <h5>Extensionismo gerencial e tecnológico - 80h por empresa (início: julho de 2013 fim: setembro de 2014)</h5>
-                                              <p>Serviço de consultoria individualizada às empresas com o objetivo de aportar as mais modernas tecnologias de produção e gestão às empresas beneficiárias. Executor Brasil (Rio Grande do Sul e São Paulo): Instituto de Competências Gerenciais (ICE) Executor Argentina, Paraguai e Uruguai Consórcio Engenho/ABECEB Brasil e Argentina</p>
+                                              <p>Serviço de consultoria individualizada às empresas com o objetivo de aportar as mais modernas tecnologias de produção e gestão às empresas beneficiárias.</p>
+                                              <p><strong>Executor Brasil (Rio Grande do Sul e São Paulo):</strong> Instituto de Competências Gerenciais (ICE)<br> <strong>Executor</strong> Argentina, Paraguai e Uruguai Consórcio Engenho/ABECEB Brasil e Argentina</p>
                                             </div>
                                           </div>
                                         </div>
@@ -215,26 +216,18 @@
                                     </div>
                                   </div>
                                 </div>
-                                <div class="pagination__slide">
+                                <div class="pagination__slide ">
                                   <div class="item is-active">
                                       <h1>2015</h1>
-                                      <h3>Estudo de mercado </h3>
-                                      <p>(maio a outubro/2015)</p>
                                   </div>
                                   <div class="item">
                                       <h1>2016</h1>
-                                      <h3>Estudo de mercado </h3>
-                                      <p>(maio a outubro/20201614)</p>
                                   </div>
                                   <div class="item">
                                       <h1>2017</h1>
-                                      <h3>Estudo de mercado </h3>
-                                      <p>(maio a outubro/2017)</p>
                                   </div>
                                   <div class="item">
                                       <h1>2018</h1>
-                                      <h3>Estudo de mercado </h3>
-                                      <p>(maio a outubro/2018)</p>
                                   </div>
                                 </div>
                                 <div class="arrows">
@@ -472,13 +465,15 @@ export default {
               TweenMax.to(activeSlide, .4, {alpha: 0, onComplete: function(){
                 activeSlide.removeClass('is-active');
                 TweenMax.set(activeSlide, { alpha: 0,  display:'hide'});
+                 setHeightActive();
               }});
 
               var newSlide = slides.eq(index);
               TweenMax.set(newSlide, { alpha: 0,  display:'block'});
 
-              TweenMax.to(newSlide, .4, {alpha: 1});
+
               newSlide.addClass('is-active');
+              TweenMax.to(newSlide, .4, {alpha: 1 });
 
               /* PAGINATION */
               if( paginationItem.nextPagination ){
@@ -499,12 +494,13 @@ export default {
                 paginationItem.activePaginationItem.removeClass('is-active');
                 calcPosition();
                 TweenMax.to( paginationItem.activePaginationItem, .3, { scale: scaleDefault } );
-                TweenMax.set(paginationItem.prevPagination, { scale: 1, opacity:1 });
+                TweenMax.set(paginationItem.prevPagination, { scale: 1, opacity: 1 });
               }
+
           }
           function calcPosition(){
             $('.pagination__slide .item:not(.is-off)').each(function(index, item) {
-                var distance = ((220) * index);
+                var distance = ((200) * index);
                 TweenMax.to( item, .3, { css: {'left' : distance } } );
               });
               disablePositionItem();
@@ -519,6 +515,14 @@ export default {
           function disableNextPrevButton(pagination){
               if(!pagination.prev('.item').length ){ $('.arrow.prev').addClass('disable'); }else {$('.arrow.prev').removeClass('disable'); }
               if( !pagination.next('.item').length ){ $('.arrow.next').addClass('disable'); }else { $('.arrow.next').removeClass('disable'); }
+          }
+          function setHeightActive() {
+            console.log('setHeightActive');
+
+            // setTimeout(function(){
+              var contentTextHeight = $('.timeline__slide.is-active .timeline__slide_content__text').outerHeight();
+              $('.timeline__slideshow').height(contentTextHeight +  150);
+            // },2000);
           }
             function slideshowNext(slideshow,previous,auto){
 
@@ -566,6 +570,7 @@ export default {
               slideshowNext($(this).closest('.timeline__slideshow'), $(this).hasClass('prev'));
             });
             calcPosition();
+            setHeightActive();
 
           })(window.jQuery);
       }
