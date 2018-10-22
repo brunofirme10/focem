@@ -544,8 +544,9 @@ section {
       display: inline-block;
       transform: scale(.5);
       h1 {
-        font-weight: 300;
-        font-size: 6.5rem;
+        font-weight: 600;
+        font-size: 6rem;
+        font-family: 'Montserrat', sans-serif;
       }
       h3 {
         font-weight: 300;
@@ -562,21 +563,28 @@ section {
         transform: scale(1);
         h3 {
           opacity: 1;
+          text-align: center;
         }
         p {
+          text-align: center;
           opacity: 1;
+          color: #03a9f4;
         }
       }
       &.is-disable {
         opacity: 0;
-        background:red;
+        h1 {
+          color: #8ed8f9
+        }
       }
       &.is-disable.is-disable-first{
         opacity: 1;
       }
       &.is-disable.is-disable-text {
         opacity: 1;
-        background: blue;
+      }
+      &.is-disable-first {
+        color: #8ed8f9;
       }
     }
   }
@@ -642,6 +650,9 @@ section {
     }
     .prev {
       left: 30px;
+      &.disable {
+        opacity: .2;
+      }
 
       &:hover .svg {
         left: -10px;
@@ -649,7 +660,9 @@ section {
     }
     .next {
       right: 30px;
-
+      &.disable {
+        opacity: .2;
+      }
       &:hover .svg {
         left: 10px;
       }
