@@ -12,11 +12,12 @@
 <script>
 import Layouts from '@/layout'
 import Navbar from '@/layout/components/Navbar'
+
 export default {
   name: 'App',
   components: {
     ...Layouts,
-    Navbar
+    Navbar,
   },
   computed: {
     layout() {

@@ -3,12 +3,14 @@
         <header-default/>
         <fade-transition>  
             <router-view/>
-        </fade-transition>  
+        </fade-transition>
+        <footer-bar/>  
     </div>
 </template>
 <script>
 import Components from './components'
 import HeaderDefault from '@/layout/components/Header/Default'
+
 export default {
     name: 'Default',
     components: {

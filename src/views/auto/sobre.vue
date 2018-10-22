@@ -309,11 +309,13 @@
 </template>
 <script>
 import AboutComponents from '@/layout/components/About'
+import components from '@/layout/components'
 import api from '@/api/pt_br'
 
 export default {
   components: {
-    ...AboutComponents
+    ...AboutComponents,
+    components
   },
   data: (app) => ({
     downloads: _.cloneDeep(api.auto.downloads),
