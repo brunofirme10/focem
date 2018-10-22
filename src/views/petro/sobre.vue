@@ -96,19 +96,7 @@
                 <div class="tab-panel">
                   <div class="tab-content">
                    <div class="timeline__slideshow">
-                     <!-- <div class="pagination__slide">
-                        <div class="item is-active">
-                          <span class="icon">2015</span>
-                        </div>
-                        <div class="item">
-                          <span class="icon">2014</span>
-                        </div>
-                        <div class="item">
-                          <span class="icon">2013</span>
-                        </div>
-                      </div> -->
                       <div class="timeline__slides">
-
                         <div class="timeline__slide is-active">
                           <div class="timeline__slide_img">
                             <img src="@/assets/img/pg/timeline/ilustracao.png" alt="">
@@ -165,19 +153,19 @@
                             <p>(maio a outubro/2015)</p>
                         </div>
                         <div class="item">
-                            <h1>2014</h1>
+                            <h1>2016</h1>
                             <h3>Estudo de mercado </h3>
-                            <p>(maio a outubro/2014)</p>
+                            <p>(maio a outubro/20201614)</p>
                         </div>
                         <div class="item">
-                            <h1>2013</h1>
+                            <h1>2017</h1>
                             <h3>Estudo de mercado </h3>
-                            <p>(maio a outubro/2013)</p>
+                            <p>(maio a outubro/2017)</p>
                         </div>
                         <div class="item">
-                            <h1>2012</h1>
+                            <h1>2018</h1>
                             <h3>Estudo de mercado </h3>
-                            <p>(maio a outubro/2012)</p>
+                            <p>(maio a outubro/2018)</p>
                         </div>
                       </div>
                        <div class="arrows">
@@ -195,7 +183,6 @@
                       </div>
                     </div>
                    </div>
-
                   </div>
                 </div>
               </div>
@@ -300,6 +287,7 @@ export default {
           });
           //SLIDESHOW
         function slideshowSwitch(slideshow,index,auto, paginationItem){
+            var scaleDefault = .5;
             var slides = slideshow.find('.timeline__slide');
             var activeSlide = slides.filter('.is-active');
 
@@ -316,14 +304,15 @@ export default {
 
             /* PAGINATION */
             if( paginationItem.nextPagination ){
-              TweenMax.set(paginationItem.nextPagination, { scale: .6 });
+              TweenMax.set(paginationItem.nextPagination, { scale: scaleDefault });
               TweenMax.set(paginationItem.activePaginationItem, { opacity: 1, x:0  });
-              TweenMax.to( paginationItem.activePaginationItem, .3, { opacity: 0, scale:.6 } );
+              TweenMax.to( paginationItem.activePaginationItem, .3, { opacity: 0, scale: scaleDefault } );
 
-              paginationItem.activePaginationItem.removeClass('is-active is-disable is-disable-first is-disable-text').addClass('is-off');
+              // Item ativo de paginacao
+              paginationItem.activePaginationItem.removeClass('is-active is-disable').addClass('is-off');
 
               TweenMax.to(paginationItem.nextPagination, .4, {scale: 1, left: 0 , onComplete: function(){
-                paginationItem.nextPagination.addClass('is-active');
+                paginationItem.nextPagination.removeClass('is-disable').addClass('is-active');
                 calcPosition();
               }});
             }
@@ -331,37 +320,33 @@ export default {
               paginationItem.prevPagination.removeClass('is-off is-disable-text is-disable-first').addClass('is-active');
               paginationItem.activePaginationItem.removeClass('is-active');
               calcPosition();
-              TweenMax.to( paginationItem.activePaginationItem, .3, { scale:.6 } );
+              TweenMax.to( paginationItem.activePaginationItem, .3, { scale: scaleDefault } );
               TweenMax.set(paginationItem.prevPagination, { scale: 1, opacity:1 });
             }
-
-            // TODO::MOVER PARA POSICAO INICIAL DO CAROUSEL
-            //TODO::STOP LOOP
-            // if(newSlide.is(activeSlide))return;
-
         }
         function calcPosition(){
            $('.pagination__slide .item:not(.is-off)').each(function(index, item) {
-              var distance = ((200) * index);
+              var distance = ((220) * index);
               TweenMax.to( item, .3, { css: {'left' : distance } } );
             });
             disablePositionItem();
         }
         function disablePositionItem(){
           $('.pagination__slide .item:not(.is-active, .is-off)').each(function(index, item){
-            if(index == 0){
-              $(item).addClass('is-disable-first');
-            }
-            if(index == 1){
-              $(item).addClass('is-disable-text');
-            }
-            $(item).addClass('is-disable');
+            $(item).removeClass('is-disable-text is-disable-first').addClass('is-disable');
+            if(index == 0){ $(item).addClass('is-disable-first'); }
+            if(index == 1){ $(item).addClass('is-disable-text'); }
           })
         }
+        function disableNextPrevButton(pagination){
+            if(!pagination.prev('.item').length ){ $('.arrow.prev').addClass('disable'); }else {$('.arrow.prev').removeClass('disable'); }
+            if( !pagination.next('.item').length ){ $('.arrow.next').addClass('disable'); }else { $('.arrow.next').removeClass('disable'); }
+        }
           function slideshowNext(slideshow,previous,auto){
-            var slides= slideshow.find('.timeline__slide');
-            var activeSlide=slides.filter('.is-active');
-            var newSlide=null;
+
+            var slides = slideshow.find('.timeline__slide');
+            var activeSlide =slides.filter('.is-active');
+            var newSlide = null;
 
             var paginationItem = null;
             var paginations = slideshow.find('.pagination__slide .item');
@@ -376,11 +361,14 @@ export default {
             if(previous){
               newSlide = activeSlide.prev('.timeline__slide');
               if(newSlide.length === 0) return;
+
                 // newSlide=slides.last();
               // }
               pagination.prevPagination = pagination.activePaginationItem.prev('.item');
               if(pagination.prevPagination.length==0)
                 return;
+
+              disableNextPrevButton(pagination.prevPagination);
 
             } else {
               newSlide=activeSlide.next('.timeline__slide');
@@ -392,6 +380,7 @@ export default {
               if(pagination.nextPagination.length==0)
                 return;
                 // pagination.nextPagination=paginations.filter('.paginations').first();
+              disableNextPrevButton(pagination.nextPagination);
             }
             slideshowSwitch(slideshow, newSlide.index(), auto, pagination );
           }

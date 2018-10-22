@@ -5,6 +5,7 @@ $secondary-color-lighter: #e5e6e7;
 $dark: #000;
 $white-color: #fff;
 $gray-color: #dadcdd;
+$blue-dark: #1f3841;
 
 body {
   color: $secondary-color;
@@ -35,23 +36,13 @@ input[type="text"], textarea {
   }
 }
 
-.btn {
-  background: $primary-color;
-  padding: 0.7rem 1.5rem 0.7rem 1.5rem;
-  &.large {
-    padding: 0.7rem 5rem 0.7rem 5rem;
-  }
-  &.primary {
-      background: $primary-color;
-      color: #FFF;
-  }
-}
-
-.btn-primary {
-  background: $primary-color;
-  color: #FFF;
-}
-
+// .btn {
+//   background: $primary-color;
+//   padding: 0.7rem 1.5rem 0.7rem 1.5rem;
+//   &.large {
+//     padding: 0.7rem 5rem 0.7rem 5rem;
+//   }
+// }
 
 /* BUTTONS */
 .button  {
@@ -59,9 +50,17 @@ input[type="text"], textarea {
   font-family: 'Montserrat', sans-serif;
   font-weight: 500;
   border: 1px solid transparent;
+  display: block;
   svg {
     position: relative;
     right: -1rem;
+  }
+  &.button-primary {
+    background: $primary-color;
+    color: #FFF;
+  }
+  &.button-large {
+    padding: 0.7rem 5rem 0.7rem 5rem;
   }
   &.button-default {
     background: $primary-color-lighter;
@@ -69,6 +68,20 @@ input[type="text"], textarea {
       background: $white-color;
       color: $primary-color-lighter;
       border-color: $primary-color-lighter;
+    }
+  }
+  &.button-download {
+    font-weight: 300;
+    text-transform: uppercase;
+    padding: .7rem 2rem;
+    color: $blue-dark;
+    border-color: $primary-color;
+    display: block;
+     &:visited,
+     &:hover {
+      background: $white-color;
+      color: $primary-color;
+      border-color: $primary-color;
     }
   }
 }
@@ -548,6 +561,10 @@ section {
     &.gallery-slider {
       padding: 0px;
     }
+    h2 {
+      color: #58595b;
+      font-weight: 500;
+    }
   }
 }
 // componentes tab
@@ -564,8 +581,9 @@ section {
       display: inline-block;
       transform: scale(.5);
       h1 {
-        font-weight: 300;
-        font-size: 6.5rem;
+        font-weight: 600;
+        font-size: 6rem;
+        font-family: 'Montserrat', sans-serif;
       }
       h3 {
         font-weight: 300;
@@ -582,21 +600,28 @@ section {
         transform: scale(1);
         h3 {
           opacity: 1;
+          text-align: center;
         }
         p {
+          text-align: center;
           opacity: 1;
+          color: #03a9f4;
         }
       }
       &.is-disable {
         opacity: 0;
-        background:red;
+        h1 {
+          color: #8ed8f9
+        }
       }
       &.is-disable.is-disable-first{
         opacity: 1;
       }
       &.is-disable.is-disable-text {
         opacity: 1;
-        background: blue;
+      }
+      &.is-disable-first {
+        color: #8ed8f9;
       }
     }
   }
@@ -662,6 +687,9 @@ section {
     }
     .prev {
       left: 30px;
+      &.disable {
+        opacity: .2;
+      }
 
       &:hover .svg {
         left: -10px;
@@ -669,7 +697,9 @@ section {
     }
     .next {
       right: 30px;
-
+      &.disable {
+        opacity: .2;
+      }
       &:hover .svg {
         left: 10px;
       }
