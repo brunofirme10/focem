@@ -40,6 +40,7 @@
                     <path class="a3" d="M0 20 L15 36 L30 20"></path>
                 </svg>
             </a>
+            <div class="bg-blue">
             <div class="choose-section space" id="about-details">
               <div class="grid-container">
                 <div class="grid-x grid-padding-x">
@@ -141,6 +142,7 @@
                   </div>
                 </div>
               </div>
+            </div>
             </div>
             </div>
         </div>
@@ -304,7 +306,8 @@ export default {
     tabSelected: 'timeline'
   }),
   mounted() {
-      this.renderTabs()
+      this.renderTabs();
+      this.scrollDetect();
   },
   methods: {
     goWithScroll(el) {
@@ -612,6 +615,36 @@ export default {
           calcPosition();
 
         })(window.jQuery);
+    },
+
+    scrollDetect() {
+        
+    $.fn.isOnScreen = function(){
+        
+        var win = $(window);
+        
+        var viewport = {
+            top : win.scrollTop() - 400,
+            left : win.scrollLeft()
+        };
+        viewport.right = viewport.left + win.width();
+        viewport.bottom = viewport.top + win.height();
+        
+        var bounds = this.offset();
+        bounds.right = bounds.left + this.outerWidth();
+        bounds.bottom = bounds.top + this.outerHeight();
+        
+        return (!(viewport.right < bounds.left || viewport.left > bounds.right || viewport.bottom < bounds.top || viewport.top > bounds.bottom));
+        
+    };
+    $(window).on('scroll', function(){
+        if($('.bg-blue').isOnScreen()){
+        $('#menu').addClass('menu-blue');
+        }else{
+            $('#menu').removeClass('menu-blue');
+        };
+    });
+
     }
   }
 }
