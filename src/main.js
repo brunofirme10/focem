@@ -15,6 +15,12 @@ import 'foundation-sites/dist/js/foundation.min.js';
 require('./assets/css/lightslider.min.css');
 require('./assets/js/lightslider.min.js');
 
+import axios from 'axios'
+import VueAxios from 'vue-axios'
+ 
+Vue.use(VueAxios, axios)
+Vue.axios.defaults.baseURL = './../api'
+
 import 'vue-awesome/icons'
 import Icon from 'vue-awesome/components/Icon'
 Vue.component('v-icon', Icon)
