@@ -217,25 +217,25 @@
                                                                         <div class="grid-x grid-padding-x small-up-2 medium-up-2 large-up-2">
                                                                             <div class="cell">
                                                                                 <p class="title"><strong>Gestão Empresarial</strong></p>
-                                                                                <p><strong>Executor: </strong>Instituto de Competências Empresariais (ICE)</p> 
-                                                                                <p><strong>Local: </strong>Montevidéu - UY</p> 
-                                                                                <p><strong>Participantes: </strong>88 empresários</p> 
-                                                                                
+                                                                                <p><strong>Executor: </strong>Instituto de Competências Empresariais (ICE)</p>
+                                                                                <p><strong>Local: </strong>Montevidéu - UY</p>
+                                                                                <p><strong>Participantes: </strong>88 empresários</p>
+
                                                                                 <p class="title"><strong>Qualidade</strong></p>
-                                                                                <p><strong>Executor: </strong> Instituto de Competências Empresariais (ICE)</p> 
-                                                                                <p><strong>Local: </strong>Montevidéu - UY</p> 
-                                                                                <p><strong>Participantes: </strong>88 empresários</p> 
+                                                                                <p><strong>Executor: </strong> Instituto de Competências Empresariais (ICE)</p>
+                                                                                <p><strong>Local: </strong>Montevidéu - UY</p>
+                                                                                <p><strong>Participantes: </strong>88 empresários</p>
                                                                             </div>
                                                                             <div class="cell">
                                                                                 <p class="title"><strong>Gestão Empresarial</strong></p>
-                                                                                <p><strong>Executor: </strong>Instituto de Competências Empresariais (ICE)</p> 
-                                                                                <p><strong>Local: </strong>Montevidéu - UY</p> 
-                                                                                <p><strong>Participantes: </strong>88 empresários</p> 
-                                                                                
+                                                                                <p><strong>Executor: </strong>Instituto de Competências Empresariais (ICE)</p>
+                                                                                <p><strong>Local: </strong>Montevidéu - UY</p>
+                                                                                <p><strong>Participantes: </strong>88 empresários</p>
+
                                                                                 <p class="title"><strong>Gestão Empresarial</strong></p>
-                                                                                <p><strong>Executor: </strong>Instituto de Competências Empresariais (ICE)</p> 
-                                                                                <p><strong>Local: </strong>Montevidéu - UY</p> 
-                                                                                <p><strong>Participantes: </strong>88 empresários</p> 
+                                                                                <p><strong>Executor: </strong>Instituto de Competências Empresariais (ICE)</p>
+                                                                                <p><strong>Local: </strong>Montevidéu - UY</p>
+                                                                                <p><strong>Participantes: </strong>88 empresários</p>
                                                                             </div>
                                                                         </div>
                                                                     </div>
@@ -411,10 +411,10 @@ export default {
     }
   },
   methods: {
-      goWithScroll(el) {
+    goWithScroll(el) {
       TweenMax.to(window, 1, {
         ease: Power4.easeOut,
-        scrollTo:{ y: el }
+        scrollTo: { y: el }
       });
     },
     mapLoaded() {
