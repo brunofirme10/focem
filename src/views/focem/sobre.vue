@@ -44,8 +44,8 @@
            </div>
         </div>
         <div class="plan">
-          <div class="grid-x grid-padding-x grid-padding-y justify-content">
-            <div class="cell text-center justify-content">
+          <div class="grid-x grid-padding-x grid-padding-y">
+            <div class="cell text-center">
                 <button class="button button-default">PLANO DE AQUISIÇÕES <v-icon name="download"/></button>
             </div>
           </div>
