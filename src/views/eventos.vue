@@ -12,14 +12,15 @@
                 </div>
             </div>
         </div>
-        <div class="grid-container p-t-2">
+        <div class="grid-container p-t-2 eventos__lista">
             <div class="grid-x grid-margin-x align-center">
-                <div class="box large-8 medium-8 cell p-b-3" v-for="(event, key) in events" :key="key">
+                <div class="box medium-9 cell p-b-3 eventos__lista__item" v-for="(event, key) in events" :key="key">
+                    <router-link :to="`/${event.category}/${(event.slug || event.id)}/evento`">
                     <div class="grid-x grid-margin-x">
-                        <div class="large-6 medium-6 cell">
+                        <div class="medium-7 cell">
                             <img :src="event.photo" alt="">
                         </div>
-                        <div class="large-6 medium-6 cell">
+                        <div class="medium-5 cell">
                             <div class="grid-x grid-margin-x">
                                 <div class="cell">
                                     <h3> {{ event.title }}</h3>
@@ -50,17 +51,22 @@
                             </div>
                             <div class="grid-x grid-margin-x">
                                 <div class="cell" style="position: relative">
+<<<<<<< HEAD
                                     <router-link class="subscribe text-center" :to="`/${event.category}/${(event.slug || event.id)}/evento`"> Mais informações </router-link>
+=======
+                                    <button class="button button-primary text-center" > Fazer inscrição </button>
+>>>>>>> 4b970b85bac11a1e5e5d6366c63bfafaa9d6c335
                                 </div>
                             </div>
                         </div>
                     </div>
+                    </router-link>
                 </div>
             </div>
         </div>
     </section>
 </div>
-   
+
 </template>
 
 <script>
