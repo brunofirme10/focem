@@ -949,7 +949,7 @@ section {
           p {
             font-size: 12px;
             text-align: left;
-            
+
           }
           &.p-sm {
             p {
@@ -961,7 +961,7 @@ section {
             }
           }
         }
-        
+
       }
     }
     .pagination__slide   {
@@ -998,8 +998,8 @@ nav {
             position: relative;
             pointer-events: auto;
             text-transform: uppercase;
-            color: #A9A9A9;
-            font-weight: 500;
+            color: #d1d3d4;
+            font-weight: 400;
             min-height: 35px;
             width: 100%;
             transition: .3s all;
@@ -1008,7 +1008,7 @@ nav {
               position: absolute;
               right: -110px;
               width: 100px;
-              height: 2px;
+              height: 1px;
               top: 10px;
               background: #A9A9A9;
               transition: .2s all;
@@ -1034,9 +1034,9 @@ nav {
           }
         }
       }
-    &.menu-blue {
+    &.menu-white {
       a {
-        color: rgb(0, 120, 177);
+        color: #027ab0;
         &:after{
           color: rgb(0, 120, 177);
           background: rgb(0, 120, 177);
