@@ -51,11 +51,7 @@
                             </div>
                             <div class="grid-x grid-margin-x">
                                 <div class="cell" style="position: relative">
-<<<<<<< HEAD
                                     <router-link class="subscribe text-center" :to="`/${event.category}/${(event.slug || event.id)}/evento`"> Mais informações </router-link>
-=======
-                                    <button class="button button-primary text-center" > Fazer inscrição </button>
->>>>>>> 4b970b85bac11a1e5e5d6366c63bfafaa9d6c335
                                 </div>
                             </div>
                         </div>

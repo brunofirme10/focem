@@ -448,7 +448,6 @@ export default {
     },
     scoreEffectIn(el) {
         let self = this
-<<<<<<< HEAD
 		$('.infographic__score h1.active').each(function() {
 			self.scoreEffectOut($(this).parents('.infographic__score'))
         });
@@ -457,14 +456,6 @@ export default {
             cursor: 'pointer'
         });
         TweenMax.fromTo($(el).find('h1 span.score'), .5, { x: 30, opacity: 0, display: 'block' }, { x: 0, opacity: 1 });
-=======
-        $('.infographic h1.active').each(function() {
-            self.scoreEffectOut($(this).parents('.infographic'))
-        })
-        $(el).find('h1').addClass('active');
-        TweenMax.fromTo($(el).find('h1 span.score'), .5, { x: 30, opacity: 0, display: 'block' }, { x: 0, opacity: 1 });
-
->>>>>>> 7d84882a9fb56fc51b491350be9fe6ed72fb21d0
     },
     scoreEffectOut(el) {
         // let el = this
