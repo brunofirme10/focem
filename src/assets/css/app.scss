@@ -776,7 +776,8 @@ section {
         font-size: 6rem;
         font-family: 'Montserrat', sans-serif;
         &.sm {
-          font-size: 3rem!important
+          font-size: 3rem !important;
+          line-height: 3rem;
         }
       }
       h3 {

@@ -387,8 +387,7 @@
 import AboutComponents from '@/layout/components/About'
 import components from '@/layout/components'
 import api from '@/api/pt_br'
-import OnScreen from 'onscreen';
-const os = new OnScreen();
+
 
 export default {
   components: {
@@ -404,7 +403,6 @@ export default {
   }),
   mounted() {
     // this.renderMap();
-    this.scrollDetect();
     this.renderTimeline();
   },
   watch: {
@@ -453,7 +451,7 @@ export default {
 		$('.infographic__score h1.active').each(function() {
 			self.scoreEffectOut($(this).parents('.infographic__score'))
         });
-        
+
         $(el).find('h1 ').addClass('active').css({
             cursor: 'pointer'
         });
@@ -605,25 +603,8 @@ export default {
           setHeightActive();
       })(window.jQuery);
     },
-    scrollDetect() {
-        var osScreen =  new OnScreen({
-          tolerance: 200,
-          debounce: 100,
-          container: window
-        });
-        osScreen.on('enter', '.blue-stage',  (element, event) => {
-            $('#menu').addClass('menu-white');
-        });
-        osScreen.on('leave', '.blue-stage',  (element, event) => {
-            $('#menu').removeClass('menu-white');
-        });
-    }
   }
 }
-
-
-
-
 </script>
 <style lang="scss" scoped>
 </style>
