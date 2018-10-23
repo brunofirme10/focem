@@ -8,53 +8,30 @@
                     </div>
                     <div class="slide__images">
                       <div class="slide__image slide__image--car">
-                        <img class="" src="@/assets/img/carro.png" alt="">
+                        <a href="/petroleo-gas/sobre"><img class="" src="@/assets/img/carro.png" alt=""></a>
                       </div>
                       <div class="slide__image slide__image--refinery" >
-                        <img src="@/assets/img/refinaria.png" alt="">
+                        <a href="/automotivo/sobre"><img src="@/assets/img/refinaria.png" alt=""></a>
                       </div>
                     </div>
+                </div>
+                <div class="language">
+                  <div class="grid-container">
+                    <div class="grid-x grid-padding-x">
+                      <div class="cell">
+                        <h6><span>Escolha o IDIOMA</span></h6>
+                        <div class="choose">
+                          <a href="#">BRASIL</a>
+                          <a href="#">ESPANHOL</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
             </div>
         </div>
     </section>
 </template>
-
-<style scoped>
-section#home .slide{
-  width: 100vw;
-  background: blue;
-  text-align: center;
-}
-.slide__images  {
-  text-align: center;
-}
-.slide__image {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  max-height: 60vh;
-  cursor: pointer;
-}
-.slide__image.slide__image--car {
- transform: translate(-90%,-50%);
- max-height: 50vh;
-}
-.slide__image.slide__image--refinery {
- transform: translate(-10%,-70%);
-}
-#home .slide .slide__title {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -80%);
-}
-#home .slide .slide__title h1 {
-  font-size: 20rem;
-
-}
-</style>
 <script>
 export default {
   mounted(){
@@ -87,7 +64,7 @@ export default {
         TweenMax.fromTo(imageCar, .3, { opacity: 1 }, { opacity: 0 });
         TweenMax.fromTo(imageRefinery, .4, {x: 0}, {x: -200});
         titleHome.textContent = "Petroleo & Gás";
-        TweenMax.to(titleHome, .2, {scale: .5, y: 200 });
+        TweenMax.to(titleHome, .2, {scale: .4, y: 200 });
       })
       contentRefinery.addEventListener('mouseleave', e => {
         TweenMax.fromTo(imageCar, .3, { opacity: 0 }, { opacity: 1 });
