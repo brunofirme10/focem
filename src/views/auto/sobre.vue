@@ -450,10 +450,10 @@ export default {
     },
     scoreEffectIn(el) {
         let self = this
-		  $('.infographic__score h1.active').each(function() {
-			  self.scoreEffectOut($(this).parents('.infographic__score'))
-      });
-
+		$('.infographic__score h1.active').each(function() {
+			self.scoreEffectOut($(this).parents('.infographic__score'))
+        });
+        
         $(el).find('h1 ').addClass('active').css({
             cursor: 'pointer'
         });
