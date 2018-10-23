@@ -56,10 +56,15 @@
             <div class="choose-section">
               <div class="slide">
                   <div class="slide__title">
-                      <h1>Petróleo & Gás </h1>
+                      <h1>FOCEM</h1>
                   </div>
-                  <div class="slide__image">
-                      <img src="@/assets/img/automotivos.png" alt="">
+                  <div class="slide__images">
+                    <div class="slide__image slide__image--car">
+                      <a href="/automotivo/sobre"><img class="" src="@/assets/img/carro.png" alt=""></a>
+                    </div>
+                    <div class="slide__image slide__image--refinery" >
+                      <a href="/petroleo-gas/sobre"><img src="@/assets/img/refinaria.png" alt=""></a>
+                    </div>
                   </div>
               </div>
             </div>
@@ -77,5 +82,45 @@ export default {
     // data: () => ({
     //     events: api.list
     // })
+    mounted() {
+      this.animHome();
+    },
+    methods: {
+      animHome(){
+        let titleHome = document.querySelector('.slide .slide__title h1');
+        titleHome.textContent = "FOCEM";
+        let contentCar = document.querySelector('.slide .slide__images .slide__image--car');
+        let imageCar = contentCar.querySelector('img');
+
+        let contentRefinery = document.querySelector('.slide .slide__images .slide__image--refinery');
+        let imageRefinery = contentRefinery.querySelector('img');
+
+        contentCar.addEventListener('mouseenter', e => {
+          TweenMax.fromTo(imageRefinery, .3, { opacity: 1 }, { opacity: 0 });
+          TweenMax.fromTo(imageCar, .4, {x: 0}, {x: 200});
+          titleHome.textContent = "Automotivo";
+          TweenMax.to(titleHome, .2, {scale: .5, y: -50});
+        })
+        contentCar.addEventListener('mouseleave', e => {
+          TweenMax.fromTo(imageRefinery, .3, { opacity: 0 }, { opacity: 1 });
+          TweenMax.fromTo(imageCar, .4, {x: 100}, {x: 0, y: 0});
+          titleHome.textContent = "FOCEM";
+          TweenMax.to(titleHome, .2, { scale: 1, y:0});
+        })
+
+        contentRefinery.addEventListener('mouseenter', e => {
+          TweenMax.fromTo(imageCar, .3, { opacity: 1 }, { opacity: 0 });
+          TweenMax.fromTo(imageRefinery, .4, {x: 0}, {x: -100});
+          titleHome.textContent = "Petroleo & Gás";
+          TweenMax.to(titleHome, .2, {scale: .5, y: 100 });
+        })
+        contentRefinery.addEventListener('mouseleave', e => {
+          TweenMax.fromTo(imageCar, .3, { opacity: 0 }, { opacity: 1 });
+          TweenMax.fromTo(imageRefinery, .4, {x: -200 }, { x: 0,  y: 0 });
+          titleHome.textContent = "FOCEM";
+          TweenMax.to( titleHome, .2, {scale: 1, y: 0 });
+        })
+      }
+    }
 }
 </script>

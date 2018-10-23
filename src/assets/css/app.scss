@@ -188,12 +188,27 @@ section {
           top: 50%;
           left: 50%;
           transform: translate(-50%,-50%);
-          .slide__title h1 {
-            font-size: 7rem;
-            font-weight: 900;
-            color: $white-color;
+          width: 100vw;
+          text-align: center;
+          .slide__title {
+              position: absolute;
+              top: 50%;
+              left: 50%;
+              transform: translate(-50%, -80%);
+              h1 {
+                font-size: 15rem !important;
+                line-height: 15rem !important;
+                font-weight: 900;
+                color: $white-color;
+              }
+              @media screen and (max-width: 1200px) {
+                h1 {
+                  font-size: 15rem;
+                }
+              }
           }
-          .slide__image {
+          .slide__images {
+            text-align: center;
             position: absolute;
             z-index: 1;
             top: 50%;
@@ -201,9 +216,28 @@ section {
             width: 100%;
             object-fit: cover;
             transform: translate(-50%,-50%);
+            .slide__image {
+              position: absolute;
+              top: 50%;
+              left: 50%;
+              transform: translate(-50%, -50%);
+              max-height: 60vh;
+              cursor: pointer;
+              img {
+                max-height: 300px;
+              }
+              &.slide__image--car {
+                z-index: 1;
+                transform: translate(-90%,-50%);
+                max-height: 50vh;
+              }
+              &.slide__image--refinery {
+                transform: translate(-10%,-70%);
+
+              }
+            }
           }
         }
-
       }
       .content__scrollable {
         padding: 1rem 1.5rem;
