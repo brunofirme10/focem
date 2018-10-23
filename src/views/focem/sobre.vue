@@ -48,6 +48,7 @@
           </div>
         </div>
       </div>
+      <div class="bg-blue">
       <div class="grid-container full">
         <div class="grid-x">
           <div class="cell text-center">
@@ -64,6 +65,7 @@
             </div>
             </div>
         </div>
+      </div>
       </div>
     </section>
 </div>

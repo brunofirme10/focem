@@ -38,7 +38,7 @@
                     </div>
                 </div>
             </div> -->
-            <div class="maps">
+            <div class="bg-blue">
             <div class="choose-section space" id="about-details">
               <div class="grid-container">
                 <div class="grid-x grid-padding-x">
@@ -523,7 +523,6 @@ export default {
       })(window.jQuery);
     },
     scrollDetect() {
-        console.log('teste');
         
     $.fn.isOnScreen = function(){
         
@@ -543,10 +542,11 @@ export default {
         return (!(viewport.right < bounds.left || viewport.left > bounds.right || viewport.bottom < bounds.top || viewport.top > bounds.bottom));
         
     };
-    
     $(window).on('scroll', function(){
-        if($('.maps').isOnScreen()){
+        if($('.bg-blue').isOnScreen()){
         $('#menu').addClass('menu-blue');
+        }else{
+            $('#menu').removeClass('menu-blue');
         };
     });
     }
