@@ -55,9 +55,9 @@
                                             <textarea name="" cols="30" rows="6"></textarea>
                                         </div>
                                     </div>
-                                    <div class="grid-x grid-margin-x align-center">
+                                    <div class="grid-x grid-margin-x">
                                         <div class="cell text-right">
-                                            <button class="button button-primary" type="submit"> Inscrever </button>
+                                            <button class="button button-primary button-inline" type="submit"> INSCREVER </button>
                                         </div>
                                     </div>
                                 </form>
