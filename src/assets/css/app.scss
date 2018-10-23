@@ -384,6 +384,12 @@ section {
           text-align: center;
         }
       }
+
+      .plan {
+        display: flex;
+        justify-content: center; 
+    }
+
     }
     .event-info {
         display: flex;

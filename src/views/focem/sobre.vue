@@ -24,17 +24,18 @@
              <p>Os recursos são entregues em caráter de doação não reembolsável para financiar até 85% do valor elegível dos projetos apresentados. </p>
               <p>A ABDI executa dois projetos, ainda em andamento, aprovados pelo FOCEM dentro do segundo de seus quatro grandes eixos, o Programa de Desenvolvimento da Competitividade.</p>
                <p>Os projetos financiados pelo FOCEM devem  se enquadrar nas seguintes áreas de ações,  indicadas pelos seus programas respectivos:</p>
+                <h6> Programa I - Convergência Estrutural</h6>
+                <h6> Programa II -  Desenvolvimento da Competitividade</h6>
+                <h6> Programa III - Coesão Social</h6>
+                <h6> Programa IV - Fortalecimento da Estrutura Institucional e do Processo de Integração</h6>
           </div>
         </div>
         <div class="grid-x grid-padding-x grid-padding-y">
           <div class="cell medium-6">
-            <h6>Programa I - Convergência Estrutural
-              Programa II -  Desenvolvimento da Competitividade</h6>
             <p> Para facilitar ainda mais a criação do comércio intraMercosul, projetos de reordenamentos foram criados. Esses projetos estimulam integrações, com a intenção de aumentar a qualidade de produtos e o número de pesquisas, a fim de gerar novos produtos  e processos produtivos.</p>
             <p>A ABDI teve seu início em 2005, vinculada ao Ministério da Indústria, Comércio Exterior e Serviços (MDIC),  e tem como objetivo promover a execução de ações para ampliar a competitividade da indústria. E isso  se aplica diretamente aos dois projetos de integração produtiva, voltados para cadeia automotiva e para cadeia de petróleo e gás, executados pela Agência  com recursos majoritariamente provenientes do Fundo.</p>
           </div>
           <div class="cell medium-6">
-            <h6>Programa III - Coesão Social Programa IV - Fortalecimento da Estrutura Institucional e do Processo de Integração</h6>
             <p>Entre os dois projetos, um é voltado para o adensamento e a complementação produtiva no setor automobilístico-autopecista (contribuição FOCEM de US$ 3 milhões), e o outro para o desenvolvimento de fornecedores na cadeia produtiva de petróleo e gás (contribuição FOCEM de US$ 2,8 milhões). </p>
             <h6>Os dois projetos são plurinacionais, beneficiando quatro  países do bloco: Argentina, Brasil, Paraguai e Uruguai. </h6>
             <p>
@@ -42,9 +43,11 @@
             </p>
            </div>
         </div>
-        <div class="grid-x grid-padding-x grid-padding-y">
-          <div class="cell text-center">
-              <button class="button button-default">PLANO DE AQUISIÇÕES <v-icon name="download"/></button>
+        <div class="plan">
+          <div class="grid-x grid-padding-x grid-padding-y justify-content">
+            <div class="cell text-center justify-content">
+                <button class="button button-default">PLANO DE AQUISIÇÕES <v-icon name="download"/></button>
+            </div>
           </div>
         </div>
       </div>
