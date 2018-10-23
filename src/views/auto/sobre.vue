@@ -448,6 +448,7 @@ export default {
     },
     scoreEffectIn(el) {
         let self = this
+<<<<<<< HEAD
 		$('.infographic__score h1.active').each(function() {
 			self.scoreEffectOut($(this).parents('.infographic__score'))
         });
@@ -456,10 +457,18 @@ export default {
             cursor: 'pointer'
         });
         TweenMax.fromTo($(el).find('h1 span.score'), .5, { x: 30, opacity: 0, display: 'block' }, { x: 0, opacity: 1 });
+=======
+        $('.infographic h1.active').each(function() {
+            self.scoreEffectOut($(this).parents('.infographic'))
+        })
+        $(el).find('h1').addClass('active');
+        TweenMax.fromTo($(el).find('h1 span.score'), .5, { x: 30, opacity: 0, display: 'block' }, { x: 0, opacity: 1 });
+
+>>>>>>> 7d84882a9fb56fc51b491350be9fe6ed72fb21d0
     },
     scoreEffectOut(el) {
         // let el = this
-        TweenMax.to($(el).find('h1 span.score'), .2, { x: 30, opacity: 0 , 
+        TweenMax.to($(el).find('h1 span.score'), .2, { x: 30, opacity: 0 ,
             onComplete: function() {
                 $(el).find('h1').removeClass('active')
                 TweenMax.set($(el).find('h1 span.score'), { clearProps: 'all' });
@@ -467,12 +476,12 @@ export default {
         })
     },
     ajustSizeMap(svgDoc) {
-        
+
         let svgWidth = svgDoc.getElementsByTagName('svg')[0].getBBox().width;
 
         $('svg', svgDoc).attr('width',  $('#container-map').width());
         $('svg', svgDoc).attr('height', $('#container-map').height() + 100);
-        
+
         let proportionContainerSvg = svgWidth/$('#container-map').width()
 
         $('svg', svgDoc).children('g').attr('transform', `translate(0, -80) scale(${proportionContainerSvg})`)
@@ -604,32 +613,27 @@ export default {
       })(window.jQuery);
     },
     scrollDetect() {
-        
-    $.fn.isOnScreen = function(){
-        
-        var win = $(window);
-        
-        var viewport = {
-            top : win.scrollTop() - 400,
-            left : win.scrollLeft()
-        };
-        viewport.right = viewport.left + win.width();
-        viewport.bottom = viewport.top + win.height();
-        
-        var bounds = this.offset();
-        bounds.right = bounds.left + this.outerWidth();
-        bounds.bottom = bounds.top + this.outerHeight();
-        
-        return (!(viewport.right < bounds.left || viewport.left > bounds.right || viewport.bottom < bounds.top || viewport.top > bounds.bottom));
-        
-    };
-    $(window).on('scroll', function(){
-        if($('.bg-blue').isOnScreen()){
-        $('#menu').addClass('menu-blue');
-        }else{
-            $('#menu').removeClass('menu-blue');
-        };
-    });
+      $.fn.isOnScreen = function(){
+          var win = $(window);
+          var viewport = {
+              top : win.scrollTop() - 400,
+              left : win.scrollLeft()
+          };
+          viewport.right = viewport.left + win.width();
+          viewport.bottom = viewport.top + win.height();
+
+          var bounds = this.offset();
+          bounds.right = bounds.left + this.outerWidth();
+          bounds.bottom = bounds.top + this.outerHeight();
+          return (!(viewport.right < bounds.left || viewport.left > bounds.right || viewport.bottom < bounds.top || viewport.top > bounds.bottom));
+      };
+      $(window).on('scroll', function(){
+          if($('.bg-blue').isOnScreen()){
+          $('#menu').addClass('menu-blue');
+          }else{
+              $('#menu').removeClass('menu-blue');
+          };
+      });
     }
   }
 }
