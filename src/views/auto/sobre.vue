@@ -6,7 +6,7 @@
             <div class="grid-x">
                 <div class="cell small-2">
                     <div class="link">
-                        <a href=""> Saiba como funciona o programa >></a>
+                        <p href=""> Saiba como funciona o programa >></p>
                     </div>
                 </div>
             </div>
