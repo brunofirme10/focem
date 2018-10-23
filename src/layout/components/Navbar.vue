@@ -64,6 +64,7 @@ export default {
         osScreen.on('leave', '.blue-stage',  (element, event) => {
             $('#menu').removeClass('menu-white');
         });
+
     }
   }
 }

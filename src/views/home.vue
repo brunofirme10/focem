@@ -36,6 +36,7 @@
 export default {
   mounted(){
     this.animHome();
+    this.homeClass();
   },
   methods: {
     animHome(){
@@ -73,6 +74,11 @@ export default {
          TweenMax.to(titleHome, .2, {scale: 1, y: 0});
       })
 
+    },
+    homeClass() {
+       if( $('#home').length ) {
+          $('#menu').addClass('menu-home');
+        }
     }
   },
 }
