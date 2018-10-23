@@ -38,6 +38,7 @@
                     </div>
                 </div>
             </div> -->
+            <div class="maps">
             <div class="choose-section space" id="about-details">
               <div class="grid-container">
                 <div class="grid-x grid-padding-x">
@@ -119,6 +120,7 @@
                 </div>
               </div>
             </div>
+        </div>
         <div class="grid-container">
             <div class="grid-x grid-padding-x">
                 <div class="cell">
@@ -257,7 +259,9 @@ export default {
     classCoutrySelected: ''
   }),
   mounted() {
-    this.renderMap()
+    this.renderMap();
+    
+    this.scrollDetect();
   },
   watch: {
     classCoutrySelected(val) {
@@ -355,9 +359,39 @@ export default {
           }, false);
 
       })
+    },
+
+    scrollDetect() {
+        $.fn.isOnScreen = function(){
+            
+            var win = $(window);
+            
+            var viewport = {
+                top : win.scrollTop() - 400,
+                left : win.scrollLeft()
+            };
+            viewport.right = viewport.left + win.width();
+            viewport.bottom = viewport.top + win.height();
+            
+            var bounds = this.offset();
+            bounds.right = bounds.left + this.outerWidth();
+            bounds.bottom = bounds.top + this.outerHeight();
+            
+            return (!(viewport.right < bounds.left || viewport.left > bounds.right || viewport.bottom < bounds.top || viewport.top > bounds.bottom));
+            
+        };
+        
+        $(window).on('scroll', function(){
+          if($('.maps').isOnScreen()){
+            $('#menu').addClass('menu-blue');
+          };
+        });
     }
   }
 }
+
+
+
 
 </script>
 <style lang="scss">
