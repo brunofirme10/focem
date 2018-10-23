@@ -8,10 +8,10 @@
                     </div>
                     <div class="slide__images">
                       <div class="slide__image slide__image--car">
-                        <a href="/petroleo-gas/sobre"><img class="" src="@/assets/img/carro.png" alt=""></a>
+                        <a href="/automotivo/sobre"><img class="" src="@/assets/img/carro.png" alt=""></a>
                       </div>
                       <div class="slide__image slide__image--refinery" >
-                        <a href="/automotivo/sobre"><img src="@/assets/img/refinaria.png" alt=""></a>
+                        <a href="/petroleo-gas/sobre"><img src="@/assets/img/refinaria.png" alt=""></a>
                       </div>
                     </div>
                 </div>
