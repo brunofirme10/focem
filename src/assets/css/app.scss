@@ -455,15 +455,15 @@ section {
           background:red;
           position: relative;
           a {
-            font-size: 2rem;
-            font-weight: 600;
+            font-size: 1.5rem;
+            font-weight: 400;
             color: #fff;
             position: absolute;
             &:first-child {
-              left: -100px;
+              left: -120px;
             }
             &:nth-child(2) {
-              right: -100px;;
+              right: -120px;;
             }
             &:hover {
               color: #8ed8f9;

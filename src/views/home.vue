@@ -21,7 +21,7 @@
                       <div class="cell">
                         <h6><span>Escolha o IDIOMA</span></h6>
                         <div class="choose">
-                          <a href="#">BRASIL</a>
+                          <a href="#">PORTUGUÊS</a>
                           <a href="#">ESPANHOL</a>
                         </div>
                       </div>
