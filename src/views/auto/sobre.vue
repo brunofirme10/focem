@@ -217,25 +217,25 @@
                                                                         <div class="grid-x grid-padding-x small-up-2 medium-up-2 large-up-2">
                                                                             <div class="cell">
                                                                                 <p class="title"><strong>Gestão Empresarial</strong></p>
-                                                                                <p><strong>Executor: </strong>Instituto de Competências Empresariais (ICE)</p> 
-                                                                                <p><strong>Local: </strong>Montevidéu - UY</p> 
-                                                                                <p><strong>Participantes: </strong>88 empresários</p> 
-                                                                                
+                                                                                <p><strong>Executor: </strong>Instituto de Competências Empresariais (ICE)</p>
+                                                                                <p><strong>Local: </strong>Montevidéu - UY</p>
+                                                                                <p><strong>Participantes: </strong>88 empresários</p>
+
                                                                                 <p class="title"><strong>Qualidade</strong></p>
-                                                                                <p><strong>Executor: </strong> Instituto de Competências Empresariais (ICE)</p> 
-                                                                                <p><strong>Local: </strong>Montevidéu - UY</p> 
-                                                                                <p><strong>Participantes: </strong>88 empresários</p> 
+                                                                                <p><strong>Executor: </strong> Instituto de Competências Empresariais (ICE)</p>
+                                                                                <p><strong>Local: </strong>Montevidéu - UY</p>
+                                                                                <p><strong>Participantes: </strong>88 empresários</p>
                                                                             </div>
                                                                             <div class="cell">
                                                                                 <p class="title"><strong>Gestão Empresarial</strong></p>
-                                                                                <p><strong>Executor: </strong>Instituto de Competências Empresariais (ICE)</p> 
-                                                                                <p><strong>Local: </strong>Montevidéu - UY</p> 
-                                                                                <p><strong>Participantes: </strong>88 empresários</p> 
-                                                                                
+                                                                                <p><strong>Executor: </strong>Instituto de Competências Empresariais (ICE)</p>
+                                                                                <p><strong>Local: </strong>Montevidéu - UY</p>
+                                                                                <p><strong>Participantes: </strong>88 empresários</p>
+
                                                                                 <p class="title"><strong>Gestão Empresarial</strong></p>
-                                                                                <p><strong>Executor: </strong>Instituto de Competências Empresariais (ICE)</p> 
-                                                                                <p><strong>Local: </strong>Montevidéu - UY</p> 
-                                                                                <p><strong>Participantes: </strong>88 empresários</p> 
+                                                                                <p><strong>Executor: </strong>Instituto de Competências Empresariais (ICE)</p>
+                                                                                <p><strong>Local: </strong>Montevidéu - UY</p>
+                                                                                <p><strong>Participantes: </strong>88 empresários</p>
                                                                             </div>
                                                                         </div>
                                                                     </div>
@@ -411,10 +411,10 @@ export default {
     }
   },
   methods: {
-      goWithScroll(el) {
+    goWithScroll(el) {
       TweenMax.to(window, 1, {
         ease: Power4.easeOut,
-        scrollTo:{ y: el }
+        scrollTo: { y: el }
       });
     },
     mapLoaded() {
@@ -448,23 +448,14 @@ export default {
     },
     scoreEffectIn(el) {
         let self = this
-<<<<<<< HEAD
-		$('.infographic__score h1.active').each(function() {
-			self.scoreEffectOut($(this).parents('.infographic__score'))
-        });
-        
+		  $('.infographic__score h1.active').each(function() {
+			  self.scoreEffectOut($(this).parents('.infographic__score'))
+      });
+
         $(el).find('h1 ').addClass('active').css({
             cursor: 'pointer'
         });
         TweenMax.fromTo($(el).find('h1 span.score'), .5, { x: 30, opacity: 0, display: 'block' }, { x: 0, opacity: 1 });
-=======
-        $('.infographic h1.active').each(function() {
-            self.scoreEffectOut($(this).parents('.infographic'))
-        })
-        $(el).find('h1').addClass('active');
-        TweenMax.fromTo($(el).find('h1 span.score'), .5, { x: 30, opacity: 0, display: 'block' }, { x: 0, opacity: 1 });
-
->>>>>>> 7d84882a9fb56fc51b491350be9fe6ed72fb21d0
     },
     scoreEffectOut(el) {
         // let el = this
