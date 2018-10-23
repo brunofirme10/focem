@@ -1,23 +1,78 @@
 const downloads = [
     {
         id: 1,
-        title: 'Material Didático Encontros de Cooperação e Boas Práticas (1 entraga)',
-        path: 'auto/downloads/material-didatico.zip',
+        title: 'Estudo do Mercado Automotivo do Mercosul',
+        path: '#',
     },
     {
         id: 2,
-        title: 'Meio Ambiente',
-        path: 'auto/downloads',
+        title: 'Manual de Fornecimento de Peças e Componentes',
+        path: '#',
     },
     {
         id: 3,
-        title: 'Normas de Qualidade (dia 1)',
-        path: 'auto/downloads',
+        title: 'Resultados das Atividades de Extensão',
+        path: '#',
     },
     {
         id: 4,
-        title: 'Normas de Qualidade (dia 2)',
-        path: 'auto/downloads',
+        title: 'Apostila MASP - Português',
+        path: '#',
+    },
+    {
+        id: 5,
+        title: 'Apostila MASP - Espanhol',
+        path: '#',
+    },
+    {
+        id: 6,
+        title: 'Apostila MSA - Português',
+        path: '#',
+    },
+    {
+        id: 7,
+        title: 'Apostila MSA - Espanhol',
+        path: '#',
+    },
+    {
+        id: 8,
+        title: 'Boas Práticas (Formação Profissional) - Português',
+        path: '#',
+    },
+    {
+        id: 9,
+        title: 'Boas Práticas (Formação Profissional) - Espanhol',
+        path: '#',
+    },
+    {
+        id: 10,
+        title: 'Capacitação (Pilares Gerenciais) - Português',
+        path: '#',
+    },
+    {
+        id: 11,
+        title: 'Capacitação (Pilares Gerenciais) - Espanhol',
+        path: '#',
+    },
+    {
+        id: 12,
+        title: 'Capacitação em Metrologia',
+        path: '#',
+    },
+    {
+        id: 13,
+        title: 'Oficina de Capacitação (Qualidade) - Português',
+        path: '#',
+    },
+    {
+        id: 14,
+        title: 'Oficina de Capacitação (Qualidade) - Espanhol',
+        path: '#',
+    },
+    {
+        id: 15,
+        title: 'Seminário de Inovação (Apresentação',
+        path: '#',
     },
 ]
 

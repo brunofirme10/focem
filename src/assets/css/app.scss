@@ -598,6 +598,9 @@ section {
         font-weight: 600;
         font-size: 6rem;
         font-family: 'Montserrat', sans-serif;
+        &.sm {
+          font-size: 3rem!important
+        }
       }
       h3 {
         font-weight: 300;
@@ -653,6 +656,15 @@ section {
       &.is-active {
         display: block;
       }
+      .dot::before {
+        content: '';
+        width: 10px;
+        height: 10px;
+        background: $primary-color;
+        position: absolute;
+        top: .5rem;
+        left: 0;
+      }
       .timeline__slide_img {
         position: absolute;
         top: 0;
@@ -665,11 +677,16 @@ section {
         position: absolute;
         display: inline-block;
         width: 70%;
-        margin-top: 150px;
+        // margin-top: 80px;
         top: 0;
         right: 0;
         height: 100%;
         padding: 0 10px;
+        p.dot {
+          position: relative;
+          text-indent: 15px;
+          margin-bottom: 5px;
+        }
         .timeline__slide_content__title {
           text-align: left;
           margin: 30px 0;
@@ -691,6 +708,10 @@ section {
         }
         .timeline__slide_content__text {
           padding-right: 100px;
+        }
+        .timeline__content__scroll {
+          max-height: 350px;
+          overflow: scroll;
         }
       }
     }
@@ -751,8 +772,19 @@ section {
           p {
             font-size: 12px;
             text-align: left;
+            
+          }
+          &.p-sm {
+            p {
+              margin: 0;
+              &.title {
+                text-decoration: underline;
+                margin-top: 1rem
+              }
+            }
           }
         }
+        
       }
     }
     .pagination__slide   {

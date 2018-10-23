@@ -81,7 +81,7 @@
                                 </div>
                             </div>
                             <div class="cell large-7">
-                                <div class="grid-x">
+                                <div class="grid-x grid-margin-x">
                                     <div class="cell">
                                         <div class="grid-x">
                                             <div class="large-5 cell">
@@ -98,7 +98,7 @@
                                                 <div class="infographic country-select" data-location="UY">
                                                     <div class="infographic__score">
                                                         <h1>
-                                                            <span class="score">30</span>
+                                                            <span class="score">23</span>
                                                             <span class="country">Uruguai</span>
                                                         </h1>
                                                     </div>
@@ -106,13 +106,13 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="cell">
+                                    <div class="cell m-t-1">
                                         <div class="grid-x align-right">
                                             <div class="large-5 cell">
                                                 <div class="infographic country-select" data-location="ARG">
                                                     <div class="infographic__score">
                                                         <h1>
-                                                            <span class="score">23</span>
+                                                            <span class="score">34</span>
                                                             <span class="country">Argentina</span>
                                                         </h1>
                                                     </div>
@@ -122,7 +122,7 @@
                                                 <div class="infographic country-select" data-location="PAR">
                                                     <div class="infographic__score">
                                                         <h1>
-                                                            <span class="score">21</span>
+                                                            <span class="score">8</span>
                                                             <span class="country">Paraguai</span>
                                                         </h1>
                                                     </div>
@@ -157,76 +157,110 @@
                    <div class="timeline__slideshow">
                       <div class="timeline__slides">
                         <div class="timeline__slide is-active">
-                          <div class="timeline__slide_img">
-                            <img src="@/assets/img/pg/timeline/ilustracao.png" alt="">
-                          </div>
-                          <div class="timeline__slide_content">
-                            <div class="timeline__slide_content__title"></div>
-                            <div class="timeline__slide_content__text">
-                              <p> 1 Seleção com base em critérios de inserção na cadeia, faturamento bruto anual e presença na região de abrangência do projeto.</p>
-                              <p>Executores: Dinamus Consultoria </p>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="timeline__slide">
-                          <div class="timeline__slide_img">
-                            <img src="@/assets/img/pg/timeline/ilustracao.png" alt="">
-                          </div>
-                          <div class="timeline__slide_content">
-                            <div class="timeline__slide_content__title"></div>
-                            <div class="timeline__slide_content__text">
-                              <p>2 Seleção com base em critérios de inserção na cadeia, faturamento bruto anual e presença na região de abrangência do projeto.</p>
-                              <p>Executores: Dinamus Consultoria </p>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="timeline__slide">
-                          <div class="timeline__slide_img">
-                            <img src="@/assets/img/pg/timeline/ilustracao.png" alt="">
-                          </div>
-                          <div class="timeline__slide_content">
-                            <div class="timeline__slide_content__title"></div>
-                            <div class="timeline__slide_content__text">
-                              <p>3 Seleção com base em critérios de inserção na cadeia, faturamento bruto anual e presença na região de abrangência do projeto.</p>
-                              <p>Executores: Dinamus Consultoria </p>
-                            </div>
-                          </div>
-                        </div>
-                         <div class="timeline__slide">
-                          <div class="timeline__slide_img">
-                            <img src="@/assets/img/pg/timeline/ilustracao.png" alt="">
-                          </div>
-                          <div class="timeline__slide_content">
-                            <div class="timeline__slide_content__title"></div>
-                            <div class="timeline__slide_content__text">
-                              <p>4 Seleção com base em critérios de inserção na cadeia, faturamento bruto anual e presença na região de abrangência do projeto.</p>
-                              <p>Executores: Dinamus Consultoria </p>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="pagination__slide">
-                        <div class="item is-active">
-                            <h1>2015</h1>
-                            <h3>Estudo de mercado </h3>
-                            <p>(maio a outubro/2015)</p>
-                        </div>
-                        <div class="item">
-                            <h1>2016</h1>
-                            <h3>Estudo de mercado </h3>
-                            <p>(maio a outubro/20201614)</p>
-                        </div>
-                        <div class="item">
-                            <h1>2017</h1>
-                            <h3>Estudo de mercado </h3>
-                            <p>(maio a outubro/2017)</p>
-                        </div>
-                        <div class="item">
-                            <h1>2018</h1>
-                            <h3>Estudo de mercado </h3>
-                            <p>(maio a outubro/2018)</p>
-                        </div>
-                      </div>
+                          	<div class="timeline__slide_img">
+                            	<img src="@/assets/img/pg/timeline/ilustracao.png" alt="">
+                          	</div>
+                          	<div class="timeline__slide_content m-t-6">
+                           	 	<div class="timeline__slide_content__title"></div>
+                            		<div class="timeline__slide_content__text">
+                             		 	<p>Elaboração de estudo de mercado internacional que contém: mapeamento da cadeia produtiva de petróleo e gás dos estados parte do Mercosul, ambiente e oportunidades de negócios, demandas e políticas de compras das empresas-âncoras, famílias de itens com baixa e/ou média competitividade e outros adquiridos fora da zona do Mercosul e identificação de empresas fornecedoras e potenciais fornecedoras em cada estado parte, bem como análise da concorrência.</p>
+                              			<p>Executores: Dinamus Consultoria </p>
+                            		</div>
+                          		</div>
+							</div>
+                        	<div class="timeline__slide">
+                          	<div class="timeline__slide_img">
+                            	<img src="@/assets/img/pg/timeline/ilustracao.png" alt="">
+                          	</div>
+                          	<div class="timeline__slide_content m-t-5">
+                            	<div class="timeline__slide_content__title"></div>
+                           	 		<div class="timeline__slide_content__text">
+										<div class="grix-x small-up-12 medium-up-12 large-up-12 timeline__content__scroll">
+											<div class="cell">
+												<p class="dot"><strong>Seminário de sensibilização e difusão</strong> (fevereiro/2016)</p>
+												<p>Captação do interesse e adesão de empresas fornecedoras dos quatro estados parte para participarem do projeto.</p>
+												<p><strong>Executor</strong>: Dinamus Consultoria</p>
+											</div>
+											<div class="cell">
+												<p class="dot"><strong>Seleção e lista final de empresas fornecedoras </strong> (março/2016)</p>
+												<p>Seleção com base em critérios de inserção na cadeia, faturamento bruto anual e presença na região de abrangência do projeto.</p>
+												<p><strong>Executores:</strong> ABDI/Comitês Consultivos Locais</p>
+											</div>
+											<div class="cell">
+												<p class="dot"><strong>Diagnóstico das empresas fornecedoras </strong> (abril/2016)</p>
+												<p>O diagnóstico abordou questões relacionadas às diferentes práticas de uma empresa, embasando uma análise de diferentes áreas da gestão. Além do resultado individual, foi realizado cruzamento entre os resultados obtidos pela empresa e a média das que participam do projeto, oferecendo não só uma visão interna, mas também um comparativo com empresas de tamanho similar. </p>
+												<p><strong>Executor:</strong> Dinamus Consultoria </p>
+											</div>
+											<div class="cell">
+												<p class="dot"><strong>Seminário de boas práticas</strong>(novembro/dezembro/2016)</p>
+												<p>Capacitação em temas inerentes à gestão empresarial e negociações internacionais.</p>
+												<p><strong>Executor:</strong> Dinamus Consultoria  </p>
+											</div>
+											<div class="cell">
+												<p class="dot"><strong>Sessão de negócios</strong> (novembro/dezembro/2016) </p>
+												<p>Promoção da integração entre as empresas e criação de um ambiente propício ao networking e à formação de parcerias e negócios.</p>
+												<p><strong>Executor:</strong>  Dinamus Consultoria </p>
+											</div>
+											<div class="cell">
+												<p class="dot"><strong>Planos de qualificação</strong> (novembro/dezembro/2016) </p>
+												<p>Com base nos diagnósticos aplicados, as empresas foram avaliadas com nota de 1 a 5 em cada um dos itens examinados. As notas foram utilizadas para definir um conjunto de recomendações que compôs um plano de qualificação individual para cada companhia.</p>
+												<p><strong>Executor:</strong>  Dinamus Consultoria </p>
+											</div>
+										</div>
+                            		</div>
+                          		</div>
+                        	</div>
+                        	<div class="timeline__slide">
+                          	<div class="timeline__slide_img">
+                            	<img src="@/assets/img/pg/timeline/ilustracao.png" alt="">
+                          	</div>
+                          	<div class="timeline__slide_content m-t-2">
+                            	<div class="timeline__slide_content__title"></div>
+                           	 		<div class="timeline__slide_content__text">
+										<div class="grix-x small-up-12 medium-up-12 large-up-12 timeline__content__scroll">
+											<div class="cell">
+												<p class="dot"><strong>Visita à feira de relevância internacional do setor de P&G + trilha comercial</strong> </p>
+												<p>Apoiar as atividades comerciais das empresas beneficiárias do projeto, por meio da otimização de sua participação em feiras do Setor de Petróleo e Gás.</p>
+											</div>
+											<div class="cell">
+												<p class="dot"><strong>Rodada de negócios </strong></p>
+												<p>Criar um ambiente favorável à promoção de negócios e parcerias entre as empresas-âncoras do Setor de Petróleo e Gás e as empresas fornecedoras participantes do projeto.</p>
+											</div>
+											<div class="cell">
+												<p class="dot"><strong>Imersão tecnológica + rodada tecnológica - Local: Brasil</strong> </p>
+												<p>Estimular a colaboração entre empresas e centros de PD&I que atuam na fronteira do conhecimento.</p>
+											</div>
+											<div class="cell">
+												<p class="dot"><strong>Extensionismo industrial e tecnológico</strong> </p>
+												<p>70h por empresa - Intervenção rápida na empresa, com ferramentas consolidadas nos conceitos do Lean (lean manufacturing e lean office) e customizadas para as companhias atendidas, com foco no aumento da produtividade e no aperfeiçoamento de processos de negócio da PMEs da cadeia produtiva de petróleo e gás do Mercosul.</p>
+											</div>
+											<div class="cell">
+												<p class="dot"><strong>Imersão tecnológica + rodada tecnológica - Local: Argentina</strong></p>
+												<p>Estimular a colaboração entre empresas e centros de PD&I que atuam na fronteira do conhecimento.</p>
+											</div>
+											<div class="cell">
+												<p class="dot"><strong>Seminário de encerramento </strong></p>
+												<p>Celebrar os resultados alcançados no projeto, dar visibilidade para as empresas atendidas e parceiros envolvidos, bem como abrir espaço para discussões futuras sobre a integração produtiva regional e a cadeia de petróleo e gás no Mercosul.</p>
+											</div>
+										</div>
+                            		</div>
+                          		</div>
+                        	</div>
+                        	
+                      	</div>
+                      	<div class="pagination__slide">
+							<div class="item is-active">
+								<h1>2015</h1>
+								<h3>Estudo de mercado </h3>
+								<p>(maio a outubro/2015)</p>
+							</div>
+							<div class="item">
+								<h1>2016</h1>
+							</div>
+							<div class="item">
+								<h1 class="sm">Próximas atividades</h1>
+							</div>
+                      	</div>
                        <div class="arrows">
                       <div class="arrow prev">
                         <span class="svg svg-arrow-left">
@@ -344,9 +378,15 @@ export default {
         });
     },
     scoreEffectIn(el) {
+		let self = this
+		$('.infographic__score h1.active').each(function() {
+			self.scoreEffectOut($(this).parents('.infographic__score'))
+		});
+
         $(el).find('h1').addClass('active').css({
             cursor: 'pointer'
-        });
+		});
+		
         TweenMax.fromTo($(el).find('h1 span.score'), .5, { x: 30, opacity: 0, display: 'block' }, { x: 0, opacity: 1 });
     },
     scoreEffectOut(el) {

@@ -11,118 +11,125 @@
                 </div>
             </div>
         </div>
+        <div class="grid-container">
+            <div class="grid-x grid-padding-x grid-padding-y align-center text-center">
+                <div class="cell">
+                    <h1>FOCEM AUTOMOTIVO </h1>
+                    <h3>Fundo para Convergência Estrutural do Mercosul</h3>
+                </div>
+            </div>
+            <div class="grid-x grid-padding-x grid-padding-y align-center">
+                <div class="cell medium-4">
+                    <div class="content__scrollable">
+                    <p> O projeto de Adensamento e Complementação Automotiva no âmbito do Mercosul (FOCEM Automotivo) é uma iniciativa executada pela ABDI, com recursos majoritatiamente provenientes do FOCEM, que foi aprovada em 2010.</p>
+                    </div>
+                </div>
+                <div class="cell medium-4">
+                        <img src="@/assets/img/carro.png" alt="">
+                </div>
+            </div>
+        </div>
+        <div class="grid-container full">
+            <div class="grid-x">
+                <div class="cell text-center">
+                        <a class="action" @click.prevent="goWithScroll('#about-details')">
+                            <svg class="arrow-down">
+                                <text x="-26" y="-10" class="text">EXPLORAR</text>
+                                <path class="a1" d="M0 0 L15 16 L30 0"></path>
+                                <path class="a2" d="M0 10 L15 26 L30 10"></path>
+                                <path class="a3" d="M0 20 L15 36 L30 20"></path>
+                            </svg>
+                        </a>
+                </div>
+            </div>
+        </div>
+        <div class="choose-section space" id="about-details">
             <div class="grid-container">
-                <div class="grid-x grid-padding-x grid-padding-y align-center text-center">
-                    <div class="cell">
-                        <h1>FOCEM AUTOMOTIVO </h1>
-                        <h3>Fundo para Convergência Estrutural do Mercosul</h3>
-                    </div>
-                </div>
-                <div class="grid-x grid-padding-x grid-padding-y align-center">
-                    <div class="cell medium-4">
-                        <div class="content__scrollable">
-                        <p> O projeto de Adensamento e Complementação Automotiva no âmbito do Mercosul (FOCEM Automotivo) é uma iniciativa executada pela ABDI, com recursos majoritatiamente provenientes do FOCEM, que foi aprovada em 2010.</p>
-                        </div>
-                    </div>
-                    <div class="cell medium-4">
-                            <img src="@/assets/img/carro.png" alt="">
-                    </div>
-                </div>
-            </div>
-            <!-- <div class="grid-container full">
-                <div class="grid-x">
-                    <div class="cell text-center">
-                            <div class="choose-section">
-                              <object data="/static/map.svg" type="image/svg+xml" id="map"></object>
-                            </div>
-                    </div>
-                </div>
-            </div> -->
-            <div class="choose-section space" id="about-details">
-              <div class="grid-container">
                 <div class="grid-x grid-padding-x">
-                  <div class="medium-7 cell">
-                    <div class="grid-y grid-padding-y">
-                      <div class="medium-6 cell">
-                        <div class="infographic">
-                          <div class="infographic__data">
-                            <h1 class="dot active">Público-alvo</h1>
-                            <div class="grid-x grid-padding-x">
-                              <div class="small-9 cell">
-                                <h2>99 empresas  que participam  deste projeto. </h2>
-                              </div>
-                              <div class="small-3 cell">
-                                <img src="@/assets/img/pg/icon-empresa.png">
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="medium-6 cell">
-                        <div class="grid-x grid-padding-x">
-                            <div class="cell large-5 infographic">
-                                <div class="infographic__text dot">
-                                <p>
-                                    As empresas beneficiadas
-                                    pelo projeto foram escolhidas
-                                    a partir da identificação
-                                    de sua capacidade potencial
-                                    de atender às demandas
-                                    das empresas-âncoras
-                                    do setor no Mercosul
-                                    por itens estratégicos
-                                    e de baixa competitividade,
-                                    com dificuldade de suprimento ou que
-                                    precisam ser importados
-                                    de fora da zona do bloco.
-                                </p>
+                    <div class="medium-7 cell">
+                        <div class="grid-y grid-padding-y">
+                            <div class="medium-6 cell">
+                                <div class="infographic">
+                                    <div class="infographic__data">
+                                        <h1 class="dot active">Público-alvo</h1>
+                                        <div class="grid-x grid-padding-x">
+                                            <div class="small-9 cell">
+                                                <h2>99 empresas  que participam  deste projeto. </h2>
+                                            </div>
+                                            <div class="small-3 cell">
+                                                <img src="@/assets/img/pg/icon-empresa.png">
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="cell large-7">
-                                <div class="grid-x">
-                                    <div class="cell">
+                            <div class="medium-6 cell">
+                                <div class="grid-x grid-padding-x">
+                                    <div class="cell large-5 infographic">
+                                        <div class="infographic__text dot">
+                                            <p>
+                                                As empresas beneficiadas
+                                                pelo projeto foram escolhidas
+                                                a partir da identificação
+                                                de sua capacidade potencial
+                                                de atender às demandas
+                                                das empresas-âncoras
+                                                do setor no Mercosul
+                                                por itens estratégicos
+                                                e de baixa competitividade,
+                                                com dificuldade de suprimento ou que
+                                                precisam ser importados
+                                                de fora da zona do bloco.
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="cell large-7">
                                         <div class="grid-x">
-                                            <div class="large-5 cell">
-                                                <div class="infographic country-select" data-location="BR">
-                                                    <div class="infographic__score">
-                                                        <h1>
-                                                            <span class="score">34</span>
-                                                            <span class="country">BRASIL</span>
-                                                        </h1>
+                                            <div class="cell">
+                                                <div class="grid-x">
+                                                    <div class="large-5 cell">
+                                                        <div class="infographic country-select" data-location="BR">
+                                                            <div class="infographic__score">
+                                                                <h1>
+                                                                    <span class="score">44</span>
+                                                                    <span class="country">BRASIL</span>
+                                                                </h1>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="large-5 cell">
+                                                        <div class="infographic country-select" data-location="UY">
+                                                            <div class="infographic__score">
+                                                                <h1>
+                                                                    <span class="score">10</span>
+                                                                    <span class="country">Uruguai</span>
+                                                                </h1>
+                                                            </div>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="large-5 cell">
-                                                <div class="infographic country-select" data-location="UY">
-                                                    <div class="infographic__score">
-                                                        <h1>
-                                                            <span class="score">30</span>
-                                                            <span class="country">Uruguai</span>
-                                                        </h1>
+                                            <div class="cell">
+                                                <div class="grid-x align-right">
+                                                    <div class="large-5 cell">
+                                                        <div class="infographic country-select" data-location="ARG">
+                                                            <div class="infographic__score">
+                                                                <h1>
+                                                                    <span class="score">24</span>
+                                                                    <span class="country">Argentina</span>
+                                                                </h1>
+                                                            </div>
+                                                        </div>
                                                     </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="cell">
-                                        <div class="grid-x align-right">
-                                            <div class="large-5 cell">
-                                                <div class="infographic country-select" data-location="ARG">
-                                                    <div class="infographic__score">
-                                                        <h1>
-                                                            <span class="score">23</span>
-                                                            <span class="country">Argentina</span>
-                                                        </h1>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="large-5 cell">
-                                                <div class="infographic country-select" data-location="PAR">
-                                                    <div class="infographic__score">
-                                                        <h1>
-                                                            <span class="score">21</span>
-                                                            <span class="country">Paraguai</span>
-                                                        </h1>
+                                                    <div class="large-5 cell">
+                                                        <div class="infographic country-select" data-location="PAR">
+                                                            <div class="infographic__score">
+                                                                <h1>
+                                                                    <span class="score">10</span>
+                                                                    <span class="country">Paraguai</span>
+                                                                </h1>
+                                                            </div>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
@@ -130,16 +137,14 @@
                                     </div>
                                 </div>
                             </div>
-                          </div>
                         </div>
-                      </div>
-                  </div>
-                  <div class="medium-5 cell" id="container-map">
-                      <object data="/static/map.svg" type="image/svg+xml" id="map" @load="mapLoaded"></object>
-                  </div>
+                    </div>
+                    <div class="medium-5 cell" id="container-map">
+                        <object data="/static/map.svg" type="image/svg+xml" id="map" @load="mapLoaded"></object>
+                    </div>
                 </div>
-              </div>
             </div>
+        </div>
         <div class="grid-container">
             <div class="grid-x grid-padding-x">
                 <div class="cell">
@@ -147,165 +152,235 @@
                         <div class="tab">
                           <input class="tab-radio" type="radio" id="tab-1" name="tab-group-1" checked>
                           <label class="tab-label" for="tab-1">TIMELINE</label>
-                          <div class="tab-panel">
-                            <div class="tab-content">
-                            <div class="timeline__slideshow timeline_two">
-                                <div class="timeline__slides">
-                                  <div class="timeline__slide is-active">
-                                    <div class="timeline__slide_img">
-                                      <img src="@/assets/img/pg/timeline/ilustracao.png" alt="">
-                                    </div>
-                                    <div class="timeline__slide_content">
-                                      <div class="timeline__slide_content__title"></div>
-                                      <div class="timeline__slide_content__text">
-                                        <div class="grid-container">
-                                          <div class="grid-x grid-padding-x small-up-2 medium-up-5 large-up-5">
-                                            <div class="cell">
-                                               <figure><img src="@/assets/img/focem-auto/timeline/icon-selecao-empresas-beneficiarias.png"></figure>
-                                              <h5>Seleção das empresas beneficiárias</h5>
-                                              <p>Seleção com base em critérios de inserção na cadeia, faturamento bruto anual e presença na região de abrangência do projeto.</p>
-                                              <p> <strong>Executores:</strong> ABDI
-                                              Comitês Consultivos Locais
-                                              </p>
+                            <div class="tab-panel">
+                                <div class="tab-content">
+                                    <div class="timeline__slideshow timeline_two">
+                                        <div class="timeline__slides">
+                                            <div class="timeline__slide is-active">
+                                                <div class="timeline__slide_img">
+                                                    <img src="@/assets/img/pg/timeline/ilustracao.png" alt="">
+                                                </div>
+                                                <div class="timeline__slide_content">
+                                                    <div class="timeline__slide_content__title"></div>
+                                                        <div class="timeline__slide_content__text">
+                                                            <div class="grid-container">
+                                                                <div class="grid-x grid-padding-x small-up-2 medium-up-5 large-up-5">
+                                                                    <div class="cell">
+                                                                        <figure><img src="@/assets/img/focem-auto/timeline/icon-selecao-empresas-beneficiarias.png"></figure>
+                                                                        <h5>Seleção das empresas beneficiárias</h5>
+                                                                        <p>Seleção com base em critérios de inserção na cadeia, faturamento bruto anual e presença na região de abrangência do projeto.</p>
+                                                                        <p> <strong>Executores:</strong> ABDI Comitês Consultivos Locais </p>
+                                                                    </div>
+                                                                    <div class="cell">
+                                                                        <figure><img src="@/assets/img/focem-auto/timeline/icon-manual-fornecimento.png"></figure>
+                                                                        <h5>Manual de fornecimento (setembro/13)</h5>
+                                                                        <p>Levantamento das exigências básicas para o fornecimento de partes e peças exigidas por sistemistas e montadoras.</p>
+                                                                        <p><strong>Executores:</strong> Produttare </p>
+                                                                    </div>
+                                                                    <div class="cell">
+                                                                        <figure><img src="@/assets/img/focem-auto/timeline/icon-capacitacao-quadro.png"></figure>
+                                                                        <h5>Capacitações do quadro técnico  (setembro/2013)</h5>
+                                                                        <p>Levantamento das exigências básicas para o fornecimento de partes e peças exigidas por sistemistas e montadoras. Executores: Produttare</p>
+                                                                        <p><strong>Executores:</strong> Produttare Local: Porto Alegre - RS</p>
+                                                                    </div>
+                                                                    <div class="cell">
+                                                                        <figure><img src="@/assets/img/focem-auto/timeline/icon-estudo-setorial.png"></figure>
+                                                                        <h5>Estudo setorial (novembro/13)</h5>
+                                                                        <p>Levantamento do cenário e das tendências da indústria automobilística e dos fatores que influenciam a competitividade das empresas atendidas pelo projeto. Realizado por: Produttare</p>
+                                                                    </div>
+                                                                    <div class="cell">
+                                                                        <figure><img src="@/assets/img/focem-auto/timeline/icon-extensionismo.png"></figure>
+                                                                        <h5>Extensionismo gerencial e tecnológico - 80h por empresa (início: julho de 2013 fim: setembro de 2014)</h5>
+                                                                        <p>Serviço de consultoria individualizada às empresas com o objetivo de aportar as mais modernas tecnologias de produção e gestão às empresas beneficiárias.</p>
+                                                                        <p><strong>Executor Brasil (Rio Grande do Sul e São Paulo):</strong> Instituto de Competências Gerenciais (ICE)<br> <strong>Executor</strong> Argentina, Paraguai e Uruguai Consórcio Engenho/ABECEB Brasil e Argentina</p>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
                                             </div>
-                                             <div class="cell">
-                                               <figure><img src="@/assets/img/focem-auto/timeline/icon-manual-fornecimento.png"></figure>
-                                              <h5>Manual de fornecimento (setembro/13)</h5>
-                                              <p>Levantamento das exigências básicas para o fornecimento de partes e peças exigidas por sistemistas e montadoras.</p>
-                                              <p><strong>Executores:</strong> Produttare </p>
+                                            <div class="timeline__slide">
+                                                <div class="timeline__slide_img">
+                                                    <img src="@/assets/img/pg/timeline/ilustracao.png" alt="">
+                                                </div>
+                                                <div class="timeline__slide_content">
+                                                    <div class="timeline__slide_content__title"></div>
+                                                        <div class="timeline__slide_content__text p-sm">
+                                                            <div class="grid-container">
+                                                                <div class="grid-x grid-padding-x">
+                                                                    <div class="large-4 cell align-center text-center">
+                                                                        <figure class="text-center">
+                                                                            <img src="@/assets/img/focem-auto/timeline/icon-manual-fornecimento.png">
+                                                                        </figure>
+                                                                        <h5>Seminário de boas práticas (maio/2014)</h5>
+                                                                        <p>Difusão de conhecimento aos representantes das empresas participantes nos temas de Gestão Empresarial, Qualidade, Formação Profissional e Metrologia e Normatização.</p>
+                                                                        <div class="grid-x grid-padding-x small-up-2 medium-up-2 large-up-2">
+                                                                            <div class="cell">
+                                                                                <p class="title"><strong>Gestão Empresarial</strong></p>
+                                                                                <p><strong>Executor: </strong>Instituto de Competências Empresariais (ICE)</p> 
+                                                                                <p><strong>Local: </strong>Montevidéu - UY</p> 
+                                                                                <p><strong>Participantes: </strong>88 empresários</p> 
+                                                                                
+                                                                                <p class="title"><strong>Qualidade</strong></p>
+                                                                                <p><strong>Executor: </strong> Instituto de Competências Empresariais (ICE)</p> 
+                                                                                <p><strong>Local: </strong>Montevidéu - UY</p> 
+                                                                                <p><strong>Participantes: </strong>88 empresários</p> 
+                                                                            </div>
+                                                                            <div class="cell">
+                                                                                <p class="title"><strong>Gestão Empresarial</strong></p>
+                                                                                <p><strong>Executor: </strong>Instituto de Competências Empresariais (ICE)</p> 
+                                                                                <p><strong>Local: </strong>Montevidéu - UY</p> 
+                                                                                <p><strong>Participantes: </strong>88 empresários</p> 
+                                                                                
+                                                                                <p class="title"><strong>Gestão Empresarial</strong></p>
+                                                                                <p><strong>Executor: </strong>Instituto de Competências Empresariais (ICE)</p> 
+                                                                                <p><strong>Local: </strong>Montevidéu - UY</p> 
+                                                                                <p><strong>Participantes: </strong>88 empresários</p> 
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="large-3 cell">
+                                                                        <figure><img src="@/assets/img/focem-auto/timeline/icon-capacitacao-quadro.png"></figure>
+                                                                        <h5>Rodadas de negócios (agosto/2014)</h5>
+                                                                        <p>Estímulo ao contato entre pequenas empresas fornecedoras e médios e grandes compradores de autopeças, componentes e sistemas da cadeia automotiva</p>
+                                                                        <p class="m-t-1"><strong>Empresas compradoras:</strong> GM, Marcopolo, Agrale, Foton, Brunning, Nexteer, Magna Cosma, Cherry (Uruguai)</p>
+                                                                        <p><strong>Local:</strong> Porto Alegre - RS</p>
+                                                                        <p><strong>Executor/apoio:</strong> Sebrae/RS</p>
+                                                                    </div>
+                                                                    <div class="large-3 cell">
+                                                                        <figure><img src="@/assets/img/focem-auto/timeline/icon-estudo-setorial.png"></figure>
+                                                                        <h5>Seminário de inovação (agosto/2014)</h5>
+                                                                        <p>O seminário abordou o tema de inovação e o encadeamento do desenvolvimento de novos produtos partindo das montadoras e sistemistas para o fabricante de autopeças.</p>
+                                                                        <p></p>
+                                                                        <p class="title"><strong>Palestrantes</strong></p>
+                                                                        <p><strong>Montadora: </strong>Fiat Chrysler - Sr. José Francisco Romero</p>
+                                                                        <p><strong>Sistemista/empresa inovadora: </strong> Aethra Sistemas Automotivos S.A. - Sr. Marley de Souza Lemos</p>
+                                                                        <p><strong>Universidades/centro de pesquisa e inovação: </strong>UFSC - Universidade Federal de Santa Catarina - Sr. Neri dos Santos</p>
+                                                                        <p><strong>Local: </strong>Porto Alegre - RSs</p>
+                                                                    </div>
+                                                                    <div class="large-2 cell">
+                                                                        <figure><img src="@/assets/img/focem-auto/timeline/icon-extensionismo.png"></figure>
+                                                                        <h5>Gestão da inovação (outubro/2014)</h5>
+                                                                        <p>Capacitação de proprietários e/ou diretores das empresas beneficiárias na gestão de projetos de inovação nas indústrias do setor de autopeças.</p>
+                                                                        <p><strong>Executor:</strong> Instituto Nacional de Empreendedorismo e Inovação (INEI)</p>
+                                                                        <p><strong>Local:</strong> Santo André - SP</p>
+                                                                    </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
                                             </div>
-                                             <div class="cell">
-                                               <figure><img src="@/assets/img/focem-auto/timeline/icon-capacitacao-quadro.png"></figure>
-                                              <h5>Capacitações do quadro técnico  (setembro/2013)</h5>
-                                              <p>Levantamento das exigências básicas para o fornecimento de partes e peças exigidas por sistemistas e montadoras. Executores: Produttare</p>
-                                              <p><strong>Executores:</strong> Produttare Local: Porto Alegre - RS</p>
+                                        <div class="timeline__slide">
+                                            <div class="timeline__slide_img">
+                                                <!-- <img src="@/assets/img/pg/timeline/ilustracao.png" alt=""> -->
                                             </div>
-                                             <div class="cell">
-                                               <figure><img src="@/assets/img/focem-auto/timeline/icon-estudo-setorial.png"></figure>
-                                              <h5>Estudo setorial (novembro/13)</h5>
-                                              <p>Levantamento do cenário e das tendências da indústria automobilística e dos fatores que influenciam a competitividade das empresas atendidas pelo projeto. Realizado por: Produttare</p>
+                                            <div class="timeline__slide_content">
+                                                <div class="timeline__slide_content__title"></div>
+                                                    <div class="timeline__slide_content__text m-t-2">
+                                                        <div class="grid-x grid-padding-x small-up-1 medium-up-4 large-up-4">
+                                                            <div class="cell">
+                                                                <h5>Especialização Tecnológica - Workshop de indústria de 4.0</h5>
+                                                                <p>Sensibilizar e capacitar, difundindo os conceitos fundamentais e o uso da tecnologia da indústria 4.0.</p>
+                                                            </div>
+                                                            <div class="cell">
+                                                                <h5>Rodada de negócios II</h5>
+                                                                <p>Criar ambiente favorável à promoção de negócios e parcerias entre compradores e fornecedores.</p>
+                                                            </div>
+                                                            <div class="cell">
+                                                                <h5>Rodada Tecnológica - Conexão com startups</h5>
+                                                                <p>Desenvolver startups e indústrias por meio do codesenvolvimento das soluções tecnológicas</p>
+                                                            </div>
+                                                            <div class="cell">
+                                                                <h5>Seminário de encerramento</h5>
+                                                                <p>Celebrar os resultados, melhorar a visibilidade para as empresas atendidas e parceiros envolvidos e abrir espaço para discussões futuras.</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
                                             </div>
-                                             <div class="cell">
-                                               <figure><img src="@/assets/img/focem-auto/timeline/icon-extensionismo.png"></figure>
-                                              <h5>Extensionismo gerencial e tecnológico - 80h por empresa (início: julho de 2013 fim: setembro de 2014)</h5>
-                                              <p>Serviço de consultoria individualizada às empresas com o objetivo de aportar as mais modernas tecnologias de produção e gestão às empresas beneficiárias.</p>
-                                              <p><strong>Executor Brasil (Rio Grande do Sul e São Paulo):</strong> Instituto de Competências Gerenciais (ICE)<br> <strong>Executor</strong> Argentina, Paraguai e Uruguai Consórcio Engenho/ABECEB Brasil e Argentina</p>
+                                            <div class="timeline__slide">
+                                                <div class="timeline__slide_img">
+                                                    <img src="@/assets/img/pg/timeline/ilustracao.png" alt="">
+                                                </div>
+                                                <div class="timeline__slide_content">
+                                                    <div class="timeline__slide_content__title"></div>
+                                                    <div class="timeline__slide_content__text">
+                                                    <p>4 Seleção com base em critérios de inserção na cadeia, faturamento bruto anual e presença na região de abrangência do projeto.</p>
+                                                    <p>Executores: Dinamus Consultoria </p>
+                                                </div>
                                             </div>
-                                          </div>
                                         </div>
-                                      </div>
                                     </div>
-                                  </div>
-                                  <div class="timeline__slide">
-                                    <div class="timeline__slide_img">
-                                      <img src="@/assets/img/pg/timeline/ilustracao.png" alt="">
+                                    <div class="pagination__slide">
+                                        <div class="item is-active">
+                                            <h1>2013</h1>
+                                        </div>
+                                        <div class="item">
+                                            <h1>2014</h1>
+                                        </div>
+                                        <div class="item">
+                                            <h1 class="sm">Próximas atividades</h1>
+                                        </div>
                                     </div>
-                                    <div class="timeline__slide_content">
-                                      <div class="timeline__slide_content__title"></div>
-                                      <div class="timeline__slide_content__text">
-                                        <p>2 Seleção com base em critérios de inserção na cadeia, faturamento bruto anual e presença na região de abrangência do projeto.</p>
-                                        <p>Executores: Dinamus Consultoria </p>
-                                      </div>
+                                    <div class="arrows">
+                                        <div class="arrow prev">
+                                            <span class="svg svg-arrow-left">
+                                                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="25px" height="36px" viewBox="0 0 14 26" enable-background="new 0 0 25 36" xml:space="preserve"> <path d="M13,26c-0.256,0-0.512-0.098-0.707-0.293l-12-12c-0.391-0.391-0.391-1.023,0-1.414l12-12c0.391-0.391,1.023-0.391,1.414,0s0.391,1.023,0,1.414L2.414,13l11.293,11.293c0.391,0.391,0.391,1.023,0,1.414C13.512,25.902,13.256,26,13,26z"/> </svg>
+                                            <span class="alt sr-only"></span>
+                                        </span>
                                     </div>
-                                  </div>
-                                  <div class="timeline__slide">
-                                    <div class="timeline__slide_img">
-                                      <img src="@/assets/img/pg/timeline/ilustracao.png" alt="">
+                                    <div class="arrow next">
+                                        <span class="svg svg-arrow-right">
+                                            <svg version="1.1"  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="25px" height="36px" viewBox="0 0 14 26" enable-background="new 0 0 25 36" xml:space="preserve"> <path d="M1,0c0.256,0,0.512,0.098,0.707,0.293l12,12c0.391,0.391,0.391,1.023,0,1.414l-12,12c-0.391,0.391-1.023,0.391-1.414,0s-0.391-1.023,0-1.414L11.586,13L0.293,1.707c-0.391-0.391-0.391-1.023,0-1.414C0.488,0.098,0.744,0,1,0z"/> </svg>
+                                            <span class="alt sr-only"></span>
+                                        </span>
                                     </div>
-                                    <div class="timeline__slide_content">
-                                      <div class="timeline__slide_content__title"></div>
-                                      <div class="timeline__slide_content__text">
-                                        <p>3 Seleção com base em critérios de inserção na cadeia, faturamento bruto anual e presença na região de abrangência do projeto.</p>
-                                        <p>Executores: Dinamus Consultoria </p>
-                                      </div>
-                                    </div>
-                                  </div>
-                                  <div class="timeline__slide">
-                                    <div class="timeline__slide_img">
-                                      <img src="@/assets/img/pg/timeline/ilustracao.png" alt="">
-                                    </div>
-                                    <div class="timeline__slide_content">
-                                      <div class="timeline__slide_content__title"></div>
-                                      <div class="timeline__slide_content__text">
-                                        <p>4 Seleção com base em critérios de inserção na cadeia, faturamento bruto anual e presença na região de abrangência do projeto.</p>
-                                        <p>Executores: Dinamus Consultoria </p>
-                                      </div>
-                                    </div>
-                                </div>
-                            </div>
-                              <div class="pagination__slide ">
-                                  <div class="item is-active">
-                                      <h1>2015</h1>
-                                  </div>
-                                  <div class="item">
-                                      <h1>2016</h1>
-                                  </div>
-                                  <div class="item">
-                                      <h1>2017</h1>
-                                  </div>
-                                  <div class="item">
-                                      <h1>2018</h1>
-                                  </div>
-                                </div>
-                                <div class="arrows">
-                                <div class="arrow prev">
-                                  <span class="svg svg-arrow-left">
-                                    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="25px" height="36px" viewBox="0 0 14 26" enable-background="new 0 0 25 36" xml:space="preserve"> <path d="M13,26c-0.256,0-0.512-0.098-0.707-0.293l-12-12c-0.391-0.391-0.391-1.023,0-1.414l12-12c0.391-0.391,1.023-0.391,1.414,0s0.391,1.023,0,1.414L2.414,13l11.293,11.293c0.391,0.391,0.391,1.023,0,1.414C13.512,25.902,13.256,26,13,26z"/> </svg>
-                                    <span class="alt sr-only"></span>
-                                  </span>
-                                </div>
-                                <div class="arrow next">
-                                  <span class="svg svg-arrow-right">
-                                    <svg version="1.1"  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="25px" height="36px" viewBox="0 0 14 26" enable-background="new 0 0 25 36" xml:space="preserve"> <path d="M1,0c0.256,0,0.512,0.098,0.707,0.293l12,12c0.391,0.391,0.391,1.023,0,1.414l-12,12c-0.391,0.391-1.023,0.391-1.414,0s-0.391-1.023,0-1.414L11.586,13L0.293,1.707c-0.391-0.391-0.391-1.023,0-1.414C0.488,0.098,0.744,0,1,0z"/> </svg>
-                                    <span class="alt sr-only"></span>
-                                  </span>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                        </div>
-                        <div class="tab">
-                            <input class="tab-radio" type="radio" id="tab-2" name="tab-group-1">
-                            <label class="tab-label" for="tab-2">PARCEIROS</label>
-                            <div class="tab-panel">
-                                <div class="tab-content">
-                                    <partners :list="partners"/>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="tab">
-                            <input class="tab-radio" type="radio" id="tab-3" name="tab-group-1">
-                            <label class="tab-label" for="tab-3">RESULTADOS</label>
-                            <div class="tab-panel">
-                                <results-auto/>
-                            </div>
-                        </div>
-                        <div class="tab" @click=" tabSelected = 'gallery' ">
-                            <input class="tab-radio" type="radio" id="tab-4" name="tab-group-1">
-                            <label class="tab-label" for="tab-4" >GALERIA</label>
-                                <div class="tab-panel">
-                                    <div class="tab-content">
-                                        <gallery :images="gallery" v-if="tabSelected.includes('gallery')"/>
-                                    </div>
-                                </div>
-                        </div>
-                        <div class="tab">
-                            <input class="tab-radio" type="radio" id="tab-5" name="tab-group-1">
-                            <label class="tab-label" for="tab-5">DOWNLOADS</label>
-                            <div class="tab-panel">
-                                <div class="tab-content">
-                                    <h2> Central de Downloads </h2>
-                                    <hr/>
-                                    <downloads :list="downloads"/>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
+                <div class="tab">
+                    <input class="tab-radio" type="radio" id="tab-2" name="tab-group-1">
+                    <label class="tab-label" for="tab-2">PARCEIROS</label>
+                    <div class="tab-panel">
+                        <div class="tab-content">
+                            <partners :list="partners"/>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab">
+                    <input class="tab-radio" type="radio" id="tab-3" name="tab-group-1">
+                    <label class="tab-label" for="tab-3">RESULTADOS</label>
+                    <div class="tab-panel">
+                        <results-auto/>
+                    </div>
+                </div>
+                <div class="tab" @click=" tabSelected = 'gallery' ">
+                    <input class="tab-radio" type="radio" id="tab-4" name="tab-group-1">
+                    <label class="tab-label" for="tab-4" >GALERIA</label>
+                        <div class="tab-panel">
+                            <div class="tab-content gallery-slider">
+                                <gallery :images="gallery" v-if="tabSelected.includes('gallery')"/>
+                            </div>
+                        </div>
+                </div>
+                <div class="tab">
+                    <input class="tab-radio" type="radio" id="tab-5" name="tab-group-1">
+                    <label class="tab-label" for="tab-5">DOWNLOADS</label>
+                    <div class="tab-panel">
+                        <div class="tab-content">
+                            <h2> Central de Downloads </h2>
+                            <hr/>
+                            <downloads :list="downloads"/>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-    </section>
+    </div>
+</div>
+</section>
 </div>
 </template>
 <script>
@@ -329,6 +404,12 @@ export default {
     this.renderTimeline();
   },
   methods: {
+      goWithScroll(el) {
+      TweenMax.to(window, 1, {
+        ease: Power4.easeOut,
+        scrollTo:{ y: el }
+      });
+    },
     mapLoaded() {
         let self = this
 
@@ -360,12 +441,14 @@ export default {
     },
     scoreEffectIn(el) {
         let self = this
-        $('.infographic h1.active').each(function() {
-            self.scoreEffectOut($(this).parents('.infographic'))
-        })
-        $(el).find('h1').addClass('active');
-        TweenMax.fromTo($(el).find('h1 span.score'), .5, { x: 30, opacity: 0, display: 'block' }, { x: 0, opacity: 1 });
+		$('.infographic__score h1.active').each(function() {
+			self.scoreEffectOut($(this).parents('.infographic__score'))
+        });
         
+        $(el).find('h1 ').addClass('active').css({
+            cursor: 'pointer'
+        });
+        TweenMax.fromTo($(el).find('h1 span.score'), .5, { x: 30, opacity: 0, display: 'block' }, { x: 0, opacity: 1 });
     },
     scoreEffectOut(el) {
         // let el = this
@@ -517,11 +600,6 @@ export default {
 }
 
 </script>
-<style lang="scss">
-  #map {
-    path {
-      fill: red
-    }
-  }
+<style lang="scss" scoped>
 </style>
 

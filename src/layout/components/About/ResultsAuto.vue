@@ -65,6 +65,7 @@
                         <img src="@/assets/img/focem-auto/icon/resultados-entrega-rapida.png" alt="">
                     </div>
                 </div>
+                <h6>*Tudo isso permitiu aumentos significativos no faturamento anual das empresas.</h6>
             </div>
         </div>
     </div>    

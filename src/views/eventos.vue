@@ -50,7 +50,7 @@
                             </div>
                             <div class="grid-x grid-margin-x">
                                 <div class="cell" style="position: relative">
-                                    <router-link class="subscribe text-center" :to="`/${event.category}/${(event.slug || event.id)}/evento`"> Fazer inscrição </router-link>
+                                    <router-link class="subscribe text-center" :to="`/${event.category}/${(event.slug || event.id)}/evento`"> Mais informações </router-link>
                                 </div>
                             </div>
                         </div>
