@@ -1050,6 +1050,21 @@ nav {
         }
       }
     }
+    &.menu-home {
+      a {
+        color: #8ed8f9;
+        &:after{
+          color: rgb(0, 120, 177);
+          background: rgb(0, 120, 177);
+        }
+        &:hover, &.actived {
+          color: #fde970;
+          &::after{
+          background: #fde970
+          }
+        }
+      }
+    }
   }
 }
 #mobile-menu { display: none;}
