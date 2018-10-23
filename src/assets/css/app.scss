@@ -384,6 +384,12 @@ section {
           text-align: center;
         }
       }
+
+      .plan {
+        display: flex;
+        justify-content: center; 
+    }
+
     }
     .event-info {
         display: flex;
@@ -960,7 +966,7 @@ nav {
             position: relative;
             pointer-events: auto;
             text-transform: uppercase;
-            color: #DCDCDC;
+            color: #A9A9A9;
             font-weight: 500;
             min-height: 35px;
             width: 100%;
@@ -972,7 +978,7 @@ nav {
               width: 100px;
               height: 2px;
               top: 10px;
-              background: #DCDCDC;
+              background: #A9A9A9;
               transition: .2s all;
               display:inline-block;
             }
