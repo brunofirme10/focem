@@ -388,8 +388,7 @@ export default {
         $(el).find('h1').addClass('active').css({
             cursor: 'pointer'
 		});
-
-        TweenMax.fromTo($(el).find('h1 span.score'), .5, { x: 30, opacity: 0, display: 'block' }, { x: 0, opacity: 1 });
+      TweenMax.fromTo($(el).find('h1 span.score'), .5, { x: 30, opacity: 0, display: 'block' }, { x: 0, opacity: 1 });
     },
     scoreEffectOut(el) {
         // let el = this
@@ -491,7 +490,7 @@ export default {
         }
         function setHeightActive() {
             var contentTextHeight = $('.timeline__slide.is-active .timeline__slide_content__text').outerHeight();
-            $('.timeline__slideshow').height(contentTextHeight +  200);
+            $('.timeline__slideshow').height(contentTextHeight +  300);
         }
         function disableNextPrevButton(pagination){
             if(!pagination.prev('.item').length ){ $('.arrow.prev').addClass('disable'); }else {$('.arrow.prev').removeClass('disable'); }
