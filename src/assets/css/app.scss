@@ -1315,9 +1315,106 @@ nav {
     }
   }
   section.interna{
-    .link {
+    .link,#container-map {
       display: none;
     }
+    .infographic {
+      .infographic__score {
+        margin: 5px 0;
+        text-align: center;
+      }
+      h1 {
+        span{
+          display: inline-block;
+          &.score {
+            opacity: 1;
+          }
+          &.country {
+            transform: rotate(0);
+            width: 100%;
+            top: auto;
+            right: 0;
+            position: relative;
+          }
+        }
+      }
+    }
+    .tabs-section {
+      font-size: auto;
+      &:before {
+        content: none;
+      }
+      &:after {
+        content: none;
+      }
+      .tab {
+        display: block;
+         > [type="radio"]{
+           display: none;
+         }
+        [type="radio"]:checked + .tab-label {
+          background: transparent;
+          &:before {
+            content: none;
+          }
+          &:after {
+            content: none;
+          }
+        }
+        .tab-label {
+          display: block;
+          width: 100%;
+          background: transparent;
+
+        }
+      }
+      .tab-panel {
+        overflow: scroll;
+        display: inline;
+        .tab-content {
+          .timeline__slideshow {
+
+          }
+        }
+      }
+    }
+    .timeline__slideshow {
+      &.timeline_two {
+        .timeline__slides {
+          .timeline__slide_content {
+            .timeline__slide_content__text {
+              padding: 0;
+            }
+          }
+        }
+        .pagination__slide {
+          width: 70%;
+          .item {
+            h1 {
+              &.sm {
+                font-size: 1rem !important;
+                line-height: 1.5rem !important;
+                position: relative;
+                left: -40px;
+              }
+            }
+          }
+        }
+      }
+      .arrows{
+        .arrow {
+          top: 15px;
+          margin: 0;
+          padding: 0;
+          &.prev {
+            left: 0;
+          }
+          &.next {
+            right: 0;;
+          }
+        }
+      }
+     }
   }
 
 }
