@@ -1,36 +1,44 @@
 <template>
+  
+  <div>
    <section id="home">
-        <div class="grid-container">
-            <div class="grid-x grid-padding-x">
-                <div class="slide">
-                    <div class="slide__title">
-                        <h1>FOCEM</h1>
-                    </div>
-                    <div class="slide__images">
-                      <div class="slide__image slide__image--car">
-                        <router-link to="/automotivo/sobre"><img class="" src="@/assets/img/carro.png" alt=""></router-link>
-                      </div>
-                      <div class="slide__image slide__image--refinery" >
-                        <router-link to="/petroleo-gas/sobre"><img src="@/assets/img/refinaria.png" alt=""></router-link>
-                      </div>
-                    </div>
+    <div class="grid-container">
+        <div class="grid-x grid-padding-x">
+            <div class="slide">
+                <div class="slide__title">
+                    <h1>FOCEM</h1>
                 </div>
-                <div class="language">
-                  <div class="grid-container">
-                    <div class="grid-x grid-padding-x">
-                      <div class="cell">
-                        <h6><span>Escolha o IDIOMA</span></h6>
-                        <div class="choose">
-                          <a href="#">PORTUGUÊS</a>
-                          <a href="#">ESPANHOL</a>
-                        </div>
-                      </div>
-                    </div>
+                <div class="slide__images">
+                  <div class="slide__image slide__image--car">
+                    <router-link to="/automotivo/sobre"><img class="" src="@/assets/img/carro.png" alt="">
+                      <h2>Automotivo</h2>
+                    </router-link>
+                  </div>
+                  <div class="slide__image slide__image--refinery" >
+                    <router-link to="/petroleo-gas/sobre"><img src="@/assets/img/refinaria.png" alt="">
+                      <h2>Petróleo & gás</h2>
+                    </router-link>
                   </div>
                 </div>
             </div>
+            <div class="language">
+              <div class="grid-container">
+                <div class="grid-x grid-padding-x">
+                  <div class="cell">
+                    <h6><span>Escolha o IDIOMA</span></h6>
+                    <div class="choose">
+                      <a href="#">PORTUGUÊS</a>
+                      <a href="#">ESPANHOL</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
         </div>
+    </div>
     </section>
+  </div>  
+
 </template>
 <script>
 export default {
