@@ -3,14 +3,14 @@
         <cover img="auto/evento/cover-header.jpg"/>
         <section class="interna">
             <div class="grid-container">
-                <div class="grid-x grid-margin-x align-center">
+                <div class="grid-x grid-margin-x padding-x align-center">
                     <div class="large-8 cell" v-show="!_.isEmpty(event)">
                         <div class="grid-x grid-margin-x align-center p-b-1">
                             <div class="large-8 cell text-center">
                                 <h2> {{ event.title }} </h2>
                             </div>
                         </div>
-                        <div class="grid-x grid-margin-x align-center p-b-1">
+                        <div class="grid-x grid-margin-x padding-x align-center p-b-1">
                             <div class="cell event-info">
                                 <span>
                                     <v-icon name="map-marker-alt"/>
@@ -26,30 +26,30 @@
                                 </span>
                             </div>
                         </div>
-                        <div class="grid-x grid-margin-x align-center">
+                        <div class="grid-x grid-margin-x  padding-xalign-center">
                             <div class="cell">
                                 <p> {{ event.description }}</p>
                             </div>
                         </div>
-                        <div class="grid-x grid-margin-x align-center">
+                        <div class="grid-x grid-margin-x padding-x align-center">
                             <div class="cell" v-html="event.map"/>
                         </div>
-                        <div class="grid-x grid-margin-x align-center">
+                        <div class="grid-x grid-margin-x padding-x align-center">
                             <div class="cell text-center">
                                 <h3>Agora é só garantir sua vaga, clique no botão abaixo.</h3>
                             </div>
                         </div>
-                        <div class="grid-x grid-margin-x align-center">
+                        <div class="grid-x grid-margin-x padding-x align-center">
                             <div class="cell text-center">
                                 <button @click.prevent="viewForm" class="button button-primary button-inline"> Preencher fomulário </button>
                             </div>
                         </div>
-                        <div class="grid-x grid-margin-x event-form">
+                        <div class="grid-x grid-margin-x padding-x event-form">
                             <div class="cell">
                                 <form action="" @submit.prevent="submit">
                                     <fieldset class="fieldset">
                                         <legend for="personal">Informações pessoais</legend>
-                                        <div class="grid-x grid-margin-x">
+                                        <div class="grid-x grid-margin-x padding-x">
                                             <div class="large-6 cell">
                                                 <div class="input-group">
                                                     <input 
@@ -79,7 +79,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="grid-x grid-margin-x">
+                                        <div class="grid-x grid-margin-x padding-x">
                                             <div class="large-6 cell">
                                                 <div class="input-group">
                                                     <input type="number" 
@@ -109,7 +109,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="grid-x grid-margin-x">
+                                        <div class="grid-x grid-margin-x padding-x">
                                             <div class="large-6 cell">
                                                 <div class="input-group">
                                                     <input 
@@ -129,7 +129,7 @@
                                     </fieldset>
                                     <fieldset class="fieldset">
                                         <legend>Dados da empresa</legend>
-                                        <div class="grid-x grid-margin-x">
+                                        <div class="grid-x grid-margin-x padding-x">
                                             
                                             <div class="large-6 cell">
                                                 <div class="input-group">
@@ -161,7 +161,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="grid-x grid-margin-x">
+                                        <div class="grid-x grid-margin-x padding-x">
                                             <div class="large-6 cell">
                                                 <div class="input-group">
                                                     <input 
@@ -193,7 +193,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="grid-x grid-margin-x">
+                                        <div class="grid-x grid-margin-x padding-x">
                                             <div class="large-6 cell">
                                                 <div class="input-group">
                                                     <input 
@@ -241,7 +241,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="grid-x grid-margin-x">
+                                        <div class="grid-x grid-margin-x padding-x">
                                             <div class="cell">
                                                 <div class="input-group">
                                                     <textarea 
@@ -294,7 +294,7 @@
                                     </fieldset>
                                     <fieldset class="fieldset">
                                         <legend for="personal">Informações para depósito de diárias</legend>
-                                        <div class="grid-x grid-margin-x">
+                                        <div class="grid-x grid-margin-x padding-x">
                                             <div class="large-6 cell">
                                                 <div class="input-group">
                                                     <input 
@@ -324,7 +324,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="grid-x grid-margin-x">
+                                        <div class="grid-x grid-margin-x padding-x">
                                             <div class="large-6 cell">
                                                 <div class="input-group">
                                                     <input 
@@ -344,7 +344,7 @@
                                     <fieldset class="fieldset">
                                         <legend for="personal">Informações para emissão de passagens aéreas</legend>
                                         <small>Tenha em conta que as passagens serão emitidas levando em consideração o tempo de duração, horários e empresas que ofereçam as condições mais vantajosas para a ABDI.</small>
-                                        <div class="grid-x grid-margin-x m-t-1">
+                                        <div class="grid-x grid-margin-x padding-x m-t-1">
                                             <div class="large-6 cell">
                                                 <div class="input-group">
                                                     <input v-model="form.dates.go" type="date" required>
@@ -359,7 +359,7 @@
                                             </div>
                                         </div>
                                     </fieldset>
-                                    <div class="grid-x grid-margin-x">
+                                    <div class="grid-x grid-margin-x padding-x">
                                         <div class="cell text-right">
                                             <button class="button button-primary button-inline" type="submit"> INSCREVER </button>
                                         </div>

@@ -40,9 +40,8 @@ input[type], textarea, select {
   }
   &:required + label::after {
       content: '*';
-      position: absolute;
+      position: relative;
       font-size: 1.3rem;
-      top: -.2rem;
       margin-left: .2rem;
   }
   & + small {
