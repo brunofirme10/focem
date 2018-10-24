@@ -116,6 +116,7 @@ footer {
   background-color: #363436;
   padding: 50px 0 20px 0;
   overflow: hidden;
+  margin-top: 0;
   p {
     font-size: 0.7em;
     color: #8a8a8a;
@@ -135,6 +136,11 @@ footer {
   .partners img {
     filter: grayscale(100%);
   }
+
+  &.m-t-2 {
+    margin-top: 0 !important;
+  }
+
 }
 @media screen and (max-width: 39.9375em) {
   footer {
@@ -1223,7 +1229,6 @@ nav {
 
 #mobile-layout-default { display: none;}
 @media screen and (max-width: 39.9375em) {
-
   &#layout-default {
     top: 0;
     left: 0;
@@ -1232,19 +1237,15 @@ nav {
     overflow-x: hidden;
     padding: 0;
   }
-
   &.interna#focem h1 {
     font-size: 3rem !important;
-
   }
-
   &.footer.m-t-2 {
     padding: 7px 0 0 0;
+    margin-top: 0 !important;
   }
-
   &.interna#focem .choose-section .slide {
     top: 60%;
-
     .slide__title {
       position: relative;
       transform: translate(-50%, -70%);
