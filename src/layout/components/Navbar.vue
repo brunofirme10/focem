@@ -30,9 +30,12 @@
 </template>
 
 <script>
+import OnScreen from 'onscreen';
+const os = new OnScreen();
 export default {
   mounted (){
     this.toogleMobile();
+    this.scrollDetect();
   },
   methods: {
     toogleMobile (){
@@ -48,6 +51,20 @@ export default {
               }
           }
       });
+    },
+    scrollDetect() {
+        var osScreen =  new OnScreen({
+          tolerance: 200,
+          debounce: 10,
+          container: window
+        });
+        osScreen.on('enter', '.blue-stage',  (element, event) => {
+            $('#menu').addClass('menu-white');
+        });
+        osScreen.on('leave', '.blue-stage',  (element, event) => {
+            $('#menu').removeClass('menu-white');
+        });
+
     }
   }
 }

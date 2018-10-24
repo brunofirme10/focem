@@ -43,7 +43,7 @@
                 </div>
             </div>
         </div>
-        <div class="choose-section space" id="about-details">
+        <div class="choose-section space blue-stage" id="about-details">
             <div class="grid-container">
                 <div class="grid-x grid-padding-x">
                     <div class="medium-7 cell">
@@ -388,6 +388,7 @@ import AboutComponents from '@/layout/components/About'
 import components from '@/layout/components'
 import api from '@/api/pt_br'
 
+
 export default {
   components: {
     ...AboutComponents,
@@ -402,7 +403,6 @@ export default {
   }),
   mounted() {
     // this.renderMap();
-    this.scrollDetect();
     this.renderTimeline();
   },
   watch: {
@@ -448,9 +448,9 @@ export default {
     },
     scoreEffectIn(el) {
         let self = this
-		  $('.infographic__score h1.active').each(function() {
-			  self.scoreEffectOut($(this).parents('.infographic__score'))
-      });
+		$('.infographic__score h1.active').each(function() {
+			self.scoreEffectOut($(this).parents('.infographic__score'))
+        });
 
         $(el).find('h1 ').addClass('active').css({
             cursor: 'pointer'
@@ -603,35 +603,8 @@ export default {
           setHeightActive();
       })(window.jQuery);
     },
-    scrollDetect() {
-      $.fn.isOnScreen = function(){
-          var win = $(window);
-          var viewport = {
-              top : win.scrollTop() - 400,
-              left : win.scrollLeft()
-          };
-          viewport.right = viewport.left + win.width();
-          viewport.bottom = viewport.top + win.height();
-
-          var bounds = this.offset();
-          bounds.right = bounds.left + this.outerWidth();
-          bounds.bottom = bounds.top + this.outerHeight();
-          return (!(viewport.right < bounds.left || viewport.left > bounds.right || viewport.bottom < bounds.top || viewport.top > bounds.bottom));
-      };
-      $(window).on('scroll', function(){
-          if($('.bg-blue').isOnScreen()){
-          $('#menu').addClass('menu-blue');
-          }else{
-              $('#menu').removeClass('menu-blue');
-          };
-      });
-    }
   }
 }
-
-
-
-
 </script>
 <style lang="scss" scoped>
 </style>

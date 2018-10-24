@@ -762,7 +762,8 @@ section {
         font-size: 6rem;
         font-family: 'Montserrat', sans-serif;
         &.sm {
-          font-size: 3rem!important
+          font-size: 3rem !important;
+          line-height: 3rem;
         }
       }
       h3 {
@@ -935,7 +936,7 @@ section {
           p {
             font-size: 12px;
             text-align: left;
-            
+
           }
           &.p-sm {
             p {
@@ -982,8 +983,8 @@ nav {
             position: relative;
             pointer-events: auto;
             text-transform: uppercase;
-            color: #A9A9A9;
-            font-weight: 500;
+            color: #d1d3d4;
+            font-weight: 400;
             min-height: 35px;
             width: 100%;
             transition: .3s all;
@@ -992,7 +993,7 @@ nav {
               position: absolute;
               right: -110px;
               width: 100px;
-              height: 2px;
+              height: 1px;
               top: 10px;
               background: #A9A9A9;
               transition: .2s all;
@@ -1005,7 +1006,7 @@ nav {
               width: 100%;
               transition: .2s all;
             }
-            &:hover {
+            &:hover, &.actived {
               color: $primary-color;
               &::after {
                 width: calc(100% + 110px);
@@ -1018,17 +1019,32 @@ nav {
           }
         }
       }
-    &.menu-blue {
+    &.menu-white {
       a {
-        color: rgb(0, 120, 177);
+        color: #027ab0;
         &:after{
           color: rgb(0, 120, 177);
           background: rgb(0, 120, 177);
         }
-        &:hover {
+        &:hover, &.actived {
           color: $white-color;
           &::after{
           background: $white-color
+          }
+        }
+      }
+    }
+    &.menu-home {
+      a {
+        color: #8ed8f9;
+        &:after{
+          color: rgb(0, 120, 177);
+          background: rgb(0, 120, 177);
+        }
+        &:hover, &.actived {
+          color: #fde970;
+          &::after{
+          background: #fde970
           }
         }
       }
@@ -1174,7 +1190,7 @@ nav {
 }
 
 
-$spaceamounts: (1, 2, 3, 4, 5, 6, 7);
+$spaceamounts: (0, 1, 2, 3, 4, 5, 6, 7);
 $sides: (top, bottom, left, right);
 
 @each $space in $spaceamounts {

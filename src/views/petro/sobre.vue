@@ -41,7 +41,7 @@
                 </svg>
             </a>
             <div class="bg-blue">
-            <div class="choose-section space" id="about-details">
+            <div class="choose-section space blue-stage" id="about-details">
               <div class="grid-container">
                 <div class="grid-x grid-padding-x">
                   <div class="medium-7 cell">
@@ -248,7 +248,7 @@
                             		</div>
                           		</div>
                         	</div>
-                        	
+
                       	</div>
                       	<div class="pagination__slide">
 							<div class="item is-active">
@@ -369,7 +369,7 @@ export default {
         });
 
         $(mapElements).each(function () {
-            
+
             $(this).hover(_.debounce(function(e) {
                 if(self.classCoutrySelected == $(this).attr('id')) return;
 
@@ -389,12 +389,12 @@ export default {
         $(el).find('h1').addClass('active').css({
             cursor: 'pointer'
 		});
-		
+
         TweenMax.fromTo($(el).find('h1 span.score'), .5, { x: 30, opacity: 0, display: 'block' }, { x: 0, opacity: 1 });
     },
     scoreEffectOut(el) {
         // let el = this
-        TweenMax.to($(el).find('h1 span.score'), .2, { x: 30, opacity: 0 , 
+        TweenMax.to($(el).find('h1 span.score'), .2, { x: 30, opacity: 0 ,
             onComplete: function() {
                 $(el).find('h1').removeClass('active')
                 TweenMax.set($(el).find('h1 span.score'), { clearProps: 'all' });
@@ -402,12 +402,12 @@ export default {
         })
     },
     ajustSizeMap(svgDoc) {
-        
+
         let svgWidth = svgDoc.getElementsByTagName('svg')[0].getBBox().width;
 
         $('svg', svgDoc).attr('width',  $('#container-map').width());
         $('svg', svgDoc).attr('height', $('#container-map').height() + 100);
-        
+
         let proportionContainerSvg = svgWidth/$('#container-map').width()
 
         $('svg', svgDoc).children('g').attr('transform', `translate(0, -80) scale(${proportionContainerSvg})`)
@@ -658,24 +658,24 @@ export default {
     },
 
     scrollDetect() {
-        
+
     $.fn.isOnScreen = function(){
-        
+
         var win = $(window);
-        
+
         var viewport = {
             top : win.scrollTop() - 400,
             left : win.scrollLeft()
         };
         viewport.right = viewport.left + win.width();
         viewport.bottom = viewport.top + win.height();
-        
+
         var bounds = this.offset();
         bounds.right = bounds.left + this.outerWidth();
         bounds.bottom = bounds.top + this.outerHeight();
-        
+
         return (!(viewport.right < bounds.left || viewport.left > bounds.right || viewport.bottom < bounds.top || viewport.top > bounds.bottom));
-        
+
     };
     $(window).on('scroll', function(){
         if($('.bg-blue').isOnScreen()){
