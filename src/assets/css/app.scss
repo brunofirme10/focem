@@ -40,9 +40,8 @@ input[type], textarea, select {
   }
   &:required + label::after {
       content: '*';
-      position: absolute;
+      position: relative;
       font-size: 1.3rem;
-      top: -.2rem;
       margin-left: .2rem;
   }
   & + small {
@@ -690,6 +689,10 @@ section {
             color: #5b5b5f;
           }
           .eventos__lista__item {
+            margin-bottom: 4rem;
+            a{
+              left: 0;
+            }
             &:hover  {
               img {
                 box-shadow: -6px -6px 0px 0px rgba(0,165,245,1);

@@ -9,6 +9,7 @@ const CopyWebpackPlugin = require('copy-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const FriendlyErrorsPlugin = require('friendly-errors-webpack-plugin')
 const portfinder = require('portfinder')
+const chalk = require('chalk')
 
 const HOST = process.env.HOST
 const PORT = process.env.PORT && Number(process.env.PORT)
@@ -82,7 +83,19 @@ module.exports = new Promise((resolve, reject) => {
       // Add FriendlyErrorsPlugin
       devWebpackConfig.plugins.push(new FriendlyErrorsPlugin({
         compilationSuccessInfo: {
-          messages: [`Your application is running here: http://${devWebpackConfig.devServer.host}:${port}`],
+          messages: [`\n\n
+          ${chalk.green(`
+          $$\\      $$\\  $$$$$$\\  $$\\    $$\\ $$$$$$$$\\ $$$$$$$$\\             
+          $$ | $\\  $$ |$$  __$$\\ $$ |   $$ |$$  _____|\\____$$  |            
+          $$ |$$$\\ $$ |$$ /  $$ |$$ |   $$ |$$ |          $$  /             
+          $$ $$ $$\\$$ |$$$$$$$$ |\\$$\\  $$  |$$$$$\\       $$  /              
+          $$$$  _$$$$ |$$  __$$ | \\$$\\$$  / $$  __|     $$  /               
+          $$$  / \\$$$ |$$ |  $$ |  \\$$$  /  $$ |       $$  /                
+          $$  /   \\$$ |$$ |  $$ |   \\$  /   $$$$$$$$\\ $$$$$$$$\\ $$\\  
+          \\__/     \\__|\\__|  \\__|    \\_/    \\________|\\________|\\__|     `)}
+
+          ${chalk.yellow.bold(`Sua aplicação está pronta e disponível em: http://${devWebpackConfig.devServer.host}:${port}`)}
+          `],
         },
         onErrors: config.dev.notifyOnErrors
         ? utils.createNotifierCallback()

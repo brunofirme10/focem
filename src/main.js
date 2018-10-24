@@ -25,7 +25,7 @@ import axios from 'axios'
 import VueAxios from 'vue-axios'
 
 Vue.use(VueAxios, axios)
-Vue.axios.defaults.baseURL = 'http://focem.abdi.local/'
+Vue.axios.defaults.baseURL = process.env.API_URL
 
 import 'vue-awesome/icons'
 import Icon from 'vue-awesome/components/Icon'
