@@ -6,7 +6,7 @@
             <div class="grid-x">
                 <div class="cell small-2">
                     <div class="link">
-                        <p href=""> Saiba como funciona o programa >></p>
+                        <p> Saiba como funciona o programa >></p>
                     </div>
                 </div>
             </div>
@@ -44,6 +44,15 @@
             </div>
         </div>
         <div class="choose-section space blue-stage" id="about-details">
+           <div class="grid-container full">
+              <div class="grid-x">
+                  <div class="cell small-2">
+                      <div class="link">
+                          <p> PASSE O MOUSE SOBRE OS PAÍSES >></p>
+                      </div>
+                  </div>
+              </div>
+          </div>
             <div class="grid-container">
                 <div class="grid-x grid-padding-x">
                     <div class="medium-7 cell">

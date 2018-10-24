@@ -191,6 +191,30 @@ section {
       }
       h5 { text-transform: uppercase; font-weight: 400; color: $gray-color; }
       h6 { color: $primary-color; font-weight: 900 }
+      .link {
+        position: relative;
+        width: 90%;
+        height: 100%;
+        display: block;
+        text-align: right;
+        top: 45px;
+        p {
+          font-size: 0.7rem;
+          font-weight: 40;
+          color: $primary-color;
+          text-transform: uppercase;
+          margin: 0;
+          &:after {
+            content: '';
+            position: absolute;
+            height: 1px;
+            width: 100%;
+            background: $primary-color;
+            left: 0;
+            bottom: 0;
+          }
+        }
+      }
       .choose-section {
         position: relative;
         min-height: 70vh;
@@ -198,6 +222,16 @@ section {
         background: $primary-color;
         &.space {
           padding: 5rem 0;
+        }
+        &.blue-stage  {
+          .link {
+            p {
+              color: #8ed8f9;
+              &:after {
+                background: $primary-color-lighter;
+              }
+            }
+          }
         }
         .slide {
           position: absolute;
@@ -254,6 +288,7 @@ section {
             }
           }
         }
+
       }
       .content__scrollable {
         padding: 1rem 1.5rem;
@@ -606,13 +641,10 @@ section {
         font-size: 6rem;
         font-weight: 900;
       }
-
-
       &.focem-auto{
         h1{
           font-size: 4rem;
           font-weight: 900;
-          line-height: 4rem;
           position: relative;
         }
         h3{
@@ -621,30 +653,7 @@ section {
           text-transform: none;
         }
 
-        .link {
-          position: relative;
-          width: 100%;
-          height: 100%;
-          display: block;
-          text-align: right;
-          top: 45px;
 
-          p {
-            font-size: 0.7rem;
-            font-weight: 40;
-            color: $primary-color;
-            text-transform: uppercase;
-            &:after {
-              content: '';
-              position: absolute;
-              height: 1px;
-              width: 100%;
-              background: $primary-color;
-              left: 0;
-              bottom: 0;
-            }
-          }
-        }
 
         .results-auto {
           h6 {
@@ -986,7 +995,13 @@ section {
       .item {
         h1 {
           font-size: 6rem !important;
+          &.sm {
+            font-size: 3rem !important;
+            font-weight: 600 !important;
+            line-height: 3rem !important;
+          }
         }
+
       }
     }
   }
