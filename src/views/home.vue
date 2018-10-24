@@ -36,7 +36,6 @@
 export default {
   mounted(){
     this.animHome();
-    this.homeClass();
   },
   methods: {
     animHome(){
