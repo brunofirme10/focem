@@ -69,32 +69,23 @@ export default {
       })
     },
     scrollDetect() {
-       if(this.detectMobile()){
-         window.onscroll = function(ev)
-          {
+       if(this.detectMobile()) {
+         window.onscroll = function(ev) {
             var B= document.body; //IE 'quirks'
-                  var D= document.documentElement; //IE with doctype
-                  D= (D.clientHeight)? D: B;
+            var D= document.documentElement; //IE with doctype
+                D= (D.clientHeight)? D: B;
 
-            if (D.scrollTop > 200)
-              {
-                 $('#mobile-menu').addClass('blue-bar');
-              } else {
-                $('#mobile-menu').removeClass('blue-bar');
-              }
+            D.scrollTop > 200 ? $('#mobile-menu').addClass('blue-bar') : $('#mobile-menu').removeClass('blue-bar');
           };
        }
+        
         var osScreen =  new OnScreen({
-          tolerance: 200,
+          tolerance: $(document).height()/2,
           debounce: 10,
           container: window
         });
-        if( $('#home').length )
-        { $('#menu').addClass('menu-home');  }
-        else
-        {
-          $('#menu').removeClass('menu-home menu-white');
-        }
+        
+        $('#home').length ? $('#menu').addClass('menu-home') : $('#menu').removeClass('menu-home menu-white');
 
         osScreen.on('enter', '.blue-stage',  (element, event) => {
             $('#menu').addClass('menu-white');

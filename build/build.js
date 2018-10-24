@@ -28,7 +28,7 @@ rm(path.join(config.build.assetsRoot, config.build.assetsSubDirectory), err => {
     }) + '\n\n')
 
     if (stats.hasErrors()) {
-      console.log(chalk.red('  Ocorreram alguns erros.. \n'))
+      console.log(chalk.red('Ocorreram alguns erros.. \n'))
       process.exit(1)
     }
 
