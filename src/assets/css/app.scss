@@ -426,9 +426,10 @@ section {
             transform: translate(-50%, -80%);
             h1 {
               font-size: 20rem;
-              font-weight: 900;
+              font-weight : 900;
               color: $white-color;
             }
+
             @media screen and (max-width: 1200px) {
               h1 {
                 font-size: 15rem;
@@ -441,11 +442,11 @@ section {
             }
         }
         @media screen and (max-width: 39.9375em) {
-          .slide__title  {
-            height: 100%;
-            top: 70%;
-            transform: translate(-50%, -50%);
-          }
+        .slide__title  {
+          height: 100%;
+          top: 70%;
+          transform: translate(-50%, -50%);
+        }
         }
         .slide__images {
           text-align: center;
@@ -469,7 +470,10 @@ section {
               max-height: 50vh;
             }
             &.slide__image--refinery {
-              transform: translate(-10%,-70%);
+              transform: translate(0%,-60%);
+            }
+            h2 {
+              display: hidden;
             }
           }
         }
@@ -478,6 +482,13 @@ section {
         .slide {
           width: 100%;
           height: 100%;
+
+          h2 {
+            text-transform: uppercase;
+            color: $white-color;
+            font-size: 1.3rem;
+            font-weight: 600;
+          }
         }
       }
       .language {
@@ -510,6 +521,7 @@ section {
             background: #fde970;
           }
         }
+
         .choose {
           display: block;
           width: 100%;
@@ -536,7 +548,7 @@ section {
         .language {
           .choose  {
             a {
-              font-size: 1rem;
+              font-size: 0.8rem;
               &:first-child {
                 left: -60px;
               }
@@ -1179,18 +1191,23 @@ nav {
   }
 
   &.interna#focem h1 {
-    font-size: 5rem !important;
+    font-size: 3rem !important;
 
   }
 
   &.footer.m-t-2 {
-    padding: 20px 0 20px 0;
-    margin-top: 0 !important;
+    padding: 7px 0 0 0;
   }
 
+  &.interna#focem .choose-section .slide {
+    top: 60%;
 
+    .slide__title {
+      position: relative;
+      transform: translate(-50%, -70%);
+    }
+  }
 }
-
 
 $spaceamounts: (0, 1, 2, 3, 4, 5, 6, 7);
 $sides: (top, bottom, left, right);
