@@ -63,9 +63,11 @@
                   <div class="slide__images">
                     <div class="slide__image slide__image--car">
                       <a href="/automotivo/sobre"><img class="" src="@/assets/img/carro.png" alt=""></a>
+                      <h2>Automotivo</h2>
                     </div>
                     <div class="slide__image slide__image--refinery" >
                       <a href="/petroleo-gas/sobre"><img src="@/assets/img/refinaria.png" alt=""></a>
+                      <h2>Petróleo & gás</h2>
                     </div>
                   </div>
               </div>
