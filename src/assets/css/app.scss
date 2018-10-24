@@ -68,11 +68,11 @@ input[type="text"], textarea {
     padding: 0.7rem 5rem 0.7rem 5rem;
   }
   &.button-default {
-    background: $primary-color-lighter;
+    background: $primary-color;
     &:hover {
       background: $white-color;
-      color: $primary-color-lighter;
-      border-color: $primary-color-lighter;
+      color: $primary-color;
+      border-color: $primary-color;
     }
   }
   &.button-download {
@@ -189,7 +189,7 @@ section {
           font-weight: bold;
         }
       }
-      h5 { text-transform: uppercase; font-weight: 400; color: $gray-color; }
+      h5 { text-transform: uppercase; font-weight: 600; color: #dadcdd; }
       h6 { color: $primary-color; font-weight: 900 }
       .link {
         position: relative;
