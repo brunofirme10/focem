@@ -58,9 +58,9 @@ export default {
 
       contentCar.addEventListener('mouseenter', e => {
         TweenMax.fromTo(imageRefinery, .3, { opacity: 1 }, { opacity: 0 });
-        TweenMax.fromTo(imageCar, .4, {x: 0}, {x: 200});
+        TweenMax.fromTo(imageCar, .6, { x: 0 }, {x: 200, ease: Power3.easeOut});
         titleHome.textContent = "Automotivo";
-        TweenMax.to(titleHome, .2, {scale: .5});
+        TweenMax.to(titleHome, .4, { scale: .5, ease: Power3.easeOut});
       })
       contentCar.addEventListener('mouseleave', e => {
         TweenMax.fromTo(imageRefinery, .3, { opacity: 0 }, { opacity: 1 });
@@ -71,9 +71,9 @@ export default {
 
       contentRefinery.addEventListener('mouseenter', e => {
         TweenMax.fromTo(imageCar, .3, { opacity: 1 }, { opacity: 0 });
-        TweenMax.fromTo(imageRefinery, .4, {x: 0}, {x: -200});
+        TweenMax.fromTo(imageRefinery, .6, {x: 0 }, {x: -200, ease: Power3.easeOut });
         titleHome.textContent = "Petroleo & Gás";
-        TweenMax.to(titleHome, .2, {scale: .4, y: 200 });
+        TweenMax.to(titleHome, .4, {scale: .4, y: 200, ease: Power3.easeOut });
       })
       contentRefinery.addEventListener('mouseleave', e => {
         TweenMax.fromTo(imageCar, .3, { opacity: 0 }, { opacity: 1 });
@@ -82,12 +82,8 @@ export default {
          TweenMax.to(titleHome, .2, {scale: 1, y: 0});
       })
 
-    },
-    homeClass() {
-       if( $('#home').length ) {
-          $('#menu').addClass('menu-home');
-        }
     }
+
   },
 }
 </script>

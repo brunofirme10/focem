@@ -6,7 +6,7 @@ import router from './router'
 
 window.$ = window.jQuery = require('jquery')
 window.TweenMax = require('gsap').TweenMax
-require("gsap/ScrollToPlugin") 
+require("gsap/ScrollToPlugin")
 window._ = require('lodash')
 
 import 'foundation-sites/dist/css/foundation.min.css';
@@ -17,7 +17,7 @@ require('./assets/js/lightslider.min.js');
 
 import axios from 'axios'
 import VueAxios from 'vue-axios'
- 
+
 Vue.use(VueAxios, axios)
 Vue.axios.defaults.baseURL = './../api'
 
