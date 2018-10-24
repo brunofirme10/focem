@@ -269,6 +269,14 @@ section {
           top: 1.5rem;
           left:0;
         }
+        &::-webkit-scrollbar {
+          -webkit-appearance: none;
+          width: 3px;
+        }
+        &::-webkit-scrollbar-thumb {
+          border-radius: 10px;
+          background-color: $primary-color-lighter;
+        }
       }
       .action {
         svg {
