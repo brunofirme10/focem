@@ -1,5 +1,5 @@
 <template>
-  
+
   <div>
    <section id="home">
     <div class="grid-container">
@@ -37,13 +37,14 @@
         </div>
     </div>
     </section>
-  </div>  
+  </div>
 
 </template>
 <script>
 export default {
   mounted(){
     this.animHome();
+    this.addClassHome();
   },
   methods: {
     animHome(){
@@ -59,7 +60,7 @@ export default {
         TweenMax.fromTo(imageRefinery, .3, { opacity: 1 }, { opacity: 0 });
         TweenMax.fromTo(imageCar, .6, { x: 0 }, {x: 200, ease: Power3.easeOut});
         titleHome.textContent = "Automotivo";
-        TweenMax.to(titleHome, .4, { scale: .5, ease: Power3.easeOut});
+        TweenMax.fromTo(titleHome, .4, { y: 100 }, { y: 0, scale: .5, ease: Power3.easeOut});
       })
       contentCar.addEventListener('mouseleave', e => {
         TweenMax.fromTo(imageRefinery, .3, { opacity: 0 }, { opacity: 1 });
@@ -72,7 +73,7 @@ export default {
         TweenMax.fromTo(imageCar, .3, { opacity: 1 }, { opacity: 0 });
         TweenMax.fromTo(imageRefinery, .6, {x: 0 }, {x: -200, ease: Power3.easeOut });
         titleHome.textContent = "Petroleo & Gás";
-        TweenMax.to(titleHome, .4, {scale: .4, y: 200, ease: Power3.easeOut });
+        TweenMax.fromTo(titleHome, .4, { y: 300 }, {scale: .4, y: 200, ease: Power3.easeOut });
       })
       contentRefinery.addEventListener('mouseleave', e => {
         TweenMax.fromTo(imageCar, .3, { opacity: 0 }, { opacity: 1 });
@@ -80,9 +81,10 @@ export default {
         titleHome.textContent = "FOCEM";
          TweenMax.to(titleHome, .2, {scale: 1, y: 0});
       })
-
+    },
+    addClassHome() {
+      $('#menu').addClass('menu-home');
     }
-
   },
 }
 </script>

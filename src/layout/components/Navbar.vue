@@ -64,10 +64,13 @@ export default {
           container: window
         });
 
-        if( $('#home').length ) { $('#menu').addClass('menu-home');
-        }else {
+        if( $('#home').length )
+        { $('#menu').addClass('menu-home');  }
+        else
+        {
           $('#menu').removeClass('menu-home menu-white');
         }
+
         osScreen.on('enter', '.blue-stage',  (element, event) => {
             $('#menu').addClass('menu-white');
         });
