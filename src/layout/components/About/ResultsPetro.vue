@@ -4,10 +4,10 @@
             <div class="results-petro">
                 <h5>IMPORTANTES RESULTADOS FORAM CONQUISTADOS:</h5>
                 <div class="grid-x grid-padding-x grid-padding-y align-center text-justify">
-                <div class="cell small-4">
+                <div class="cell medium-4">
                     <img src="@/assets/img/pg/resultados/ilustracao.png" alt="">
                 </div>
-                <div class="cell small-4">
+                <div class="cell medium-4">
                     <p>Com o projeto ainda em execução, pequenas e
                         médias empresas já estão sendo beneficiadas graças
                         ao estímulo, ao desenvolvimento do mercado regional,

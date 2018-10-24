@@ -605,7 +605,7 @@ export default {
             }
             slideshowSwitch(slideshow, newSlide.index(), auto, pagination );
           }
-           $('.timeline__slideshow .arrows .arrow').on('click',function(){
+          $('.timeline__slideshow .arrows .arrow').on('click',function(){
             slideshowNext($(this).closest('.timeline__slideshow'), $(this).hasClass('prev'));
           });
           calcPosition();

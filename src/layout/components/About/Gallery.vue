@@ -13,7 +13,7 @@
                     </svg>
                 </button>
                 <ul id="image-gallery" class="list-unstyled cS-hidden">
-                    <li :data-thumb="item" v-for="(item, key) in images" :key="key"> 
+                    <li :data-thumb="item" v-for="(item, key) in images" :key="key">
                         <img :src="item" />
                     </li>
                 </ul>
@@ -58,15 +58,15 @@ export default {
                 loop:true,
                 onSliderLoad: function() {
                     $('#image-gallery').removeClass('cS-hidden');
-                }  
+                }
             });
 
             $('#goToPrevSlide').click(function(){
-                slider.goToPrevSlide(); 
+                slider.goToPrevSlide();
             });
 
             $('#goToNextSlide').click(function(){
-                slider.goToNextSlide(); 
+                slider.goToNextSlide();
             });
         }
     }
@@ -107,6 +107,15 @@ export default {
         background: green
 
     }
+}
+@media screen and (max-width: 39.9375em) {
+    .gallery #goToPrevSlide {
+      left: -30px;
+      z-index: 1;
+    }
+    .gallery #goToNextSlide {
+      right: -30px;
+     }
 }
 
 

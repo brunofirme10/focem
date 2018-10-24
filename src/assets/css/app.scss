@@ -1318,6 +1318,10 @@ nav {
     .link,#container-map {
       display: none;
     }
+    h1 {
+      font-size: 2rem;
+      line-height: 2rem;
+    }
     .infographic {
       .infographic__score {
         margin: 5px 0;
@@ -1372,13 +1376,39 @@ nav {
         overflow: scroll;
         display: inline;
         .tab-content {
-          .timeline__slideshow {
-
-          }
+          h3 { font-size: .8rem;}
+          padding: 0;
+          .timeline__slideshow {}
         }
       }
     }
     .timeline__slideshow {
+      .timeline__slides {
+        .timeline__slide_img {
+          display: none;
+        }
+        .timeline__slide_content {
+          width: 100%;;
+          .timeline__slide_content__text {
+            padding: 0;
+          }
+        }
+      }
+      .pagination__slide {
+        width: 90%;
+        .item {
+          h1 {
+            line-height: 6rem;
+            &.sm {
+              top: 10px;
+              left: 10px;
+              font-size: 1rem !important;
+              line-height: 1.5rem !important;
+              position: relative;
+            }
+          }
+        }
+      }
       &.timeline_two {
         .timeline__slides {
           .timeline__slide_content {
@@ -1391,6 +1421,7 @@ nav {
           width: 70%;
           .item {
             h1 {
+
               &.sm {
                 font-size: 1rem !important;
                 line-height: 1.5rem !important;
