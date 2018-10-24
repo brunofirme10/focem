@@ -17,11 +17,16 @@ body {
 
   }
 }
-input[type="text"], textarea {
+label {
+  position: relative;
+}
+
+input[type], textarea, select {
+  position: relative;
   background-color: $secondary-color-lighter;
   border: solid 1px $secondary-color-lighter;
   color: $dark;
-  padding-left: 2rem;
+  padding-left: 1rem;
   font-family: 'Montserrat', sans-serif;
   font-size: .8rem;
   font-weight: 500;
@@ -34,15 +39,37 @@ input[type="text"], textarea {
     background-color: $primary-color-lighter;
     border: solid 1px $primary-color-lighter;
   }
+  &:required + label::after {
+      content: '*';
+      position: absolute;
+      font-size: 1.3rem;
+      top: -.2rem;
+      margin-left: .2rem;
+  }
+  & + small {
+    display: block;
+    margin-bottom: 1rem;
+  }
+  &.error {
+    border-color: red;
+  }
 }
 
-// .btn {
-//   background: $primary-color;
-//   padding: 0.7rem 1.5rem 0.7rem 1.5rem;
-//   &.large {
-//     padding: 0.7rem 5rem 0.7rem 5rem;
-//   }
-// }
+.input-group {
+  display: flex;
+  flex-direction: column-reverse;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  margin: 0px;
+  & + small {
+    display: block;
+    margin-bottom: 1rem;
+  }
+}
+
+textarea {
+  margin-bottom: 0px;
+}
 
 /* BUTTONS */
 .button  {
@@ -141,6 +168,7 @@ header {
   max-height: 50vh;
   overflow: hidden;
 }
+
 section {
     padding: 30px 0 0 0;
     h1, h2, h3 {

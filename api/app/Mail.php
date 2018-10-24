@@ -1,47 +1,46 @@
 <?php
-class Mail{
-    protected $sendTo = '';
-    protected $subject = '';
-    protected $body = '';
 
-    protected $_sender = 'noreply@abdi.com.br';
-    protected $_sender_pass = 'Cc0M@!MKT';
-    protected $_sender_email_reply =  "noreply@abdi.com.br";
-    protected $_sender_email_name = "Cidades Inteligentes";
+class Mail {
+    protected $sendTo;
+    protected $subject;
+    protected $body;
 
-    public function sendSuccessTo($to){
+    protected $_sender = MAIL_USER;
+    protected $_sender_pass = MAIL_PASSWORD;
+    protected $_sender_email_reply =  MAIL_USER;
+    protected $_sender_email_name = MAIL_USER_NAME;
+    protected $_admin_email = MAIL_NOTIFICATION_ADMIN;
+
+    public function sendToUser($to, $user) {
         $this->sendTo = $to;
-        $this->subject = utf8_decode('Cidades Inteligentes - OBRIGADO PELO CADASTRO ');
-        $this->body =  '<html class="no-js" lang="en">
-                            <head>
-                                <meta charset="utf-8" />
-                                <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-                                <title>Cidades Inteligentes</title>
-                            </head>
-                            <body>
-                                <h5>OBRIGADO PELO CADASTRO</h5>
-                                <p>Recebemos no nosso banco de dados o registro da sua empresa e solução.</p>
-                                
-                                Qualquer dúvida entre em contato com:<br>
-                                Carlos Venícius Frees<br>
-                                Coordenação de Difusão Tecnológica<br>
-                                carlos.frees@abdi.com.br<br>
-                                (61) 3962.8683<br><br>
-                                Até logo!
-                                <hr>
-                            </body>
-                        </html>';
+        $this->subject = utf8_decode('FOCEM ABDI - OBRIGADO PELO CADASTRO');
+        $this->body = $this->handleMail($user, file_get_contents(ROOT . '/app/helpers/resources/email/register_success.html'));
+        $this->sendMail();
+        $this->notificationToAdmin($user);
+    }
+
+    protected function notificationToAdmin($user) {
+        $this->sendTo = $this->_admin_email;
+        $this->subject = utf8_decode('FOCEM ABDI - Novo cadastro no site');
+        $this->body = $this->handleMail($user, file_get_contents(ROOT . '/app/helpers/resources/email/notification.html'));
         $this->sendMail();
     }
+
+    protected function handleMail($data, $file) {
+        !empty ($data['name']) ? $file = str_replace('%name%', $data['name'], $file) : '';
+        !empty ($data['email']) ? $file = str_replace('%email%', $data['email'], $file) : '';
+        return $file;
+    }
+
     public function sendMail(){
         $mail = new PHPMailer();
         $result = array();
         $emailReply = $this->_sender_email_reply;
-        $nomeReply  = $this->_sender_email_name;;
+        $nomeReply  = $this->_sender_email_name;
 
         $mail->IsSMTP();                                      // Set mailer to use SMTP
         // $mail->Host         = 'smtp.zoho.com';  // Specify main and backup server
-        $mail->Host         = "correio.abdi.com.br";  // Specify main and backup server
+        $mail->Host         = MAIL_HOST;  // Specify main and backup server
         $mail->SMTPAuth     = true;  
         $mail->Username     = $this->_sender;                            // SMTP username
         $mail->Password     = $this->_sender_pass;                           // SMTP password
@@ -54,7 +53,7 @@ class Mail{
         $mail->FromName = $nomeReply;
         $mail->AddAddress($this->sendTo , $this->subject); // Add a recipient
         $mail->AddReplyTo($emailReply, $nomeReply);
-        $mail->SMTPDebug  = 4;
+        $mail->SMTPDebug  = 0; // 4 = FULL
 
         $mail->WordWrap = 50;                                 // Set word wrap to 50 characters
         $mail->IsHTML(true);      
