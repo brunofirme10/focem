@@ -33,6 +33,11 @@
 import OnScreen from 'onscreen';
 const os = new OnScreen();
 export default {
+  watch:{
+    $route (to, from){
+      $('#menu').removeClass('menu-white');
+    }
+  },
   mounted (){
     this.toogleMobile();
     this.scrollDetect();
@@ -58,13 +63,20 @@ export default {
           debounce: 10,
           container: window
         });
+
+        if( $('#home').length )
+        { $('#menu').addClass('menu-home');  }
+        else
+        {
+          $('#menu').removeClass('menu-home menu-white');
+        }
+
         osScreen.on('enter', '.blue-stage',  (element, event) => {
             $('#menu').addClass('menu-white');
         });
         osScreen.on('leave', '.blue-stage',  (element, event) => {
             $('#menu').removeClass('menu-white');
         });
-
     }
   }
 }
