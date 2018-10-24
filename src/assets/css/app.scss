@@ -14,7 +14,6 @@ body {
   }
   h1, h2, h3, h4, h5, h6, .font-montserrat {
     font-family: 'Montserrat', sans-serif;
-
   }
 }
 input[type="text"], textarea {
@@ -125,10 +124,12 @@ footer {
       display: block;
       ul {
         list-style-type: none;
-      }
-      a {
-        color: #8a8a8a;
-        font-family: 'Montserrat', sans-serif;
+        li {
+          a {
+            color: #8a8a8a;
+            font-family: 'Montserrat', sans-serif;
+          }
+        }
       }
     }
   .partners img {
@@ -600,14 +601,12 @@ section {
 
 
       &.focem-auto{
-
         h1{
           font-size: 4rem;
           font-weight: 900;
           line-height: 4rem;
           position: relative;
         }
-
         h3{
           font-size: 1rem;
           font-weight: 400;
@@ -615,7 +614,6 @@ section {
         }
 
         .link {
-
           position: relative;
           width: 100%;
           height: 100%;
@@ -641,20 +639,15 @@ section {
         }
 
         .results-auto {
-
           h6 {
             color: #696969;
             text-align: center;
           }
-
           h1{
             color: #696969;
           }
-
         }
-
       }
-
     }
 }
 .tabs-section {
@@ -977,7 +970,6 @@ section {
             }
           }
         }
-
       }
     }
     .pagination__slide   {
@@ -991,7 +983,6 @@ section {
     }
   }
 }
-
 
 nav {
   &#menu {
@@ -1194,6 +1185,32 @@ nav {
     }
   }
 }
+
+#mobile-layout-default { display: none;}
+@media screen and (max-width: 39.9375em) {
+
+  &#layout-default {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+    padding: 0;
+  }
+
+  &.interna#focem h1 {
+    font-size: 5rem !important;
+
+  }
+
+  &.footer.m-t-2 {
+    padding: 20px 0 20px 0;
+    margin-top: 0 !important;
+  }
+
+
+}
+
 
 $spaceamounts: (0, 1, 2, 3, 4, 5, 6, 7);
 $sides: (top, bottom, left, right);
