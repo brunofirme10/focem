@@ -43,9 +43,9 @@
             <div class="bg-blue">
             <div class="choose-section space blue-stage" id="about-details">
               <div class="grid-container">
-                <div class="grid-x grid-padding-x">
+                <div class="grid-x grid-padding-x ">
                   <div class="medium-7 cell">
-                    <div class="grid-y grid-padding-y">
+                    <div class="grid-y grid-padding-y grid-padding-x">
                       <div class="medium-6 cell">
                         <div class="infographic">
                           <div class="infographic__data">
@@ -423,120 +423,6 @@ export default {
             TweenMax.to(this, .5, { fill: 'white' });
         })
     },
-    renderTimeline() {
-        (function($) {
-          //SLIDESHOW
-          function slideshowSwitch(slideshow,index,auto, paginationItem){
-              var scaleDefault = .5;
-              var slides = slideshow.find('.timeline__slide');
-              var activeSlide = slides.filter('.is-active');
-
-              TweenMax.to(activeSlide, .4, {alpha: 0, onComplete: function(){
-                activeSlide.removeClass('is-active');
-                TweenMax.set(activeSlide, { alpha: 0,  display:'hide'});
-                 setHeightActive();
-              }});
-
-              var newSlide = slides.eq(index);
-              TweenMax.set(newSlide, { alpha: 0,  display:'block'});
-
-
-              newSlide.addClass('is-active');
-              TweenMax.to(newSlide, .4, {alpha: 1 });
-
-              /* PAGINATION */
-              if( paginationItem.nextPagination ){
-                TweenMax.set(paginationItem.nextPagination, { scale: scaleDefault });
-                TweenMax.set(paginationItem.activePaginationItem, { opacity: 1, x:0  });
-                TweenMax.to( paginationItem.activePaginationItem, .3, { opacity: 0, scale: scaleDefault } );
-
-                // Item ativo de paginacao
-                paginationItem.activePaginationItem.removeClass('is-active is-disable').addClass('is-off');
-
-                TweenMax.to(paginationItem.nextPagination, .4, {scale: 1, left: 0 , onComplete: function(){
-                  paginationItem.nextPagination.removeClass('is-disable').addClass('is-active');
-                  calcPosition();
-                }});
-              }
-              if(paginationItem.prevPagination){
-                paginationItem.prevPagination.removeClass('is-off is-disable-text is-disable-first').addClass('is-active');
-                paginationItem.activePaginationItem.removeClass('is-active');
-                calcPosition();
-                TweenMax.to( paginationItem.activePaginationItem, .3, { scale: scaleDefault } );
-                TweenMax.set(paginationItem.prevPagination, { scale: 1, opacity: 1 });
-              }
-          }
-          function calcPosition(){
-            $('.pagination__slide .item:not(.is-off)').each(function(index, item) {
-                var distance = ((200) * index);
-                TweenMax.to( item, .3, { css: {'left' : distance } } );
-              });
-              disablePositionItem();
-          }
-          function disablePositionItem(){
-            $('.pagination__slide .item:not(.is-active, .is-off)').each(function(index, item){
-              $(item).removeClass('is-disable-text is-disable-first').addClass('is-disable');
-              if(index == 0){ $(item).addClass('is-disable-first'); }
-              if(index == 1){ $(item).addClass('is-disable-text'); }
-            })
-          }
-          function disableNextPrevButton(pagination){
-              if(!pagination.prev('.item').length ){ $('.arrow.prev').addClass('disable'); }else {$('.arrow.prev').removeClass('disable'); }
-              if( !pagination.next('.item').length ){ $('.arrow.next').addClass('disable'); }else { $('.arrow.next').removeClass('disable'); }
-          }
-          function setHeightActive() {
-              var contentTextHeight = $('.timeline__slide.is-active .timeline__slide_content__text').outerHeight();
-              $('.timeline__slideshow').height(contentTextHeight +  150);
-          }
-          function slideshowNext(slideshow,previous,auto){
-
-            var slides = slideshow.find('.timeline__slide');
-            var activeSlide =slides.filter('.is-active');
-            var newSlide = null;
-
-            var paginationItem = null;
-            var paginations = slideshow.find('.pagination__slide .item');
-
-            var activePaginationItem = paginations.filter('.is-active');
-            const pagination  = {
-                nextPagination: null,
-                prevPagination: null,
-                activePaginationItem: paginations.filter('.is-active'),
-            };
-
-            if(previous){
-              newSlide = activeSlide.prev('.timeline__slide');
-              if(newSlide.length === 0) return;
-
-                // newSlide=slides.last();
-              // }
-              pagination.prevPagination = pagination.activePaginationItem.prev('.item');
-              if(pagination.prevPagination.length==0)
-                return;
-
-              disableNextPrevButton(pagination.prevPagination);
-
-            } else {
-              newSlide=activeSlide.next('.timeline__slide');
-              if(newSlide.length==0)
-                return;
-                // newSlide=slides.filter('.timeline__slide').first();
-
-              pagination.nextPagination = pagination.activePaginationItem.next('.item');
-              if(pagination.nextPagination.length==0)
-                return;
-                // pagination.nextPagination=paginations.filter('.paginations').first();
-              disableNextPrevButton(pagination.nextPagination);
-            }
-            slideshowSwitch(slideshow, newSlide.index(), auto, pagination );
-          }
-           $('.timeline__slideshow .arrows .arrow').on('click',function(){
-            slideshowNext($(this).closest('.timeline__slideshow'), $(this).hasClass('prev'));
-          });
-          calcPosition();
-          setHeightActive();
-      })(window.jQuery);
-    },
     renderTabs() {
       (function($) {
         $('.tabs input[type="radio"]:checked').closest('.tab').addClass('checked');
@@ -558,6 +444,7 @@ export default {
             TweenMax.to(activeSlide, .4, {alpha: 0, onComplete: function(){
               activeSlide.removeClass('is-active');
               TweenMax.set(activeSlide, { alpha: 0,  display:'hide'});
+               setHeightActive();
             }});
 
             var newSlide = slides.eq(index);
@@ -602,11 +489,15 @@ export default {
             if(index == 1){ $(item).addClass('is-disable-text'); }
           })
         }
+        function setHeightActive() {
+            var contentTextHeight = $('.timeline__slide.is-active .timeline__slide_content__text').outerHeight();
+            $('.timeline__slideshow').height(contentTextHeight +  200);
+        }
         function disableNextPrevButton(pagination){
             if(!pagination.prev('.item').length ){ $('.arrow.prev').addClass('disable'); }else {$('.arrow.prev').removeClass('disable'); }
             if( !pagination.next('.item').length ){ $('.arrow.next').addClass('disable'); }else { $('.arrow.next').removeClass('disable'); }
         }
-          function slideshowNext(slideshow,previous,auto){
+        function slideshowNext(slideshow,previous,auto){
 
             var slides = slideshow.find('.timeline__slide');
             var activeSlide =slides.filter('.is-active');
@@ -626,8 +517,6 @@ export default {
               newSlide = activeSlide.prev('.timeline__slide');
               if(newSlide.length === 0) return;
 
-                // newSlide=slides.last();
-              // }
               pagination.prevPagination = pagination.activePaginationItem.prev('.item');
               if(pagination.prevPagination.length==0)
                 return;
@@ -652,6 +541,7 @@ export default {
             slideshowNext($(this).closest('.timeline__slideshow'), $(this).hasClass('prev'));
           });
           calcPosition();
+          setHeightActive();
 
         })(window.jQuery);
     },
