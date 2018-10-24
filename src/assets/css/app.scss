@@ -1129,6 +1129,7 @@ nav {
 }
 #mobile-menu { display: none;}
 @media screen and (max-width: 39.9375em) {
+  header  { pointer-events: none; position: fixed }
   header.menu-active {
     position: fixed;
   }
@@ -1187,6 +1188,7 @@ nav {
     position: fixed;
     top: 10px;
     right: 20px;
+    transition: .2s all;
     &.blue-bar {
       top: 0;
       right: 0;
@@ -1195,6 +1197,7 @@ nav {
       padding-top: 10px;
       padding-bottom: 7px;
       width: 100%;
+      transition: .2s all;
     }
     .toggler {
       display: block;
@@ -1273,7 +1276,8 @@ nav {
     padding: 0;
   }
   &.interna#focem h1 {
-    font-size: 3rem !important;
+    font-size: 2rem !important;
+    line-height: 2rem;
   }
   &.interna#focem .choose-section .slide {
     top: 60%;
@@ -1282,6 +1286,12 @@ nav {
       transform: translate(-50%, -70%);
     }
   }
+  section.interna{
+    .link {
+      display: none;
+    }
+  }
+
 }
 
 $spaceamounts: (0, 1, 2, 3, 4, 5, 6, 7);
