@@ -32,6 +32,19 @@ rm(path.join(config.build.assetsRoot, config.build.assetsSubDirectory), err => {
       process.exit(1)
     }
 
-    console.log(chalk.cyan('Pronto! Projeto compilado! \n'))
+    console.log(`
+    ${chalk.green(`
+      $$\\      $$\\  $$$$$$\\  $$\\    $$\\ $$$$$$$$\\ $$$$$$$$\\             
+      $$ | $\\  $$ |$$  __$$\\ $$ |   $$ |$$  _____|\\____$$  |            
+      $$ |$$$\\ $$ |$$ /  $$ |$$ |   $$ |$$ |          $$  /             
+      $$ $$ $$\\$$ |$$$$$$$$ |\\$$\\  $$  |$$$$$\\       $$  /              
+      $$$$  _$$$$ |$$  __$$ | \\$$\\$$  / $$  __|     $$  /               
+      $$$  / \\$$$ |$$ |  $$ |  \\$$$  /  $$ |       $$  /                
+      $$  /   \\$$ |$$ |  $$ |   \\$  /   $$$$$$$$\\ $$$$$$$$\\ $$\\  
+      \\__/     \\__|\\__|  \\__|    \\_/    \\________|\\________|\\__|     \n`)}
+    ${chalk.yellow.bold(`
+      Pronto! Projeto compilado! \n
+    `)}
+    `)
   })
 })
