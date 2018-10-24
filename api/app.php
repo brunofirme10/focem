@@ -45,10 +45,7 @@ if (isset($_POST) && !empty($_POST['action']) && ($_POST['action'] == 'save')) {
 
     if(!empty ($data['user']['email'])) {
         $mail = new Mail();
-        // $mail->sendToUser($data['user']['email']);
-
-        $email = "ediano.gama@wavez.com.br";
-        echo $mail->sendToUser($email, $_POST['user']);
+        $mail->sendToUser($data['user']['email'], $data['user']);
     }
 
     echo json_encode($result);
