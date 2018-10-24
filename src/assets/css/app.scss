@@ -1125,16 +1125,73 @@ nav {
 }
 #mobile-menu { display: none;}
 @media screen and (max-width: 39.9375em) {
+  header.menu-active {
+    position: fixed;
+  }
   nav {
     &#menu  {
-      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: #03a9f4; /* Old browsers */
+      background: -moz-linear-gradient(top, #03a9f4 0%, #029ee6 100%); /* FF3.6-15 */
+      background: -webkit-linear-gradient(top, #03a9f4 0%,#029ee6 100%); /* Chrome10-25,Safari5.1-6 */
+      background: linear-gradient(to bottom, #03a9f4 0%,#029ee6 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#03a9f4', endColorstr='#029ee6',GradientType=0 ); /* IE6-9 */
+      opacity: 0;
+      visibility: hidden;
+      transition: all .3s;
+      transform: translateY(0);
+      &.active {
+        opacity: 1;
+        visibility: visible;
+      }
+      ul {
+        position: absolute;
+        top: 50%;
+        width: 100%;
+        transform: translateY(-50%);
+        margin: 0;
+        li {
+          display: block;
+          text-align: center;
+          padding: 1rem 0;
+          a {
+            color: #fff;
+            font-weight: 500;
+            &:after {
+              content: none;
+            }
+            &:hover {
+              transform: translate(0);
+              span {
+                top: 0;
+              }
+            }
+            &.actived {
+              color: #363436;
+            }
+          }
+        }
+      }
     }
   }
   &#mobile-menu {
     display: block;
-    position: absolute;
+    position: fixed;
     top: 10px;
     right: 20px;
+    &.blue-bar {
+      top: 0;
+      right: 0;
+      background: #00a3f8;
+      padding-right: 20px;
+      padding-top: 10px;
+      padding-bottom: 7px;
+      width: 100%;
+    }
     .toggler {
       display: block;
       position: relative;
@@ -1195,41 +1252,6 @@ nav {
         }
         &:after {
           background: #182c5d;
-        }
-      }
-    }
-    nav {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: #03a9f4; /* Old browsers */
-      background: -moz-linear-gradient(top, #03a9f4 0%, #029ee6 100%); /* FF3.6-15 */
-      background: -webkit-linear-gradient(top, #03a9f4 0%,#029ee6 100%); /* Chrome10-25,Safari5.1-6 */
-      background: linear-gradient(to bottom, #03a9f4 0%,#029ee6 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#03a9f4', endColorstr='#029ee6',GradientType=0 ); /* IE6-9 */
-      opacity: 0;
-      visibility: hidden;
-      transition: all .3s;
-      &.active {
-        opacity: 1;
-        visibility: visible;
-      }
-      ul {
-        position: absolute;
-        top: 50%;
-        width: 100%;
-        transform: translateY(-50%);
-        margin: 0;
-        li {
-          display: block;
-          text-align: center;
-          padding: 1rem 0;
-          a {
-            color: #fff;
-            font-weight: 500;
-          }
         }
       }
     }
