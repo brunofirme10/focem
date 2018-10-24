@@ -115,6 +115,12 @@ const webpackConfig = merge(baseWebpackConfig, {
         to: config.build.assetsSubDirectory,
         ignore: ['.*']
       }
+    ]),
+    new CopyWebpackPlugin([
+      {
+        from: path.resolve(__dirname, '../.htaccess'),
+        to: config.build.assetsRoot,
+      }
     ])
   ]
 })

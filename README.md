@@ -26,7 +26,7 @@ define('MAIL_NOTIFICATION_ADMIN', 'xxxx@abdi.com.br');
 > exemplo **`API_URL:  '"http://focem.abdi.com.br/"'`**
 
 ## Deploy de produção
-- Na pasta raiz do projeto, rode os comandos abaixo **na ordem**
+- Na pasta raiz do projeto, rode os comandos abaixo **na ordem** `com SUDO`
 ```
 $ git pull origin master
 $ npm install
