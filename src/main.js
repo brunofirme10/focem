@@ -6,8 +6,14 @@ import router from './router'
 
 window.$ = window.jQuery = require('jquery')
 window.TweenMax = require('gsap').TweenMax
-require("gsap/ScrollToPlugin")
+require('gsap/ScrollToPlugin') 
 window._ = require('lodash')
+
+import VeeValidate from 'vee-validate'
+Vue.use(VeeValidate)
+
+import { VueMaskDirective } from 'v-mask'
+Vue.directive('mask', VueMaskDirective);
 
 import 'foundation-sites/dist/css/foundation.min.css';
 import 'foundation-sites/dist/js/foundation.min.js';
@@ -19,7 +25,7 @@ import axios from 'axios'
 import VueAxios from 'vue-axios'
 
 Vue.use(VueAxios, axios)
-Vue.axios.defaults.baseURL = './../api'
+Vue.axios.defaults.baseURL = 'http://focem.abdi.local/'
 
 import 'vue-awesome/icons'
 import Icon from 'vue-awesome/components/Icon'

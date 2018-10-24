@@ -11,11 +11,11 @@ class Model {
 
     public function __construct() {
         // MYSQLCONECTOR
-        // $this->db = new PDO("mysql:host=" . DB_HOST . ";dbname=" . DB_NAME . ";", DB_USER, DB_PASS);
+        $this->db = new PDO("mysql:host=" . DB_HOST . ";dbname=" . DB_NAME . ";", DB_USER, DB_PASS);
 
         /* conenexao para servidor linux unix*/
-        $this->db = new PDO("dblib:version=7.0;charset=UTF-8;host=".DB_HOST .";dbname=" . DB_NAME . "", DB_USER,  DB_PASS);        
-        $this->db->exec("set names utf8");
+        // $this->db = new PDO("dblib:version=7.0;charset=UTF-8;host=".DB_HOST .";dbname=" . DB_NAME . "", DB_USER,  DB_PASS);        
+        // $this->db->exec("set names utf8");
 
         // $this->db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         // $this->db->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
