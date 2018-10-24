@@ -112,9 +112,11 @@ header {
   }
 }
 
-.footer {
+.footer.m-t-2 {
   background-color: #363436;
   padding: 50px 0 20px 0;
+  margin-top: 0 !important;
+  
   p {
     font-size: 0.7em;
   }
