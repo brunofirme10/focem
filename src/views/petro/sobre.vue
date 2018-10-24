@@ -341,7 +341,6 @@ export default {
   }),
   mounted() {
       this.renderTabs();
-      this.scrollDetect();
   },
   methods: {
     goWithScroll(el) {
@@ -656,36 +655,6 @@ export default {
 
         })(window.jQuery);
     },
-
-    scrollDetect() {
-
-    $.fn.isOnScreen = function(){
-
-        var win = $(window);
-
-        var viewport = {
-            top : win.scrollTop() - 400,
-            left : win.scrollLeft()
-        };
-        viewport.right = viewport.left + win.width();
-        viewport.bottom = viewport.top + win.height();
-
-        var bounds = this.offset();
-        bounds.right = bounds.left + this.outerWidth();
-        bounds.bottom = bounds.top + this.outerHeight();
-
-        return (!(viewport.right < bounds.left || viewport.left > bounds.right || viewport.bottom < bounds.top || viewport.top > bounds.bottom));
-
-    };
-    $(window).on('scroll', function(){
-        if($('.bg-blue').isOnScreen()){
-        $('#menu').addClass('menu-blue');
-        }else{
-            $('#menu').removeClass('menu-blue');
-        };
-    });
-
-    }
   }
 }
 </script>

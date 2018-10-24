@@ -74,12 +74,8 @@ export default {
          TweenMax.to(titleHome, .2, {scale: 1, y: 0});
       })
 
-    },
-    homeClass() {
-       if( $('#home').length ) {
-          $('#menu').addClass('menu-home');
-        }
     }
+
   },
 }
 </script>
