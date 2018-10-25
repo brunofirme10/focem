@@ -365,6 +365,13 @@
                                         </div>
                                     </div>
                                 </form>
+                                <div class="box-sucess">
+                                        <div class="large-6 cell text-center">
+                                            <img src="@/assets/img/sucess.png">
+                                            <h2> Seus dados foram enviados com sucesso. </h2>
+                                            <h4> Em breve entraremos em contato. </h4>
+                                        </div>
+                                </div>
                             </div>
                         </div>
                     </div>
