@@ -368,8 +368,32 @@
                             </div>
                         </div>
                     </div>
-                    <div v-show="_.isEmpty(event)">
-                        <h1> Evento não encontrado </h1>
+                    <div class="large-8 cell">
+                        <div class="grid-x grid-margin-x grid-padding-x align-center">
+                            <div v-show="_.isEmpty(event)">
+                                <div class="interna m-b-5">
+                                    <div class="grid-container">
+                                        <div class="grid-x grid-margin-x grid-padding-x ">
+                                            <div class="cell text-center">
+                                                <h1> Eventos </h1>
+                                            </div>
+                                            <div class="cell text-center">
+                                                <h3> Fundo para Convergência Estrutural do Mercosul </h3>
+                                            </div>
+                                            <div class="cell text-center">
+                                                <img src="@/assets/img/pg/icon-empresa.png">
+                                            </div>
+                                            <div class="cell text-center">
+                                                <h2> Não há eventos disponíveis no momento. </h2>
+                                            </div>
+                                            <div class="cell text-center">
+                                                <h4> Aguarde! Em breve mais informações. </h4>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>        
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -450,4 +474,6 @@ export default {
     }
 }
 </style>
+
+
 

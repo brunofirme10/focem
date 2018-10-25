@@ -479,8 +479,6 @@ section {
 
         padding: 15px;
         margin: 15px;
-
-
         h5 {
           color: $primary-color;
           text-align: center;
@@ -491,6 +489,28 @@ section {
         display: flex;
         justify-content: center;
     }
+
+    .interna.m-b-5{
+    
+      h2 {
+        text-transform: none ;
+        line-height: 3rem ;
+        font-weight: 950;
+      }
+      h4 {
+        text-transform: none;
+        font-weight: 600;
+        color: $primary-color;
+      }
+      img{
+        padding: 50px;
+      }
+
+      @media screen and (max-width: 39.9375em) {
+          h2 {
+            font-size: 2.0rem;
+          }
+      }
 
     }
     .event-info {
@@ -699,6 +719,9 @@ section {
               }
             }
           }
+        }
+
+
         }
     }
     &#focem {
