@@ -1,14 +1,13 @@
 <?php
-
 header("Access-Control-Allow-Origin: *");
 header("Access-Control-Allow-Headers: Content-Type");
 
 //PRODUCTION OPTIONS
+define('ROOT', $_SERVER['DOCUMENT_ROOT'] . '/api');
 
-require_once('./env.php');
+require_once(ROOT . '/env.php');
 
 define('DB_CHARSET', 'utf8');
-define('ROOT', $_SERVER['DOCUMENT_ROOT']);
 require_once('app/helpers/PHPMailer/class.phpmailer.php');
 require_once('app/Model.php');
 require_once('app/Mail.php');
