@@ -17,19 +17,18 @@
               </div>
           </div>
           <div class="cell medium-8 partners">
-              <div class="grid-x grid-padding-x grid-padding-y align-center text-center">
-                  <div class="cell medium-4"></div>
-                  <div class="cell medium-2 small-6 ">
-                      <img src="@/assets/img/logo-abdi.png">
+              <div class="grid-x grid-padding-x grid-padding-y text-right">
+                  <div class="cell medium-3  small-6 ">
+                    <img src="/static/partners/3.png">
                   </div>
-                  <div class="cell medium-2  small-6 ">
-                      <img src="@/assets/img/logo-abdi.png">
+                  <div class="cell medium-3  small-6 ">
+                    <img src="/static/partners/4.png">
                   </div>
-                  <div class="cell medium-2  small-6 ">
-                      <img src="@/assets/img/logo-abdi.png">
+                  <div class="cell medium-3 small-6 ">
+                    <img src="/static/partners/1.png">
                   </div>
-                  <div class="cell medium-2  small-6 ">
-                      <img src="@/assets/img/logo-abdi.png">
+                  <div class="cell medium-3  small-6 ">
+                    <img src="/static/partners/2.png">
                   </div>
               </div>
           </div>
