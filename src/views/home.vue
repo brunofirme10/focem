@@ -48,39 +48,41 @@ export default {
   },
   methods: {
     animHome(){
-      let titleHome = document.querySelector('.slide .slide__title h1');
-      titleHome.textContent = "FOCEM";
-      let contentCar = document.querySelector('.slide .slide__images .slide__image--car');
-      let imageCar = contentCar.querySelector('img');
-
-      let contentRefinery = document.querySelector('.slide .slide__images .slide__image--refinery');
-      let imageRefinery = contentRefinery.querySelector('img');
-
-      contentCar.addEventListener('mouseenter', e => {
-        TweenMax.fromTo(imageRefinery, .3, { opacity: 1 }, { opacity: 0 });
-        TweenMax.fromTo(imageCar, .6, { x: 0 }, {x: 200, ease: Power3.easeOut});
-        titleHome.textContent = "Automotivo";
-        TweenMax.fromTo(titleHome, .4, { y: 100 }, { y: 0, scale: .5, ease: Power3.easeOut});
-      })
-      contentCar.addEventListener('mouseleave', e => {
-        TweenMax.fromTo(imageRefinery, .3, { opacity: 0 }, { opacity: 1 });
-        TweenMax.fromTo(imageCar, .4, {x: 200}, {x: 0});
+      if( !this.detectMobile() ) {
+        let titleHome = document.querySelector('.slide .slide__title h1');
         titleHome.textContent = "FOCEM";
-        TweenMax.to(titleHome, .2, {scale: 1});
-      })
+        let contentCar = document.querySelector('.slide .slide__images .slide__image--car');
+        let imageCar = contentCar.querySelector('img');
 
-      contentRefinery.addEventListener('mouseenter', e => {
-        TweenMax.fromTo(imageCar, .3, { opacity: 1 }, { opacity: 0 });
-        TweenMax.fromTo(imageRefinery, .6, {x: 0 }, {x: -200, ease: Power3.easeOut });
-        titleHome.textContent = "Petroleo & Gás";
-        TweenMax.fromTo(titleHome, .4, { y: 300 }, {scale: .4, y: 200, ease: Power3.easeOut });
-      })
-      contentRefinery.addEventListener('mouseleave', e => {
-        TweenMax.fromTo(imageCar, .3, { opacity: 0 }, { opacity: 1 });
-        TweenMax.fromTo(imageRefinery, .4, {x: -200}, {x: 0});
-        titleHome.textContent = "FOCEM";
-         TweenMax.to(titleHome, .2, {scale: 1, y: 0});
-      })
+        let contentRefinery = document.querySelector('.slide .slide__images .slide__image--refinery');
+        let imageRefinery = contentRefinery.querySelector('img');
+
+        contentCar.addEventListener('mouseenter', e => {
+          TweenMax.fromTo(imageRefinery, .3, { opacity: 1 }, { opacity: 0 });
+          TweenMax.fromTo(imageCar, .6, { x: 0 }, {x: 200, ease: Power3.easeOut});
+          titleHome.textContent = "Automotivo";
+          TweenMax.fromTo(titleHome, .4, { y: 100 }, { y: 0, scale: .5, ease: Power3.easeOut});
+        })
+        contentCar.addEventListener('mouseleave', e => {
+          TweenMax.fromTo(imageRefinery, .3, { opacity: 0 }, { opacity: 1 });
+          TweenMax.fromTo(imageCar, .4, {x: 200}, {x: 0});
+          titleHome.textContent = "FOCEM";
+          TweenMax.to(titleHome, .2, {scale: 1});
+        })
+
+        contentRefinery.addEventListener('mouseenter', e => {
+          TweenMax.fromTo(imageCar, .3, { opacity: 1 }, { opacity: 0 });
+          TweenMax.fromTo(imageRefinery, .6, {x: 0 }, {x: -200, ease: Power3.easeOut });
+          titleHome.textContent = "Petroleo & Gás";
+          TweenMax.fromTo(titleHome, .4, { y: 300 }, {scale: .4, y: 200, ease: Power3.easeOut });
+        })
+        contentRefinery.addEventListener('mouseleave', e => {
+          TweenMax.fromTo(imageCar, .3, { opacity: 0 }, { opacity: 1 });
+          TweenMax.fromTo(imageRefinery, .4, {x: -200}, {x: 0});
+          titleHome.textContent = "FOCEM";
+          TweenMax.to(titleHome, .2, {scale: 1, y: 0});
+        })
+      }
     },
     addClassHome() {
       $('#menu').addClass('menu-home');
