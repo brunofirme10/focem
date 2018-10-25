@@ -1,6 +1,8 @@
 <template>
-
   <div>
+    <height-transition>
+      <component :is="sectionComponent" v-if="sectionComponent"></component>
+    </height-transition>
    <section id="home">
     <div class="grid-container">
         <div class="grid-x grid-padding-x">
@@ -22,14 +24,38 @@
                 </div>
             </div>
             <div class="language">
+              <fade-transition>
+                <div class="grid-container m-b-4" v-show="!section">
+                  <div class="grid-x grid-padding-x">
+                    <div class="cell">
+                      <h6><span>Escolha o IDIOMA</span></h6>
+                      <div class="choose">
+                        <a href="#">PORTUGUÊS</a>
+                        <a href="#">ESPANHOL</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </fade-transition>
               <div class="grid-container">
                 <div class="grid-x grid-padding-x">
                   <div class="cell">
-                    <h6><span>Escolha o IDIOMA</span></h6>
-                    <div class="choose">
-                      <a href="#">PORTUGUÊS</a>
-                      <a href="#">ESPANHOL</a>
-                    </div>
+                    <a class="action" @click.prevent="section = 'focem'" v-show="!section">
+                      <a class="text">SOBRE O FOCEM</a>
+                      <svg class="arrow-down">
+                          <path class="a1" d="M0 0 L15 16 L30 0"></path>
+                          <path class="a2" d="M0 10 L15 26 L30 10"></path>
+                          <path class="a3" d="M0 20 L15 36 L30 20"></path>
+                      </svg>
+                    </a>
+                    <a class="action" @click.prevent="section = ''" v-show="section">
+                      <a class="text">VOLTAR AO INÍCIO</a>
+                      <svg class="arrow-down" style="transform: rotate(180deg)">
+                          <path class="a1" d="M0 0 L15 16 L30 0"></path>
+                          <path class="a2" d="M0 10 L15 26 L30 10"></path>
+                          <path class="a3" d="M0 20 L15 36 L30 20"></path>
+                      </svg>
+                    </a>
                   </div>
                 </div>
               </div>
@@ -38,16 +64,29 @@
     </div>
     </section>
   </div>
-
 </template>
 <script>
+import PetroSobre from '@/views/petro/sobre'
+import FocemSobre from '@/views/focem/sobre'
 export default {
-  mounted(){
+  components: {
+    PetroSobre,
+    FocemSobre
+  },
+  data: () => ({
+    section: ''
+  }),
+  mounted() {
     this.animHome();
     this.addClassHome();
   },
+  computed: {
+    sectionComponent() {
+      return this.section ? this.section + '-sobre' : ''
+    }
+  },
   methods: {
-    animHome(){
+    animHome() {
       if( !this.detectMobile() ) {
         let titleHome = document.querySelector('.slide .slide__title h1');
         titleHome.textContent = "FOCEM";

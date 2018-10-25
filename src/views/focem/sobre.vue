@@ -51,7 +51,7 @@
           </div>
         </div>
       </div>
-      <div class="grid-container full blue-stage">
+      <!-- <div class="grid-container full blue-stage">
         <div class="grid-x">
           <div class="cell text-center">
             <h5>Escolha um dos programas abaixo</h5>
@@ -74,7 +74,7 @@
             </div>
             </div>
         </div>
-      </div>
+      </div> -->
     </section>
 </div>
 </template>
