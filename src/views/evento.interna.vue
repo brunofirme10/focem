@@ -381,7 +381,7 @@
                                                 <h3> Fundo para Convergência Estrutural do Mercosul </h3>
                                             </div>
                                             <div class="cell text-center">
-                                                <img src="@/assets/img/pg/icon-empresa.png">
+                                                <img src="@/assets/img/alert.png">
                                             </div>
                                             <div class="cell text-center">
                                                 <h2> Não há eventos disponíveis no momento. </h2>
